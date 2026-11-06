@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarifler</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- FULL WIDTH HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="header-left">
+
+        <!-- Logo -->
+        <div class="logo" onclick="window.location.href='../index.html';" style="cursor:pointer;">
+          <img src="../images/icon-logo.svg" class="logo-icon">
+          <span class="logo-text">tarifler</span>
+        </div>
+        <!-- Logo. -->
+      </div>
+      <!-- Tarif Başlığı -->
+      <div class="recipe-title-container-single">
+        <div class="recipe-title-line-single">
+          <span></span>
+          <h1>ACUKA</h1>
+          <span></span>
+        </div>
+      </div>
+      <!--
+      <div class="recipe-title-container-double">
+      <div class="recipe-title-line-double">
+      <span></span>
+      <h1>TARİF BAŞLIĞI</h1>
+      <span></span>
+      </div>
+      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
+      </div>
+      -->
+      <!-- Tarif Başlığı. -->
+      <div class="header-right">
+        <!-- Arama Kutusu -->
+        <div class="search-container"><input type="text" id="searchInput" class="mainLoginInput" placeholder="&#61442;"
+            oninput="search()" />
+          <div id="results" class="results-dropdown"></div>
+        </div>
+        <!-- Arama Kutusu. -->
+      </div>
+    </div>
+  </header>
+  <!-- FULL WIDTH HEADER. -->
+  <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+  <div class="recipe-image"><img src="../images/acuka.png" alt=""></div>
+  <!-- İçerik -->
+  <div class="container">
+    <!-- Malzemeler Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-mal">
+          <img src="../images/icon-mal.svg" class="icon-mal">
+          <span class="text-mal">Malzemeler</span>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="malzeme-tablosu">
+          <tbody id="malzemeBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Malzemeler Kartı -->
+    <!-- Tarif Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-haz">
+          <img src="../images/icon-haz.svg" alt="" class="icon-haz">
+          <span class="text-haz">Hazırlanışı</span>
+        </div>
+      </div>
+      <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
+      <div class="table-container">
+    <!-- Hazırlanışı -->
+    <section class="recipe">
+<div class="genel-bakis"><h3>Genel Bakış</h3><p>Acuka, biber salçası, ceviz ve galeta unundan oluşan, yağla ve baharatla bağlanan ezme türü bir sürmedir. Dengesi tatlı salçanın yoğunluğu, cevizin yağlı dokusu, nar ekşisinin asidi ve çiğ sarımsağın keskinliği arasında kurulur. Bu tarifte cevizi hafifçe kavurup iri kıyıyoruz, baharatları ılık yağda açtırıyoruz ve karışımı dinlendirerek kıvamı oturtuyoruz.</p></div>
+<ol class="steps">
+<li><div class="step-content"><strong>Ön Hazırlık</strong><ul><li>Bir tava, geniş bir karıştırma kabı, terazi, termometre, rondo ve temiz bir cam kavanoz hazırla; cam kavanoz acukayı koku ve renk almadan saklar.</li><li>Malzemeleri tart; salçayı, nar ekşisini, galeta ununu ve baharatları kendi kaplarında ayır, böylece karıştırma sırasında acele etmezsin.</li><li>Galetayı kendin yapıyorsan bayat ekmeğin içini fırında 120 °C civarında kuruyana kadar kurutup öğütücüyle ince çek ve tamamen soğumasını bekle; sıcak galeta karışımda nem bırakır.</li><li>Sarımsağı soy ve filizi çıkar, çünkü filiz acı verir.</li></ul></div></li>
+<li><div class="step-content"><strong>Cevizi Hazırla</strong><ul><li>Cevizi kuru tavada çok düşük ateşte 3-4 dakika, sürekli karıştırarak ısıt; amaç kavurmak değil, kokusunu açmak ve gevrekleştirmek. Kavurma cevizin aromasını belirginleştirir ve acımsı iç zarının tadını yumuşatır.</li><li>Cevizi tavadan hemen geniş bir tabağa al ve tamamen soğumasını bekle; sıcak ceviz öğütülürken yağını bırakır.</li><li>Soğuyan cevizi rondoda kısa darbelerle iri kıy; <span class="puf">ceviz parçaları mercimek tanesi kadar kalmalı, toz ya da macun haline getirme, çünkü uzun öğütme yağını salar ve acuka ağır, yapışkan olur.</span></li></ul></div></li>
+<li><div class="step-content"><strong>Baharatları Yağda Açtır</strong><ul><li>Zeytinyağını küçük bir tavada ılık olana kadar ısıt; termometreyle 60-70 °C'yi geçmesin. Ilık yağ pul biberin ve kimyonun yağda çözünen aroma ve renk bileşiklerini dışarı alır ve baharatların çiğ tadını dengeler.</li><li>Ocaktan al, pul biberi ve kimyonu ekle, 1 dakika karıştır. <span class="puf">Yağ 70 °C'yi aşarsa pul biber yanar, rengi kahverengiye döner ve acı bir tat bırakır; ısı yükseldiyse tavayı biraz bekletip soğut.</span></li><li>Yağı oda sıcaklığına yakın bir hale gelene kadar bekle; sıcak yağ cevizi ve galetayı yumuşatır, karışımın dokusunu bozar.</li></ul></div></li>
+<li><div class="step-content"><strong>Karıştır</strong><ul><li>Kapta salçayı, nar ekşisini ve rondoda ezdiğin ya da çok ince kıydığın sarımsağı birleştirip pürüzsüz olana kadar karıştır; sarımsağı baştan eklemek tadının eşit dağılmasını sağlar.</li><li>Soğuyan baharatlı yağı ekle ve iyice karıştır.</li><li>Cevizi ve galeta unu ekle, spatulayla katlayarak karıştır. Galetayı hepsini birden eklemek yerine iki üç seferde ekle; çünkü galeta nemi emip şişer ve kıvamı bu şekilde daha kontrollü ayarlarsın.</li><li><span class="puf">Tuzu henüz ekleme; salça zaten tuzlu olduğu için tuzu dinlendirmeden sonra tadıp ayarlamak en güvenlisidir.</span></li></ul></div></li>
+<li><div class="step-content"><strong>Dinlendir</strong><ul><li>Karışımı kavanoza al, bastırarak hava boşluklarını gider ve kapağı kapat.</li><li>Oda sıcaklığında en az 1-2 saat, tercihen buzdolabında bir gece dinlendir. Dinlenme sırasında galeta yağı ve salça suyunu emerek karışımı bağlar, sarımsağın keskinliği yumuşar ve baharatlar karışıma yayılır.</li><li><span class="puf">Dinlenmeden sonra tadıp tuzu, nar ekşisini ve acıyı ayarla; sıkıysa galeta ile yağı dengeleyerek kıvamı ayarla, çünkü acuka dinlendikçe koyulaşır.</span></li></ul></div></li>
+<li><div class="step-content"><strong>Servis</strong><ul><li>Acukayı servis tabağına alıp üzerine ince bir zeytinyağı gezdir; yağ yüzeyi parlatır ve tadı yuvarlar.</li><li>Oda sıcaklığında servis et; buzdolabından çıkan soğuk acuka sertleşir ve aroması kapalı kalır, bu yüzden servisten yarım saat önce çıkar.</li><li>Kahvaltıda, lavaş ya da ekmek yanında sürmelik olarak veya mezelerin arasında tüket.</li></ul></div></li>
+</ol>
+<div class="bilgi-notlari"><h3>Bilgi Notları</h3>
+<div class="not-grubu"><h4>Saklama</h4><ul><li>Kapağı sıkı kapalı cam kavanozda ve buzdolabında saklanır; yüzeyine ince bir zeytinyağı tabakası dökmek havayla temasını keserek ceviz yağının yavaş bayatlamasını ve rengin solmasını geciktirir.</li><li>Her kullanımda temiz ve kuru bir kaşık kullan; ıslak ya da kirli kaşık bozulmayı hızlandırır.</li><li>Buzdolabında yaklaşık bir hafta kadar rahat gider; daha uzun saklamak istersen küçük porsiyonlara bölüp dondurabilirsin, çözdürdükten sonra karıştırarak kıvamı toparla.</li></ul></div>
+<div class="not-grubu"><h4>Besin Öğesi Korunumu</h4><ul><li>Cevizdeki omega-3 yağ asitleri ısıya, ışığa ve oksijene duyarlıdır; bu yüzden cevizi yalnızca hafifçe ısıtıyor, kavanozu kapalı ve karanlık tutuyoruz. Daha fazla besin korumak istersen cevizi hiç kavurmadan çiğ kullanabilirsin, ancak aroma biraz hafifler.</li><li>Biber ve salçadaki karotenoidler ve likopen yağda çözünür; yağlı ortamda emilimleri artar, bu yüzden salçayı yağla birlikte tüketmek avantajdır.</li><li>Sarımsak çiğ eklendiği ve ezildikten sonra bir süre dinlendiği için içerdiği aktif bileşikler büyük oranda korunur.</li><li>Sızma zeytinyağındaki polifenoller ısıyla azalır; yağı 70 °C'nin altında tutmak ve geri kalanı çiğ eklemek bunları korur.</li></ul></div>
+</div>
+</section>
+    <!-- Hazırlanışı. -->    
+      </div>
+    </div>
+  </div>
+  <!-- Icerik -->
+  <!-- JavaScript -->
+  <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+  <script src="../recipe.js"></script>
+  <script>
+    // Malzemeler
+    addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
+    addMainRow("Biber Salçası", "En doğru tercih katkısız, güneşte kurutulmuş ev yapımı biber salçasıdır; ona ulaşamazsan içinde tuz dışında katkı bulunmayan güvenilir bir biber salçası kullanabilirsin, o da yoksa domates salçasıyla biber salçasını yarı yarıya karıştırabilirsin, ama tat daha yassı ve daha az dumanlı olur. Acuka'nın tadının, renginin ve yoğun gövdesinin kaynağı salçadır; bu yüzden en iyisini seç. Tatlı ya da acı olması senin tercihin, acıyı pul biberle de ayarlayabileceğin için tatlı salça daha esnek bir başlangıçtır. Bu malzeme ana malzeme olduğu için %100 kabul edilir ve diğer tüm yüzdeler salçanın ağırlığına göre hesaplanır.");
+addNormalRow("Ceviz İçi", 50, "En iyisi taze hasat, kabuğundan kendi çıkardığın ceviz içidir; olmazsa vakumlu ve son kullanma tarihi uzak hazır iç ceviz kullan, bunun da yerini az miktarda kavrulmuş fındık ya da çiğ badem tutabilir ama acukanın karakteristik tadı biraz değişir. İçi açık renkli, kırılgan ve tatlı kokulu olmalı; acı, boya gibi ya da ağır yağ kokan ceviz bayatlamıştır, kullanma. Ceviz acukaya yağlı doku ve tatlımsı derinlik verir; yüzde 50 salçayı bastırmadan her lokmada ceviz hissini taşıyan dengedir, daha fazlası acukayı ağırlaştırır, daha azı ise ceviz tadını kaybettirir.");
+addNormalRow("Galeta Unu", 25, "En doğrusu bayat ekmeğin içini kurutup kendi öğüttüğün galetadır; olmazsa katkısız hazır galeta unu kullanılır, bu da yoksa ekmek içini fırında kurutmadan doğrudan ufalayabilirsin ama o zaman nem fazla olur ve oranı biraz artırman gerekir. Galeta ince ve tamamen kuru olmalı, yoksa acukada topaklanır. Galeta yağı ve salça suyunu tutarak karışımı bağlar ve sürülebilir kıvam verir; yüzde 25 yağlı salçalı karışımı ne akışkan ne de kuru bırakan orandır, kıvamı sonunda galeta ile ayarlayabilirsin.");
+addNormalRow("Sızma Zeytinyağı", 20, "En doğru seçim soğuk sıkım naturel sızma zeytinyağıdır; bulamazsan naturel birinci zeytinyağı kullan, en son çare olarak da aroması nötr bir rafine zeytinyağı ya da ayçiçek yağı gelir ama meyvemsi tadı kaybolur. Yağın asiditesi düşük, kokusu taze olmalı; acımsı ve hafif yakıcı bir tat iyi bir işaretidir. Yağ pul biberin ve kimyonun aromatik bileşiklerini çözüp karışıma taşır, acukaya parlak görünüm ve dolgunluk verir; yüzde 20 ise karışımın yağlanmadan nemli ve sürülebilir kalmasını sağlar.");
+addNormalRow("Pul Biber", 5, "En iyisi Maraş ya da Urfa gibi yağlı, kırmızı renkli ve güzel kokulu bir pul biberdir; onlar yoksa iyi bir sofralık pul biber kullan, o da yoksa tatlı kırmızı toz biberle az miktarda acı biberi karıştırabilirsin. Pul biber kuru değil hafif nemli ve yağlı olmalı, rengi canlı olmalı; solgun ve toz gibi olanlar aroma kaybetmiştir. Acuka'nın acısını ve rengini ayarlayan malzemedir; yüzde 5 orta acılık verir, acıyı sevmiyorsan 3'e indir, daha acı istiyorsan 7'ye kadar çıkabilirsin.");
+addNormalRow("Nar Ekşisi", 10, "En doğrusu içinde yalnızca nar suyu olan, şeker ve asit eklenmemiş gerçek nar ekşisidir; bulamazsan limon suyu kullanılabilir, ama miktarını yarıya indir çünkü limon çok daha keskin asit verir ve nar ekşisinin tatlı, buruk tonunu vermez. Koyu, akışkan ve ekşi-tatlı kokulu olmalı; çok tatlıysa şeker katılmıştır. Nar ekşisi salçanın ve yağın ağırlığını asitle dengeler, acukayı hafifletir; yüzde 10 ekşiliği fark edilir ama baskın olmayan bir seviyede tutar.");
+addNormalRow("Sarımsak", 5, "En iyisi taze, sert ve filizlenmemiş sarımsaktır; bulunmazsa kurutulmuş sarımsak granülü çok az miktarda kullanılabilir (taze sarımsağın yaklaşık üçte biri kadar), ama taze sarımsağın canlı keskinliği olmaz. Diş sıkı ve kabuğu kuru olmalı, içi yeşil filizlenmiş sarımsaktan kaçın çünkü acı verir. Çiğ sarımsak acukaya keskin ve canlı bir taban verir; yüzde 5 yaklaşık iki üç diş demektir ve acuka dinlendikçe sivri tadı yumuşar.");
+addNormalRow("Kimyon", 1, "En doğrusu tane kimyonu kendin evdeki öğütücüyle çekmendir; olmazsa taze alınmış toz kimyon kullan. Kimyon canlı kokulu olmalı, eski ve kokusu uçmuş kimyon sadece toz kadar katkı verir. Kimyon sıcak, toprağımsı bir derinlik katar; yüzde 1 baskın olmadan fark edilen miktardır, çünkü fazlası acukayı kimyon tadına boğar.");
+addNormalRow("Tuz", 0.5, "En iyisi iyotsuz deniz ya da kaya tuzudur; bulamazsan sofra tuzu da olur. Salça zaten tuzlu olduğu için tuzu başta düşük tutmak gerekir; yüzde 0,5 yalnızca ayar içindir ve tadım sonrası eklenmelidir. Tuzu en son artırmak, fazla tuzlu bir acukayı geri döndürememe riskini ortadan kaldırır.");
+    // Malzemeler.
+  </script>
+  <script src="../script.js" defer></script>
+  <!-- JavaScript. -->
+</body>
+
+</html>
