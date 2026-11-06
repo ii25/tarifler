@@ -1,0 +1,1136 @@
+/* Fontlar */
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RobotoCondensed-Regular";
+  src: url("fonts/RobotoCondensed-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Black";
+  src: url("fonts/Roboto-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans_Condensed-ExtraBoldItalic";
+  src: url("fonts/OpenSans_Condensed-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CanelaBarkPersonal";
+  src: url("fonts/CanelaBarkPersonal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MouseMemoirs-Regular";
+  src: url("fonts/MouseMemoirs-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Yazı tipi değişkenleri: bir yazı tipini değiştirmek için sadece buraya bak */
+:root {
+  --font-ana: "Roboto"; /* genel metin, tablo, adımlar */
+  --font-ince: "Roboto-Light"; /* ince alt başlıklar */
+  --font-kalin: "Roboto-Black"; /* logo */
+  --font-dar: "RobotoCondensed-Regular"; /* başlıklar ve arama sonuçları */
+  --font-baslik:
+    "MouseMemoirs-Regular", "Impact", sans-serif; /* ana sayfa büyük başlığı */
+  --font-imza: CanelaBarkPersonal; /* imza */
+  --font-ikon: "Font Awesome 6 Free", FontAwesome; /* arama ikonu */
+
+  /* Renk değişkenleri: yalnızca birden fazla yerde kullanılan renkler.
+     Tek yerde kullanılan renkler ilgili kuralın içinde durur. */
+  --renk-beyaz: #ffffff;
+  --renk-siyah: #000000;
+  /* kart başlıkları (Malzemeler, Hazırlanışı) */
+  --renk-baslik: #575757;
+  /* miktar kutusu ve "g" birimi */
+  --renk-miktar: #008231;
+  /* tablo ve bilgi satırı alt çizgisi */
+  --renk-cizgi: #0000001c;
+  /* tarif başlığının yanındaki çizgiler */
+  --renk-baslik-cizgi: rgba(255, 255, 255, 0.5);
+
+  /* Püf noktası rengi: Yapılış kartındaki yuvarlak işaret ve renkli püf noktası yazıları */
+  --renk-puf: #b85c00;
+
+  /* Ana başlıkların (Genel Bakış, Ön Hazırlık/Adım/Servis, Bilgi Notları) altındaki boşluk */
+  --baslik-alt-bosluk: 10px;
+
+  /* Tarif görselinin yüksekliği. auto = PNG dosyasının kendi boyutu. Örn: 320px
+     Genişlik oranı koruyarak kendiliğinden ayarlanır. Tüm tariflerde geçerli olur;
+     tek bir sayfa için sayfadaki
+     <div class="recipe-image" style="--gorsel-yukseklik: 260px"> ile ezilebilir. */
+  --gorsel-yukseklik: 130px;
+}
+/* Fontlar. */
+
+/* Animasyonlar */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* Üstten gelmesi için pozisyon */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Hedef pozisyon */
+  }
+}
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px); /* Üstten gelmesi için pozisyon */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Hedef pozisyon */
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px); /* Üstten gelmesi için pozisyon */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Hedef pozisyon */
+  }
+}
+@keyframes bounceZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7); /* Küçük boyutta başla */
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05); /* Orijinal boyuttan biraz büyük */
+  }
+  70% {
+    transform: scale(0.98); /* Hafif küçülme */
+  }
+  100% {
+    opacity: 1; /* Tam görünür durumda kalmasını sağla */
+    transform: scale(1); /* Normal boyuta gelir */
+  }
+}
+@keyframes pulseAnimation {
+  0% {
+    opacity: 1; /* Tam görünür */
+  }
+  50% {
+    opacity: 0.2; /* Ortada hafif şeffaf */
+  }
+  100% {
+    opacity: 1; /* Tekrar tam görünür */
+  }
+}
+@keyframes headerenter {
+  from {
+    letter-spacing: 10px;
+    opacity: 0;
+  }
+  to {
+    letter-spacing: 0px;
+    opacity: 1;
+  }
+}
+
+/* Animasyonlar. */
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+  background-image: radial-gradient(
+    ellipse farthest-corner at center top,
+    var(--renk-beyaz) 0%,
+    #e1e2e6 100%
+  );
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Sayfa scroll'u kapanır */
+}
+/* FULL WIDTH HEADER */
+.header {
+  width: 100%;
+  background-color: rgba(48, 47, 57, 0.96);
+  color: var(--renk-beyaz);
+}
+/* Ortak container */
+.container {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+}
+/* Header iç düzen */
+.header-inner {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+/* Sol ve sağ alanlar */
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 4vw, 300px); /* Responsive boşluk */
+}
+/* Sağ alan sağa yaslı */
+.header-right {
+  justify-content: flex-end;
+}
+/* Logo */
+.logo {
+  display: flex;
+  font-family: var(--font-kalin);
+}
+.logo-icon {
+  height: 37px;
+  width: 37px;
+  margin-right: 4px;
+}
+.logo-text1 {
+  font-size: 28px;
+  color: var(--renk-beyaz);
+}
+.logo-text2 {
+  font-size: 28px;
+  color: #ffbea5;
+}
+.logo-text3 {
+  font-size: 15px;
+  background: linear-gradient(
+    81deg,
+    rgb(163, 163, 163) 0%,
+    var(--renk-beyaz) 62%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Logo. */
+/* Tarif Başlığı */
+.recipe-title-container-single {
+  flex: 1;
+  text-align: center;
+  animation: slideInFromTop 0.5s ease-out forwards; /* 1 saniyelik animasyon */
+}
+.recipe-title-container-double {
+  flex: 1;
+  text-align: center;
+  animation: slideInFromTop 0.5s ease-out forwards; /* 1 saniyelik animasyon */
+  margin-bottom: 5px;
+}
+.recipe-title-line-single {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.recipe-title-line-double {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 18px;
+}
+.recipe-title-line-single h1 {
+  font-size: 23px;
+  letter-spacing: 2px;
+  font-family: var(--font-dar);
+  font-weight: 500;
+}
+.recipe-title-line-double h1 {
+  margin: 0;
+  font-size: 23px;
+  letter-spacing: 2px;
+  font-family: var(--font-dar);
+  font-weight: 500;
+  margin-top: 9px;
+}
+.recipe-title-line-single span {
+  flex: 1;
+  height: 1px;
+  max-width: 200px;
+  background: linear-gradient(to right, transparent, var(--renk-baslik-cizgi));
+}
+.recipe-title-line-double span {
+  flex: 1;
+  height: 1px;
+  max-width: 200px;
+  background: linear-gradient(to right, transparent, var(--renk-baslik-cizgi));
+  margin-top: 9px;
+}
+.recipe-title-line-single span:last-child {
+  background: linear-gradient(to left, transparent, var(--renk-baslik-cizgi));
+}
+.recipe-title-line-double span:last-child {
+  background: linear-gradient(to left, transparent, var(--renk-baslik-cizgi));
+}
+.recipe-title-sub-text {
+  margin-top: 6px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-family: var(--font-ince);
+  color: #ffffffad;
+}
+/* Tarif Başlığı. */
+/* Arama Kutusu */
+.search-container {
+  position: relative;
+}
+#searchInput {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 15px;
+  border: 1px solid #4d4e55;
+  border-radius: 10px;
+  outline: none;
+  height: 35px;
+  margin: 5px 0;
+  background-color: #2b2b33a2;
+  color: var(--renk-beyaz);
+}
+.mainLoginInput::placeholder {
+  font-family: var(--font-ikon);
+  font-weight: 900; /* büyüteç ikonu solid sette */
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: hsl(0, 0%, 41%);
+}
+.index-mainLoginInput::placeholder {
+  font-family: var(--font-ana);
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: var(--renk-beyaz);
+}
+.results-dropdown {
+  font-family: var(--font-dar);
+  position: absolute;
+  width: 100%;
+  background-color: #5f5f6adb;
+  border: 1px solid #cccccc2e;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none; /* Başlangıçta gizli */
+  scroll-behavior: auto;
+  scrollbar-width: none;
+}
+.results-dropdown::-webkit-scrollbar {
+  display: none;
+}
+.results-dropdown p {
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.results-dropdown p a {
+  color: var(--renk-beyaz);
+  text-decoration: none;
+  display: block; /* Tıklanabilir alanı tüm bloğa yayar */
+  padding: 5px; /* Metin etrafında boşluk bırakır */
+}
+.results-dropdown p:hover {
+  background-color: #f1f1f11c;
+}
+/* Arama Kutusu. */
+/* imza */
+.imza {
+  font-family: var(--font-imza);
+  font-size: 33px;
+}
+/* imza. */
+
+/* FULL WIDTH HEADER. */
+
+/* MAIN */
+/* Tarif Görseli */
+.recipe-image {
+  position: relative;
+  display: block;
+  width: max-content; /* görselin kendi genişliği kadar, daralmaz */
+  max-width: none;
+  flex: none; /* flex/grid içindeyse sıkışmasın */
+  margin-inline: auto; /* yatayda ortala */
+  margin-top: 10px;
+  margin-bottom: -10px;
+  opacity: 0;
+  transform-origin: center; /* Animasyonun merkezden başlamasını sağlar */
+  animation: bounceZoomIn 0.9s ease-out forwards;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+.recipe-image > img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: var(--gorsel-yukseklik); /* boyut :root'taki değişkenden gelir */
+  width: auto; /* genişlik orana göre kendiliğinden belirlenir */
+}
+
+/* dış katman: filter, opaklık, kaydırma */
+.recipe-image .golge-kap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: var(--opak, 0.4);
+  filter: brightness(0) blur(var(--blur, 4px));
+  translate: var(--tx, 0%) var(--ty, 0%);
+  pointer-events: none;
+}
+
+/* iç katman: scale, skew ve maske */
+.recipe-image .golge-kap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: bottom center;
+  transform: scale(var(--sx, 0.85), calc(var(--sy, 0.3) * var(--yon, -1)))
+    skewX(var(--aci, -30deg));
+  -webkit-mask-image: linear-gradient(to top, #00000000 0%, #000000 90%);
+  mask-image: linear-gradient(to top, #00000000 0%, #000000 90%);
+}
+
+/* Tarif Görseli. */
+.card {
+  --R: 493px; /* dairenin yarıçapı (büyüdükçe yay yassılaşır) */
+  --d: 56px; /* oyuğun derinliği */
+  --m: 0.8rem; /* kartın margin değeri, merkezi boşluğun ortasına getirir */
+  position: relative;
+  margin: var(--m);
+  margin-top: -30px;
+  padding-bottom: 10px;
+  padding-right: 7%;
+  padding-left: 7%;
+  height: 80vh;
+  flex: 1;
+  isolation: isolate; /* ::before'un z-index:-1 ile kartın içinde kalması için */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 10px;
+  /* varsayılan: sol kart, merkez sağ kenarın dışında ve üstte */
+  --cx: calc(100% + var(--m));
+  /* Oyuklu kart şekli: beyaz dolgu, daire içi şeffaf.
+     Gölge yalnızca bu şekle uygulanır; kartın içindeki ikon ve yazılar gölgeden etkilenmez. */
+  background: radial-gradient(
+    circle at var(--cx) calc(var(--d) - var(--R)),
+    transparent var(--R),
+    var(--renk-beyaz) calc(var(--R) + 0.5px)
+  );
+  filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.12))
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.24));
+  transition: filter 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* sağ kart: merkez sol kenarın dışında */
+.card:last-child::before {
+  --cx: calc(0% - var(--m));
+}
+
+.card:hover::before {
+  filter: drop-shadow(0 14px 14px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 5px 2.5px rgba(0, 0, 0, 0.1));
+}
+.card-header {
+  text-align: center;
+  padding-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-text-mal {
+  position: absolute;
+  margin-bottom: 100px;
+  font-family: var(--font-ana);
+  animation: slideInFromLeft 0.5s ease-out forwards; /* 1 saniyelik animasyon */
+}
+.icon-mal {
+  width: 55px;
+  height: 55px;
+  opacity: 0.7;
+}
+.text-mal {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--renk-baslik);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-text-haz {
+  position: absolute;
+  margin-bottom: 100px;
+  font-family: var(--font-ana);
+  animation: slideInFromRight 0.5s ease-out forwards; /* 1 saniyelik animasyon */
+}
+.icon-haz {
+  width: 42px;
+  height: 53px;
+  opacity: 0.7;
+}
+.text-haz {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--renk-baslik);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table-container {
+  display: block;
+  max-height: 90%;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  line-height: 1.6;
+  overflow-y: auto;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+}
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+table {
+  font-family: var(--font-ana);
+  width: 100%; /* Tablonun genişliğini div'e sığacak şekilde ayarlayın */
+  max-height: 100%; /* Tablonun div'den taşmasını engellemek için maksimum yüksekliği belirleyin */
+  border-collapse: collapse; /* Sütun ve satırların birleşik görünmesi için */
+  table-layout: fixed;
+  word-wrap: break-word; /* Uzun kelimeleri satır kaydır */
+  hyphens: auto;
+  white-space: normal; /* Normal metin sarma */
+}
+tr {
+  text-align: left;
+  padding-left: 20px;
+}
+td {
+  text-align: left;
+  padding-left: 30px;
+}
+.malzeme-tablosu td:nth-child(1) {
+  width: calc(
+    100% - 120px
+  ); /* İkinci sütun sabit 120px, birinci sütun geri kalan alan */
+  min-width: calc(100% - 120px);
+  max-width: calc(100% - 120px);
+}
+.malzeme-tablosu td:nth-child(2) {
+  width: 150px; /* Sabit genişlik */
+  font-size: 19px;
+  font-weight: normal;
+  color: #666666;
+  background-color: var(--renk-beyaz);
+  text-align: right;
+  padding-right: 30px;
+}
+/* Tablo satırları için hover efekti */
+table.malzeme-tablosu tr:hover td {
+  background-color: #f6f6f6b2;
+}
+table.malzeme-tablosu tr {
+  border-bottom: 1px solid var(--renk-cizgi);
+}
+/* Hücre içi stil ayarları */
+.cell-header {
+  font-size: 19px;
+  text-transform: capitalize;
+  color: var(--renk-siyah);
+  padding: 20px 0;
+  line-height: 26px;
+  font-weight: 500;
+  display: flex;
+  cursor: pointer;
+  letter-spacing: 0.1px;
+}
+/* Uzun başlıklar satırı yükseltmesin: tek satırda kalır, sığmayan kısım "…" ile kesilir */
+.cell-header > .baslik,
+.cell-header > label {
+  min-width: 0;
+  cursor: pointer; /* <label> varsayılan olarak ok imleci gösterir */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.normal-text {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  display: block;
+  color: #4d4d4d;
+  font-size: 17px;
+}
+
+.normal-text.active::after {
+  padding-bottom: 20px;
+}
+
+/* Input alanı ve "g" yazısını hizalamak için kapsayıcı */
+.input-container {
+  display: flex;
+  align-items: center;
+  /* input ve span'ı dikey olarak ortalar */
+  color: var(--renk-miktar);
+  font-size: 21px;
+}
+#anaMalzeme {
+  width: 100%; /* Genişliği hücrenin tamamına yay */
+  height: 100%; /* Yüksekliği de hücrenin tamamına yay */
+  margin: 0; /* Dış boşlukları kaldır */
+  padding-right: 3px; /* Sağ tarafa yer açmak için padding ekleyin */
+  box-sizing: border-box; /* Kenarlık ve padding dahil olmak üzere genişliği yönet */
+  border: 1px solid rgba(255, 255, 255, 0);
+  outline: none; /* Odak çizgisi yok */
+  color: var(--renk-miktar);
+  background-color: rgba(253, 253, 253, 0);
+  font-size: 20px; /* Girilen rakamların yazı boyutu */
+  text-align: right; /* Rakamları sağdan başlat */
+  padding-top: 19px;
+  padding-bottom: 19px;
+  -moz-appearance: textfield; /* Firefox'ta da okları kaldırmak için */
+  animation: none; /* Girilen değerin animasyonu olmaması için */
+}
+/* Ana malzeme satırındaki "g": diğer satırlardaki sonuç metniyle aynı boyut ve sağ kenar hizası */
+.unit {
+  font-size: 19px;
+  color: var(--renk-miktar);
+  line-height: 26px;
+  font-weight: normal;
+  margin-left: 2px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+/* Placeholder (Miktar girin) yazısı için stil */
+#anaMalzeme::placeholder {
+  font-size: 17px; /* Placeholder yazısının boyutu */
+  color: #349e5d; /* Placeholder yazısı rengi */
+  text-align: center; /* Placeholder solda kalacak */
+}
+/* Sayı girişi (number input) ok işaretlerini kaldır */
+#anaMalzeme::-webkit-outer-spin-button,
+#anaMalzeme::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Input alanı focus durumundayken kenarlık rengini değiştirmek */
+#anaMalzeme:focus {
+  outline: none; /* Varsayılan mavi kenarlığı kaldır */
+}
+/* Sadece placeholder'a animasyon uygulamak için */
+#anaMalzeme:placeholder-shown {
+  animation: pulseAnimation 2s ease-in-out infinite;
+}
+
+/* :placeholder-shown ile aynı özgüllükte olduğu için bu kural onun ALTINDA durmalı, yoksa animasyon durmaz */
+#anaMalzeme:hover {
+  border: 1px solid #c8dbe0;
+  background-color: rgba(253, 253, 253, 0.769);
+  animation: none; /* Üzerine gelince nabız animasyonu dursun */
+}
+/* Input alanı */
+/* Dropdown satır */
+/* Dropdown satır */
+.hidrasyon {
+  box-sizing: border-box;
+  height: 26px; /* .cell-header satır yüksekliğiyle (26px) aynı: satırı yükseltmez */
+  line-height: 24px; /* kenarlıklar düşünce 24px kalır, yazı dikey ortalı */
+  margin-left: min(10px, 25%); /* etiketle hidrasyon kutusu arasındaki boşluk */
+  padding: 0 8px;
+  color: #b7b7b7;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  background-color: #f7f7f7;
+  border: 1px solid #e3e3e3;
+  border-right: 0; /* ayırıcı çizgiyi kutunun sol kenarlığı çizer */
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  /* Yer daralırsa kutu küçülür, yazı sağdan başlayarak kırpılır ("hidrasy…") */
+  flex: 0 1000 auto; /* yer daralınca neredeyse tüm küçülmeyi bu kutu üstlenir, etiket en son küçülür */
+  min-width: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.custom-input {
+  box-sizing: border-box;
+  width: 45px;
+  height: 26px; /* hidrasyon etiketiyle aynı yükseklik */
+  padding: 0;
+  text-align: center;
+  color: #999999; /* girilen rakam: % işaretinden biraz daha koyu */
+  font-size: 0.8em;
+  border: 1px solid #d3d3d3;
+  border-radius: 0 4px 4px 0; /* sol köşe etiketle birleşik, sağ köşe yuvarlak */
+  flex: none; /* yüzde kutusu daralmasın */
+}
+
+/* Seçenekli malzeme satırının "değiştir" düğmesi: yazı tipi ve renk düzeni hidrasyon kutusuyla aynı */
+.degistir {
+  box-sizing: border-box;
+  height: 26px; /* .cell-header satır yüksekliğiyle (26px) aynı: satırı yükseltmez */
+  margin-left: min(10px, 25%); /* başlıkla düğme arasındaki boşluk */
+  padding: 0 8px;
+  color: #b7b7b7;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  line-height: 24px;
+  background-color: #f7f7f7;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+
+  /* Yer daralırsa düğme küçülür */
+  flex: 0 1000 auto;
+  min-width: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* Üzerine gelince renkler ters döner: arka plan koyulaşır, yazı beyaz olur */
+.degistir:hover {
+  color: var(--renk-beyaz);
+  background-color: #b7b7b7;
+  border-color: #b7b7b7;
+}
+.degistir:focus-visible {
+  box-shadow: 0 0 0 2px #c8dbe0;
+}
+
+/* Satır daralınca düğme ve hidrasyon kutusu yazısız, simge olarak görünür (recipe.js kendiliğinden .ikon ekler) */
+.degistir .ikon-simge,
+.hidrasyon .ikon-simge {
+  display: none;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.degistir.ikon,
+.hidrasyon.ikon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  min-width: 0;
+  padding: 0;
+}
+.degistir.ikon {
+  width: 34px;
+}
+.hidrasyon.ikon {
+  width: 32px;
+}
+.degistir.ikon .yazi,
+.hidrasyon.ikon .yazi {
+  display: none;
+}
+.degistir.ikon .ikon-simge,
+.hidrasyon.ikon .ikon-simge {
+  display: block;
+}
+
+/* Seçenek değişince başlıkta kısa animasyon (süre ve hareket buradan ayarlanır) */
+.baslik.degisti {
+  animation: baslikDegisti 0.35s ease-out;
+}
+@keyframes baslikDegisti {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.custom-input::placeholder {
+  color: #cccccc; /* % işareti */
+  opacity: 1; /* Firefox placeholder'ı kendiliğinden soluklaştırmasın */
+}
+.custom-input:focus {
+  outline: none;
+  border-color: #b9b9b9;
+}
+/* MAIN. */
+
+/* === NUMARALI ANA LİSTE === */
+ol.steps {
+  list-style: none;
+  counter-reset: step;
+  padding-left: 2px;
+  font-family: var(--font-ana);
+  padding-top: 15px;
+}
+
+ol.steps > li {
+  counter-increment: step;
+  display: flex;
+  align-items: flex-start; /* Alt liste bozulmaz */
+  margin-bottom: 30px;
+}
+
+/* Numara rozeti */
+ol.steps > li::before {
+  content: counter(step);
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(81deg, #973d60 0%, #9e4964 62%);
+  color: var(--renk-beyaz);
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 29%;
+  flex-shrink: 0;
+  transition: all 0.5s ease;
+  margin-right: -25px;
+  margin-top: 4px;
+}
+
+/* İçerik alanı */
+.step-content {
+  flex: 1; /* adım içeriği tüm genişliği alsın */
+  min-width: 0;
+}
+.step-content strong {
+  line-height: 38px; /* 🔥 Numara ile dikey hizalama */
+}
+
+/* Alt liste */
+.step-content ul {
+  list-style: disc;
+  padding-left: 14px;
+}
+
+.step-content ul li {
+  font-size: 17px;
+  padding-bottom: 1px;
+}
+
+/* Başlık (li içindeki strong) */
+ol.steps strong {
+  display: block;
+  font-size: 19px;
+  /* madde işareti ilk satırı 4px yükselttiği için 4px düşülür: görünen boşluk bölüm başlıklarıyla aynı olur */
+  margin-bottom: calc(var(--baslik-alt-bosluk) - 4px);
+  color: var(--renk-siyah);
+  letter-spacing: 0.3px;
+  padding-left: 34px;
+}
+
+/* Genel Bakış (adımlardan önce) ve Bilgi Notları (adımlardan sonra) */
+.genel-bakis,
+.bilgi-notlari {
+  padding-left: 2px;
+  font-family: var(--font-ana);
+}
+.genel-bakis {
+  padding-top: 15px;
+  margin-bottom: 25px;
+}
+.genel-bakis + ol.steps {
+  padding-top: 0; /* üstteki boşluğu Genel Bakış veriyor */
+}
+.bilgi-notlari {
+  padding-bottom: 20px;
+}
+/* Bölüm başlıkları: adım başlıklarıyla aynı yazı stili, numarasız */
+.genel-bakis h3,
+.bilgi-notlari h3 {
+  margin: 0 0 var(--baslik-alt-bosluk);
+  line-height: 38px; /* adım başlıklarıyla aynı satır yüksekliği: başlık-içerik arası her yerde aynı */
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  color: var(--renk-siyah);
+}
+.genel-bakis p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.not-grubu {
+  margin-bottom: 22px;
+}
+.not-grubu h4 {
+  margin: 0 0 4px;
+  line-height: 1.6;
+  font-size: 17px;
+  font-weight: bold;
+  color: #666666; /* gri alt başlık (beyaz zeminde kontrast 5,7:1) */
+}
+.not-grubu ul {
+  margin: 0;
+  padding-left: 21px; /* metin, adımlardaki maddelerle aynı hizada başlar */
+  list-style: disc;
+}
+.not-grubu ul li {
+  font-size: 17px;
+  line-height: 1.6;
+  padding-bottom: 1px;
+}
+
+ul li::marker {
+  font-size: 20px;
+  color: #bababa;
+}
+/* Püf noktası satırının madde işareti de püf rengi olur (üstteki ● işaretiyle eşleşir) */
+.step-content ul li:has(> .puf)::marker {
+  color: var(--renk-puf);
+}
+
+/* Anasayfa Başlangıcı */
+.index-header {
+  width: 100%;
+  color: var(--renk-beyaz);
+  position: absolute;
+  z-index: 999;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Yükseklik ekranın %99'u */
+  overflow: hidden;
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/banner-bg.jpg") no-repeat center center;
+  background-size: cover; /* Görsel tüm ekranı kaplar */
+  z-index: 0;
+}
+
+.banner-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
+  height: 128%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Videoyu tıklanabilir olmaktan çıkarır */
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+.banner-video video {
+  position: absolute;
+  width: 750px; /* Sabit genişlik */
+  height: auto; /* Sabit yükseklik */
+  max-width: 100%; /* Genişlik ekran boyutunu aşmaz */
+  max-height: 100%; /* Yükseklik ekran boyutunu aşmaz */
+  object-fit: contain; /* Video içeriğini kesmeden boyutlandırır */
+  transform: translate(-50%, -50%);
+  top: 37%;
+  left: 68%;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  height: 70%;
+  width: 100%;
+}
+
+.sticker {
+  font-weight: inherit;
+  padding-bottom: 50px;
+  animation-name: headerenter;
+  animation-duration: 5s;
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-baslik);
+  font-size: 5.5rem;
+  /* Alt katman: sadece beyaz kenarlık */
+  color: #ffdc9c;
+  -webkit-text-stroke: 21px var(--renk-beyaz);
+  paint-order: stroke fill;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
+}
+
+/* Üst katman: gradient dolgu */
+.sticker::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff3d81 0%, #ffb340 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0; /* stroke miras alınır, sıfırlamazsak dolgu ince görünür */
+  /* ...önceki kodun aynısı... */
+  filter: url(#stamp);
+}
+
+.index-results-dropdown {
+  width: 100%;
+  font-family: var(--font-dar);
+  position: absolute;
+  background-color: #ffffff94;
+  border: 1px solid #ffffff2e;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none; /* Başlangıçta gizli */
+  scroll-behavior: auto;
+  scrollbar-width: none;
+}
+.index-results-dropdown::-webkit-scrollbar {
+  display: none;
+}
+.index-results-dropdown p {
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.index-results-dropdown p a {
+  color: #4e2f22;
+  text-decoration: none;
+  display: block; /* Tıklanabilir alanı tüm bloğa yayar */
+  padding: 5px; /* Metin etrafında boşluk bırakır */
+}
+.index-results-dropdown p:hover {
+  background-color: #86404017;
+}
+
+#index-searchInput {
+  width: 100%;
+  font-size: 12px;
+  border: 1px solid #a2afb1;
+  border-radius: 8px;
+  outline: none;
+  background: linear-gradient(81deg, #9a519c 0%, #65286a 62%);
+  color: var(--renk-beyaz);
+  text-align: center;
+  height: 40px;
+  margin: 40px 0 5px;
+  padding: 0 25px;
+  animation: fadeIn 3s ease-out forwards;
+  opacity: 0;
+  letter-spacing: 1px;
+}
+
+/* Anasayfa Bitimi */
+
+/* Bilgi satırı: kart başlığının altında SABİT durur, liste scroll olsa da kaymaz.
+   Malzemeler'de addInfoRow() ile (recipe.js), Hazırlanışı'nda HTML'deki .info-note ile eklenir.
+   İki kartta da aynı sınıfı kullandığı için iki kartın içeriği aynı hizadan başlar. */
+.info-note {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #767676;
+  font-family: var(--font-ana);
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--renk-cizgi);
+}
+.info-note:empty::before {
+  content: "\00a0"; /* içi boş bırakılsa da satır yer kaplasın */
+}
+
+/* Bilgi satırındaki yuvarlak işaret (🟧 yerine): boyut, renk ve boşluk buradan ayarlanır */
+.puf-isareti {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 2px;
+  vertical-align: middle;
+  background-color: var(--renk-puf);
+  border-radius: 50%;
+}
+
+/* Yapılış adımlarında püf noktası yazıları: <span class="puf">...</span> */
+.puf {
+  color: var(--renk-puf);
+}
+.info-note + .table-container {
+  margin-top: 0;
+  max-height: calc(90% - 64px); /* bilgi satırının yüksekliği kadar daralt */
+}
+
+/* Kaydırma ipucu: kartın altında devam eden içerik varsa alt kenar hafifçe solar.
+   Kaydırma çubuğu gizli kalır; sınıfı script.js ekler/kaldırır. Kaldırmak için bu kuralı sil. */
+.table-container.devam-var {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - 40px),
+    transparent
+  );
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 40px), transparent);
+}

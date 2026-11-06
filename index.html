@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarif Sitesi</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- FULL WIDTH HEADER -->
+  <header class="index-header">
+    <div class="container header-inner">
+      <div class="header-left">
+
+        <!-- Logo -->
+        <div class="logo" onclick="window.location.href='index.html';" style="cursor:pointer;">
+          <img src="images/icon-logo.svg" class="logo-icon">
+          <span class="logo-text1">tarif<span class="logo-text2">sitesi<span class="logo-text3">.com</span></span></span>
+        </div>
+        <!-- Logo. -->
+      </div>
+      <!-- Tarif Başlığı -->
+      <div class="recipe-title-container-single">
+        <div class="recipe-title-line-single">
+          <h1></h1>
+        </div>
+      </div>
+      <!-- Tarif Başlığı. -->
+      
+    <div class="header-right">
+      <div class="imza">Chef</div>
+    </div>
+    </div>
+  </header>
+  <!-- FULL WIDTH HEADER. -->
+
+  <!-- İçerik -->
+ 
+
+   <!--Banner-->
+    <div class="banner">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="stamp" x="-5%" y="-5%" width="110%" height="110%">
+    <!-- Mürekkep tanesi: dolguda çok küçük boşluklar açar (istemezsen bu 3 satırı ve merge'deki "ink" düğümünü sil) -->
+    <feColorMatrix in="noise" type="matrix"
+                   values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -12 4.9" result="speck"/>
+    <feComposite in="SourceGraphic" in2="speck" operator="out" result="ink"/>
+
+    <!-- Harfin dışını ters çevir ve çok az bulanıklaştır -->
+    <feComponentTransfer in="SourceAlpha" result="inv">
+      <feFuncA type="table" tableValues="1 0"/>
+    </feComponentTransfer>
+    <feGaussianBlur in="inv" stdDeviation="0.1" result="invBlur"/>
+
+    <!-- İnce koyu iç kenar (sol üst) -->
+    <feOffset in="invBlur" dx="1.5" dy="1.5" result="invOff"/>
+    <feFlood flood-color="#000" flood-opacity="0.5" result="dark"/>
+    <feComposite in="dark" in2="invOff" operator="in" result="shadow"/>
+    <feComposite in="shadow" in2="SourceAlpha" operator="in" result="shadowIn"/>
+
+    <!-- İnce açık kenar (sağ alt) -->
+    <feOffset in="invBlur" dx="-0.6" dy="-0.6" result="invOff2"/>
+    <feFlood flood-color="#fff" flood-opacity="0.35" result="light"/>
+    <feComposite in="light" in2="invOff2" operator="in" result="hl"/>
+    <feComposite in="hl" in2="SourceAlpha" operator="in" result="hlIn"/>
+
+    <feMerge>
+      <feMergeNode in="ink"/>
+      <feMergeNode in="hlIn"/>
+      <feMergeNode in="shadowIn"/>
+    </feMerge>
+  </filter>
+</svg>
+      
+      <div class="banner-content"><h1 class="sticker" data-text="Bugün Ne Pişirelim?">Bugün Ne Pişirelim?</h1><div class="search-container"><input type="text" id="index-searchInput" class="index-mainLoginInput" placeholder="TARİF ARA" oninput="search()" />
+          <div id="results" class="index-results-dropdown"></div></div></div>
+          
+      <div class="banner-video"><video autoplay muted loop><source src="images/video-banner.mp4" type="video/mp4"></video></div>
+      <div class="banner-image"></div>
+    </div>
+<!--Banner.-->
+
+
+  <!-- Icerik -->
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+  <!-- JavaScript. -->
+</body>
+
+</html>
