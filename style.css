@@ -221,24 +221,13 @@ body {
   width: 37px;
   margin-right: 4px;
 }
-.logo-text1 {
+.logo-text {
   font-size: 28px;
   color: var(--renk-beyaz);
+  filter: drop-shadow(0 0 20px rgba(14, 0, 65, 0.6)) drop-shadow(0 1px 2px rgba(9, 0, 41, 0.35));
 }
-.logo-text2 {
-  font-size: 28px;
-  color: #ffbea5;
-}
-.logo-text3 {
-  font-size: 15px;
-  background: linear-gradient(
-    81deg,
-    rgb(163, 163, 163) 0%,
-    var(--renk-beyaz) 62%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
+
 /* Logo. */
 /* Tarif Başlığı */
 .recipe-title-container-single {
@@ -1001,9 +990,9 @@ ul li::marker {
   width: 100%;
 }
 
-.sticker {
+.hero-text {
   font-weight: inherit;
-  padding-bottom: 50px;
+  padding-bottom:20px;
   animation-name: headerenter;
   animation-duration: 5s;
   position: relative;
@@ -1020,7 +1009,7 @@ ul li::marker {
 }
 
 /* Üst katman: gradient dolgu */
-.sticker::after {
+.hero-text::after {
   content: attr(data-text);
   position: absolute;
   inset: 0;
