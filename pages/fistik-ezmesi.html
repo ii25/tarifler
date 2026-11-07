@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <div class="recipe-title-container-single">
+          <div class="recipe-title-line-single">
+            <span></span>
+            <h1>FISTIK EZMESİ</h1>
+            <span></span>
+          </div>
+        </div>
+        <!--
+      <div class="recipe-title-container-double">
+      <div class="recipe-title-line-double">
+      <span></span>
+      <h1>TARİF BAŞLIĞI</h1>
+      <span></span>
+      </div>
+      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
+      </div>
+      -->
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/fistik-ezmesi.png" alt="" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="info-note">
+          <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+          belirtir.
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>
+                Bu tarif, yalnızca çiğ fıstığın kavrulup öğütülmesiyle yapılan
+                katkısız bir fıstık ezmesidir. Hazır ürünlerdeki dolgu yağı,
+                şeker ve düşük fıstık oranı riskine karşı içeriği tamamen siz
+                belirlersiniz. Ev tipi bir kahve öğütücü ve küçük bir rondo
+                yeterlidir.
+              </p>
+            </div>
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>
+                      Terazi, fırın tepsisi, kahve öğütücü, rondo, spatula ve
+                      temiz, kuru, kapaklı bir cam kavanoz hazırlayın. Fırını
+                      160 °C'ye ısıtın.
+                    </li>
+                    <li>
+                      Fıstıkları tek tek gözden geçirin. Küflü, buruşuk, renk
+                      değişmiş ya da acımsı kokan her taneyi atın; küflü tek bir
+                      tane bile aflatoksin riski taşır ve tüm partinin tadını
+                      bozar.
+                      <span class="puf"
+                        >Şüphe ettiğiniz taneyi ayıklayın, riski almayın.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Kavurma</strong>
+                  <ul>
+                    <li>
+                      Fıstıkları tek kat tepsiye yayıp 15-18 dakika kavurun;
+                      ortada bir kez karıştırın. Kavurma aromayı geliştirir, çiğ
+                      baklagil tadını giderir ve yağın daha kolay salınmasını
+                      sağlayarak ezmeyi akıcı yapar.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Daha uzun kavurmayın; yağ acılaşır ve ezme buruk
+                        çıkar.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Soğutma ve Zar Ayıklama</strong>
+                  <ul>
+                    <li>
+                      Fıstıkları 10 dakika soğutun, avuçlarınız arasında ovup
+                      zarlarını üfleyerek ayırın.
+                    </li>
+                    <li>
+                      İsterseniz zarlı bırakabilirsiniz; zarda polifenoller
+                      bulunur, ancak ezme biraz daha koyu ve buruk olur.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>İlk Öğütme (Kahve Öğütücü)</strong>
+                  <ul>
+                    <li>
+                      Fıstıkları 2-3 küçük partide, 5-10 saniyelik kısa
+                      vuruşlarla toz haline getirin; arada motoru 10-15 saniye
+                      dinlendirin. Sürekli çalıştırmak hem motoru hem fıstığı
+                      aşırı ısıtır ve yağın tadını bozar.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Pürüzsüzleştirme (Rondo)</strong>
+                  <ul>
+                    <li>
+                      Tozu rondoya alın, 20-30 saniye çalıştırıp durun,
+                      kenarları spatulayla kazıyın ve tekrarlayın. 5-8 dakika
+                      içinde toz önce topaklanır, sonra yağını bırakıp akışkan
+                      ezmeye dönüşür. Tuzu bu aşamada ekleyin.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Rondo ısınırsa 1-2 dakika bekletin.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis</strong>
+                  <ul>
+                    <li>
+                      Ezmeyi oda sıcaklığında kullanın; bara eklerken hurma
+                      lapasıyla kolay karışır. Doğrudan kaşıkla, ekmek ya da
+                      meyveyle de tüketebilirsiniz.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>
+                    Soğuyunca temiz, kuru bir cam kavanoza alıp kapatın;
+                    sıcakken kapatırsanız buğulanır ve küf riski artar.
+                  </li>
+                  <li>
+                    Buzdolabında 2-3 hafta saklanır. Yağ üste çıkabilir,
+                    karıştırmanız yeterlidir.
+                  </li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>
+                    Kısa vuruşlarla öğütmek, yağların ısıdan oksitlenmesini
+                    azaltır.
+                  </li>
+                  <li>
+                    Çiğ fıstığı kendiniz kavurmak, hazır ezmelerdeki aşırı
+                    pişmiş ya da bayat yağ riskini ortadan kaldırır.
+                  </li>
+                  <li>
+                    Fıstığı serin ve kuru saklayın; sıcak ve nemli ortam küf ve
+                    acılaşma riskini artırır.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- Hazırlanışı. -->
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
+      addMainRow(
+        "Çiğ Yer Fıstığı",
+        "Çiğ, kabuksuz, bütün yer fıstığı bu tarifte en doğru seçimdir, çünkü kavurma ve öğütme sürecini siz kontrol edersiniz. Önceden kavrulmuş fıstık kullanmak zorunda kalırsanız tuzsuz olanı seçin ve kavurma süresini 8-10 dakikaya indirin; bu fazla ısı yağı acılaştırır. Kırık ya da doğranmış fıstık en son tercihtir, çünkü daha hızlı bayatlar. Taneler bütün, tıknaz, ince kırmızı zarlı ve acımsı ya da kartonumsu koku taşımayan olmalıdır; buruşuk, lekeli, küf kokulu taneleri mutlaka ayıklayın. Ana malzeme olduğundan tuz oranı buna göre belirlenmiştir; fıstık ezmenin tamamını oluşturur, başka yağ ya da dolgu eklenmez.",
+      );
+      addNormalRow(
+        "Tuz",
+        1,
+        "İnce deniz tuzu en doğru seçimdir; olmazsa sofra tuzu da olur. İsteğe bağlıdır: tuzsuz bırakırsanız da ezme yenir, ancak tatlar daha belirsiz olur. Oran küçüktür; fıstığın aromasını belirginleştirir, fazlası ise ezmeyi tuzlu yapar. Ezmeyi bara ekleyeceğiniz için, barda da tuz kullanıldığı göz önünde bulundurulmalıdır.",
+      ); // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <div class="recipe-title-container-single">
+          <div class="recipe-title-line-single">
+            <span></span>
+            <h1>BAR KAPLAMA KARAMELİ</h1>
+            <span></span>
+          </div>
+        </div>
+        <!--
+      <div class="recipe-title-container-double">
+      <div class="recipe-title-line-double">
+      <span></span>
+      <h1>TARİF BAŞLIĞI</h1>
+      <span></span>
+      </div>
+      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
+      </div>
+      -->
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/bar-kaplama-karameli.png" alt="" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="info-note">
+          <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+          belirtir.
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>
+                Bu karamel, şeker, glikoz, krema ve tereyağının tek tencerede
+                birlikte 120 °C’ye kadar pişirilmesiyle yapılır. Malzemelerin
+                baştan birlikte pişmesi süt karameli aromasını (Maillard)
+                oluşturur ve 170 °C’lik kuru şeker karamelizasyonundaki yanık ve
+                sıçrama riskini ortadan kaldırır. Hedef sıcaklık, karamelin
+                kıvamını belirler.
+              </p>
+            </div>
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>
+                      Kalın tabanlı, en az 3 L’lik bir tencere hazırlayın;
+                      karamel kaynarken hacmi 2-3 katına çıkar, ince tabanlı
+                      tencerede ise şeker dipte yanar.
+                    </li>
+                    <li>
+                      Tüm malzemeleri terazide tartın, termometre ve
+                      zamanlayıcıyı yanınıza alın.
+                    </li>
+                    <li>
+                      Kremayı 50-60 °C’ye ısıtın ve tereyağını küp doğrayıp oda
+                      sıcaklığında bekletin; soğuk malzemeler sıcak şekere
+                      çarpınca yağın ayrışmasına yol açar.
+                    </li>
+                    <li>
+                      Barları buzdolabında sertleştirin ve altına pişirme kağıdı
+                      serili bir tel ızgaraya dizin.
+                      <span class="puf"
+                        >Soğuk bar karameli hızla tutturur ve kıvamı
+                        sabitler.</span
+                      >
+                    </li>
+                    <li>
+                      Silikon spatula, ucu ıslatılmış bir fırça ve yanık
+                      ihtimaline karşı soğuk su dolu bir kap hazır bulundurun.
+                    </li>
+                    <li>
+                      Termometreyi kaynar suda test edin; deniz seviyesinde
+                      yaklaşık 100 °C okumalıdır.
+                      <span class="puf"
+                        >Sapma varsa hedef sıcaklıkları o kadar kaydırın.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Birleştirme</strong>
+                  <ul>
+                    <li>
+                      Şeker, glikoz, krema, tereyağı ve tuzu tencereye koyun;
+                      vanilyayı sona saklayın, çünkü uçucu aroması ısıda
+                      kaybolur.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Eritme</strong>
+                  <ul>
+                    <li>
+                      Orta ateşte, sürekli karıştırarak şeker kristalleri
+                      tamamen çözünene ve karışım kaynayana kadar ısıtın.
+                    </li>
+                    <li>
+                      Tencere kenarına sıçrayan şekeri ıslak fırçayla silin.
+                      <span class="puf"
+                        >Kenarda kalan tek bir kristal bile tüm karameli
+                        kumlaştırabilir.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Pişirme</strong>
+                  <ul>
+                    <li>
+                      Ateşi orta-kısığa alın; tabanı kazıyarak sürekli
+                      karıştırın ve termometreyi tabana değdirmeden 120 °C’ye
+                      kadar pişirin (genelde 15-25 dakika). Renk açık
+                      kehribar-fındık tonuna dönecektir.
+                    </li>
+                    <li>
+                      Sıcaklık kıvamı belirler: 115 °C akışkan ve yumuşak, 118
+                      °C yumuşak-çiğnenebilir, 120 °C koyu ve çiğnenebilir
+                      (hedef), 122-123 °C daha sert, 125 °C ve üzeri dişe
+                      yapışan sert şekerleme.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Sıcak havada veya cepte taşınacaksa 122-123 °C’ye kadar
+                        pişirin.</span
+                      >
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Yağ ayrışırsa 1-2 yemek kaşığı sıcak suyu ekleyip
+                        çırpın; çoğu zaman toparlanır.</span
+                      >
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Yanık tadın önüne geçmek için ateşi fazla yükseltmeyin
+                        ve tabanı karıştırmadan bırakmayın.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Ateşten Alma ve Vanilya</strong>
+                  <ul>
+                    <li>
+                      120 °C’yi gördüğünüzde tencereyi ateşten alın, 30 saniye
+                      bekleyin, vanilyayı ekleyip karıştırın.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Tencerenin kenarını ve dibini kazımayın; oradaki
+                        kristal veya yanık parçalar karameli bozar.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Kıvam Dinlendirme</strong>
+                  <ul>
+                    <li>
+                      Karameli 3-5 dakika dinlendirin; akışkan ama yoğun bir
+                      kıvama gelmesi gerekir, çünkü çok sıcak karamel barın
+                      içine akar.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Kaplama</strong>
+                  <ul>
+                    <li>
+                      Karameli soğuk barların üzerine kaşık veya spatulayla
+                      yaklaşık 3 mm kalınlıkta yayın.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Karamel çabuk koyulaşır; sertleşirse tencereyi sıcak su
+                        dolu bir kabın üzerine koyup tekrar
+                        akışkanlaştırın.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Dinlendirme</strong>
+                  <ul>
+                    <li>
+                      Barları oda sıcaklığında 1-2 saat bekletin; yavaş soğuma
+                      karamelin yapısını eşit oturtur. Acele ederseniz
+                      buzdolabında 20-30 dakika tutabilirsiniz.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis</strong>
+                  <ul>
+                    <li>
+                      Barları hafif yağlanmış, ısıtılmış bir bıçakla kesin;
+                      buzdolabından çıkardıysanız 10 dakika bekleyin.
+                    </li>
+                    <li>
+                      Her barı pişirme kağıdına sarıp küçük poşetlere koyun.
+                      <span class="puf"
+                        >Bahçede veya bisiklette cep ısısıyla yumuşayabilir,
+                        sarmak yapışmasını önler.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>
+                    Pişirme kağıdına sarılı barlar serin ve kuru yerde 1 hafta,
+                    buzdolabında 2-3 hafta, dondurucuda 2-3 ay dayanır.
+                  </li>
+                  <li>
+                    Barın içeriği, özellikle nemli meyveler, bu süreleri
+                    kısaltabilir.
+                  </li>
+                  <li>
+                    Soğuktan çıkan barlar yoğuşma yapmasın diye kapalı kapta oda
+                    sıcaklığına gelmesini bekleyin.
+                  </li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>
+                    Karamel şeker ağırlıklı bir üründür ve 120 °C’ye çıkmak
+                    kıvam için şarttır; bu yüzden krema ve tereyağındaki ısıya
+                    duyarlı bileşenlerin (A ve D vitamini) bir kısmı kaybolur.
+                    Pişirmeyi hedef sıcaklıkta bitirip ateşten almak kaybı en
+                    aza indirir.
+                  </li>
+                  <li>Vanilya uçucu aroması nedeniyle ısıdan sonra eklenir.</li>
+                  <li>
+                    Kuruyemiş yağları sıcağa hassastır; karameli ince tabaka
+                    uygulayıp sıcak karamelin barla temas süresini kısa tutun.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- Hazırlanışı. -->
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
+      addMainRow(
+        "Toz şeker",
+        "Karamel için en doğru seçim sade beyaz toz şekerdir; saf sakkaroz olduğu için renk ve tat gelişimi öngörülebilir olur. Bulamazsanız ince kristal şeker aynı sonucu verir, miktarın yarısına kadarını esmer şekerle değiştirirseniz aroma derinleşir ve karamel biraz yumuşar. Kuru, topaklanmamış ve katkısız olmasına dikkat edin; nişasta içeren pudra şekeri bu iş için uygun değildir, çünkü bulanıklık ve yanma yapar. Ana malzeme olduğu için %100 kabul edilir ve diğer tüm oranlar buna göre hesaplanır; pişirme sırasındaki su kaybı nedeniyle toplam malzeme ağırlığının yaklaşık %80’i kadar karamel elde edilir, 3 mm kalınlıkta 100 cm² yüzeye yaklaşık 40 g karamel gider.",
+      );
+      addNormalRow(
+        "Glikoz şurubu",
+        50,
+        "En doğru seçim katkısız, berrak glikoz şurubudur (pastacılık glikozu); bulamazsanız açık renkli mısır şurubu aynı işi görür, o da yoksa ev yapımı invert şeker kullanabilirsiniz. Glikozun uzun şeker zincirleri sakkaroz kristallerinin yeniden birleşmesini engellediği için karamel kumlanmaz ve esnek kalır. Renksiz, kristalleşmemiş ve nötr tatlı olanı seçin; pastacılık malzemesi satan yerlerde bulunur. Şekerin yarısı kadar kullanmak kristalleşmeyi güvenle önlemeye yeter; daha fazlası karameli fazla yapışkan ve geç sertleşen, daha azı ise kumlanmaya açık bir yapıya getirir.",
+      );
+      addNormalRow(
+        "Krema (%35 yağlı)",
+        75,
+        "En doğru seçim taze veya pastörize %35 yağlı sıvı süt kremasıdır; ardından aynı yağ oranındaki UHT krema gelir, süt ürünü istemezseniz hindistan cevizi kreması kullanılabilir ancak aroma değişir. Süt proteini ve yağ, hem Maillard reaksiyonuyla karamelin rengini ve aromasını verir hem de dokuyu yumuşatır. İçeriğinde yalnızca süt kreması yazan, mümkünse stabilizatörsüz olanı seçin; bitkisel yağlı şanti türü ürünler bu iş için uygun değildir. Şekerin %75’i kadar kullanmak iyi bir dengedir; fazlası karameli yumuşatıp pişme süresini uzatır, azı ise sert ve sakızımsı bir doku verir.",
+      );
+      addNormalRow(
+        "Tereyağı",
+        25,
+        "En doğru seçim tuzsuz gerçek tereyağıdır; tuzlu tereyağı kullanırsanız tuzu azaltın, süt ürünü istemezseniz hindistan cevizi yağı kullanabilirsiniz ancak daha sert bir doku ve farklı bir aroma verir. %82 yağlı, katkısız ve oda sıcaklığında yumuşamış olanı seçin; küp doğramak tencerede eşit erimesini sağlar. Şekerin %25’i, karameli ağızda eritip parlaklık verecek kadar yağdır; fazlası yağın ayrışmasına, azı ise kuru ve yapışkan bir dokuya yol açar.",
+      );
+      addNormalRow(
+        "Tuz",
+        2,
+        "En doğru seçim ince deniz tuzudur; bulamazsanız iyotsuz ince sofra tuzu kullanılabilir. Fleur de sel gibi iri tuzlar pişirmeye değil, daha çok karamelin üzerine serpilerek tuzlu karamel etkisi vermeye uygundur. İnce olanı seçin ki çabuk çözünsün. %2 oran tatlıyı dengeleyip aromayı belirginleştirecek kadardır, tuzlu bir tat vermez; tuzlu tereyağı kullanıyorsanız yarıya indirin.",
+      );
+      addNormalRow(
+        "Vanilya",
+        2,
+        "En doğru seçim vanilya çubuğunun tohumları veya vanilya macunudur; ardından saf vanilya özü gelir, en sonda sentetik vanilin kalır. Etiketinde doğal vanilya yazan, macun veya alkol bazlı olanı seçin. Uçucu aroması ısıdan zarar gördüğü için pişirmeden sonra eklenir; %2 oran süt aromasının önüne geçmeden belirgin bir vanilya notası verir, vanilin kullanıyorsanız yoğunluğu çok yüksek olduğundan bir tutam yeter.",
+      );
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

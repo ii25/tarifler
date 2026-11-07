@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <div class="recipe-title-container-single">
+          <div class="recipe-title-line-single">
+            <span></span>
+            <h1>ENERJİ BARI</h1>
+            <span></span>
+          </div>
+        </div>
+        <!--
+      <div class="recipe-title-container-double">
+      <div class="recipe-title-line-double">
+      <span></span>
+      <h1>TARİF BAŞLIĞI</h1>
+      <span></span>
+      </div>
+      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
+      </div>
+      -->
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/enerji-bari.png" alt="" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="info-note">
+          <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+          belirtir.
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>
+                Bu tarif, bal içermeyen, pişirmesiz bağlamayla hazırlanan yüksek
+                enerjili bir bardır. Hurma ve fıstık ezmesi bağlayıcı olarak
+                çalışır; yulaf yavaş, hurma ve kuru meyve hızlı enerji verir;
+                kuruyemiş ve çekirdekler uzun süre tok tutan yağ ve protein
+                sağlar.
+              </p>
+            </div>
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>
+                      Terazi, geniş bir karıştırma kabı, rondo, spatula, 20x20
+                      cm kalıp, pişirme kâğıdı ve fırın tepsisi hazırlayın.
+                      Fırını 150 °C'ye (fanlıysa 140 °C) ısıtın.
+                    </li>
+                    <li>
+                      Tüm malzemeleri tartın. Hurma sertse sıcak suda 10 dakika
+                      bekletip süzün; süzdüğünüz suyu atmayın, bağlayıcıda
+                      kullanacaksınız. Kuruyemişleri iri kıyın, kayısı
+                      kullanıyorsanız küçük doğrayın.
+                    </li>
+                    <li>
+                      Kalıbı pişirme kâğıdıyla kaplayın; kâğıdın kenarları
+                      dışarı taşsın, böylece bar kolay çıkar.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Hafif Kavurma</strong>
+                  <ul>
+                    <li>
+                      Yulaf ve kıyılmış kuruyemişi tepsiye tek kat yayıp 8-10
+                      dakika kavurun; ortada bir kez karıştırın. Kavurma,
+                      yulafın tebeşirimsi çiğ tadını giderir ve aromayı
+                      derinleştirir, düşük ısı ise kuruyemişin yağlarını korur.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Chia, keten ve çekirdekleri kavurmayın; omega-3 yağ
+                        asitleri ısıya duyarlıdır.</span
+                      >
+                    </li>
+                    <li>
+                      Karışımı tamamen soğutun. Sıcak karışım fıstık ezmesini
+                      akıtır ve çikolatayı eritir.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Bağlayıcıyı Hazırlama</strong>
+                  <ul>
+                    <li>
+                      Hurmayı rondoda ya da çatalla ezip lapa haline getirin;
+                      fıstık ezmesi ve tuzla birlikte pürüzsüzleşene kadar
+                      çırpın. Bağlayıcıyı ayrı hazırlamak, katı malzemelere eşit
+                      dağılmasını sağlar.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Çok koyuysa hurma bekletme suyundan 1 yemek kaşığı
+                        ekleyin.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Karıştırma</strong>
+                  <ul>
+                    <li>
+                      Soğuyan yulaf ve kuruyemiş karışımına kuru üzüm,
+                      çekirdekler, chia ve tarçını ekleyin; bağlayıcıyı da
+                      ekleyip elinizle yoğurur gibi birleştirin.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Bir avuç alıp sıkın; dağılıyorsa 1 yemek kaşığı su
+                        ekleyin. Çikolata damlalarını en son, hafifçe
+                        katın.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Sıkıştırma</strong>
+                  <ul>
+                    <li>
+                      Karışımı kalıba dökün ve spatulanın ya da kaşığın
+                      arkasıyla çok sıkı bastırın. Bar, bu adımda ne kadar
+                      sıkıştırılırsa çantada o kadar sağlam kalır.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Dinlendirme ve Kesme</strong>
+                  <ul>
+                    <li>
+                      Kalıbı buzdolabında en az 2 saat bekletin; hurma ve yağ
+                      soğuyunca sertleşir, her şeyi bir arada tutar.
+                    </li>
+                    <li>
+                      Kâğıttan tutarak barı kaldırın ve keskin, ince bir bıçakla
+                      10 eşit dikdörtgene kesin.
+                      <span class="puf"
+                        >Bıçağı arada sıcak suya batırıp silerseniz
+                        yapışmaz.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis</strong>
+                  <ul>
+                    <li>
+                      Bahçe işinden ya da sürüşten 15-20 dakika önce yiyin. Uzun
+                      sürüşlerde saatte 1-2 bar tüketebilirsiniz; yulaf ve kuru
+                      meyve su istediğinden yanınızda yeterince su bulundurun.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>
+                    Her barı ayrı ayrı pişirme kâğıdına sarıp küçük poşetlere
+                    koyun.
+                  </li>
+                  <li>
+                    Oda sıcaklığında serin yerde 5-7 gün, buzdolabında 2-3
+                    hafta, dondurucuda 3 aya kadar saklanır.
+                  </li>
+                  <li>Dondurucudan sabah çıkarırsanız gün içinde çözülür.</li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>
+                    Pişirmesiz bağlama, ısıya duyarlı vitamin ve yağ asitlerini
+                    korur; fırında yalnızca yulaf ve kuruyemiş hafifçe kavrulur.
+                  </li>
+                  <li>
+                    Hurma bekletme suyunu karışıma katmak, suya geçen çözünür
+                    şeker ve mineralleri geri kazandırır.
+                  </li>
+                  <li>
+                    Keten kullanacaksanız mutlaka öğütülmüş olsun, öğütülmüşü
+                    ise kapalı ve serin saklayın; ışık ve hava yağlarını bozar.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- Hazırlanışı. -->
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
+      addMainRow(
+        "Yulaf Ezmesi",
+        "Kalın taneli yulaf ezmesi bu tarif için en doğru seçimdir; bulamazsanız ince taneli yulaf ezmesi de kullanılabilir, ancak bar biraz daha yumuşak ve dağılgan olur. Hazır hızlı (instant) yulaf ise en son tercihtir, çünkü çok ince olduğu için bar macun gibi bir doku alır. Alırken içindekiler kısmında yalnızca yulaf yazan, kokusu temiz, bayat ya da kağıt gibi koku taşımayan ürünü seçin. Tarifin ana malzemesi olduğundan diğer tüm oranlar yulafa göre belirlenmiştir; yulaf barın iskeletini ve yavaş sindirilen karbonhidrat kısmını oluşturur.",
+      );
+      addNormalRow(
+        "Çekirdeksiz Kuru Hurma",
+        90,
+        "Yumuşak, çekirdeksiz Medjool tipi hurma bu tarifin en iyi seçeneğidir, çünkü hem tatlandırıcı hem de bağlayıcı görevini tek başına görür. Bulamazsanız yumuşak kuru incir (sapları kesilmiş) ikinci, kuru kayısı ise üçüncü seçenek olur; bunlarda bar biraz daha taneli ve ekşimsi çıkar. Hurmanın içindekiler kısmında yalnızca hurma yazmalı, glikoz şurubu ya da parlatıcı yağ bulunmamalıdır. Oran yulafa yakın tutulmuştur; bu, barı bal olmadan bir arada tutacak bağlayıcı gücü sağlar. Daha az koyarsanız bar ufalanır, daha fazla koyarsanız yapışkan ve fazla tatlı olur.",
+      );
+      addNormalRow(
+        "Fıstık Ezmesi",
+        50,
+        "Evde, yalnızca fıstıktan yaptığınız ezme bu tarifin en doğru tercihidir; hazır alacaksanız içinde sadece fıstık (ve en fazla tuz) yazan, yağı yüzeye çıkan, katkısız ve şekersiz bir ürün arayın. Daha az tercih edilen seçenekler badem ezmesi ve fındık ezmesidir; ikisi de uygun ama tat biraz değişir. Akışkan, oda sıcaklığında olması bağlayıcıya kolay karışmasını sağlar. Oran, barın yağ ve protein dengesini kurar; azaltırsanız bar kuru ve sert kalır, artırırsanız yağlı ve dağınık olur.",
+      );
+      addNormalRow(
+        "Karışık Çiğ Kuruyemiş (Fındık, Badem, Ceviz)",
+        40,
+        "Çiğ ve bütün fındık, badem ve cevizin karışımı en iyi sonucu verir; her biri farklı doku ve yağ asidi profili katar. Yalnızca birini bulabiliyorsanız badem ya da fındık yeterlidir, ceviz ise en son tercih olur çünkü hızlı acılaşır. Taze, kokusu temiz, iç rengi açık kuruyemiş seçin; eski yağ kokusu varsa kullanmayın. Oran, enerji yoğunluğunu artırıp barın dokusunu çıtır hale getirecek kadardır; çok fazlası barın ufalanmasına yol açar.",
+      );
+      addNormalRow(
+        "Kuru Üzüm",
+        25,
+        "Çekirdeksiz, koyu renkli, nemini koruyan kuru üzüm en doğru seçimdir; olmazsa küçük doğranmış kuru kayısı (sülfürsüz) ya da kuru vişne kullanılabilir, en son seçenek ise kuru incirdir. Üzümün yüzeyinde yağ ya da parlatıcı bulunmamalıdır. Oran küçük tutulmuştur; hurmanın tatlılığına ek olarak hızlı karbonhidrat ve doku çeşitliliği katar, fazlası barı aşırı tatlı yapar.",
+      );
+      addNormalRow(
+        "Kabak Çekirdeği (Çiğ)",
+        15,
+        "Kabuksuz, çiğ kabak çekirdeği en uygun seçimdir; olmazsa çiğ ayçiçeği çekirdeği ikinci seçenek olur, tuzlu ve kavrulmuş çekirdekler ise tuzu dengesini bozacağı için tercih edilmez. Çekirdekler yeşil, parlak, kokusu temiz olmalıdır. Oran, magnezyum ve çinko içeriğini artırırken barın dokusunu bozmayacak düzeyde tutulmuştur.",
+      );
+      addNormalRow(
+        "Chia Tohumu",
+        10,
+        "Chia tohumu en doğru seçimdir, çünkü öğütmeye gerek kalmadan nemi tutar ve barı bağlamaya yardım eder; bulamazsanız öğütülmüş keten tohumu ikinci seçenek olur (bütün keten sindirilmeden çıktığı için öğütülmüş olması şarttır). Her ikisi de yoksa tarif yine çalışır, ancak bar biraz daha gevrek olur. Tohumlar kuru, kokusu temiz, küf ve nem izi taşımayan olmalıdır. Oran düşük tutulmuştur, çünkü fazlası nemi çekip karışımı jelimsi yapar.",
+      );
+      addNormalRow(
+        "Bitter Çikolata Damlası (%70)",
+        15,
+        "İsteğe bağlıdır; kullanacaksanız içinde yalnızca kakao kütlesi, kakao yağı ve az şeker bulunan %70 bitter damla en doğru seçimdir. Bulamazsanız bitter çikolatayı küçük küçük doğrayarak kullanabilirsiniz; sütlü çikolata en son tercihtir, çünkü barı fazla tatlandırır. Sıcak havalarda hiç kullanmayın. Oran, tadı yumuşatacak ama barın kimliğini bozmayacak kadardır.",
+      );
+      addNormalRow(
+        "Tuz",
+        1.5,
+        "İnce deniz tuzu en doğru seçimdir; olmazsa sofra tuzu ikinci seçenek olur, ancak iri taneli tuz karışımda dağılmaz, mutlaka toz haline getirin. Oran düşük görünse de terle kaybedilen sodyumu desteklemek ve tatları belirginleştirmek için yeterlidir, fazlası barı yapay tuzlu yapar.",
+      );
+      addNormalRow(
+        "Tarçın",
+        1,
+        "Taze öğütülmüş Seylan tarçını en iyi sonucu verir; bulamazsanız normal tarçın da olur, ancak daha sert ve acımsıdır. Oran küçüktür; aroma verir ve hurmanın tatlılığını dengeler, fazlası baskın hale gelir.",
+      );
+      addNormalRow(
+        "Su",
+        5,
+        "Hurma bekletme suyu en doğru seçimdir, çünkü hurmadan geçen şeker ve mineralleri geri kazandırır; olmazsa içme suyu da olur. Gerekmedikçe eklemeyin: karışım sıkıldığında dağılıyorsa 1 yemek kaşığı (yaklaşık %5) eklenir, fazlası barı yumuşatır ve saklama süresini kısaltır.",
+      );
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

@@ -56,8 +56,10 @@ const ARAMA_LISTESI = [
   { title: "Çikolata", url: "cikolata.html" },
   { title: "Ispanak", url: "ispanak.html" },
   { title: "Salamura Yeşil Zeytin", url: "salamura-yesil-zeytin.html" },
-  { title: "Enerji Bar", url: "enerji-bar.html" },
+  { title: "Enerji Barı", url: "enerji-bari.html" },
   { title: "Patlamış Mısır", url: "patlamis-misir.html" },
+  { title: "Bar Kaplama Karameli", url: "bar-kaplma-karameli.html" },
+  { title: "Fıstık Ezmesi", url: "fistik-ezmesi.html" },
 ];
 
 function search() {

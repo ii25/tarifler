@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <div class="recipe-title-container-single">
+          <div class="recipe-title-line-single">
+            <span></span>
+            <h1>ZEYTİN</h1>
+            <span></span>
+          </div>
+        </div>
+        <!--
+      <div class="recipe-title-container-double">
+      <div class="recipe-title-line-double">
+      <span></span>
+      <h1>TARİF BAŞLIĞI</h1>
+      <span></span>
+      </div>
+      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
+      </div>
+      -->
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image"><img src="../images/zeytin.png" alt="" /></div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="info-note">
+          <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+          belirtir.
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>
+                Bu tarif, sele ya da yağlı sele olarak bilinen kuru tuzlama
+                yöntemidir. Zeytin su ve salamura kullanılmadan doğrudan tuza
+                yatırılır. Tuz zeytinin suyunu çeker, acılığı veren oleuropein
+                de bu suyla dışarı atılır. Isı ve kostik kullanılmadığı için
+                zeytinin doğal yapısı ve aroması korunur. Sonuç buruşuk, yoğun
+                aromalı ve yağlı bir sofra zeytinidir.
+              </p>
+            </div>
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>
+                      Tabanı delikli bir plastik kasa ya da kevgir, altına
+                      koyacağınız bir tepsi, terazi ve temiz bir bez hazırlayın.
+                      Metal kap kullanmayın, çünkü tuz metali aşındırır ve
+                      zeytine geçer.
+                    </li>
+                    <li>
+                      Zeytinleri tek tek elden geçirin. Ezik, yumuşak ve kurtlu
+                      olanları atın.
+                      <span class="puf"
+                        >Yüzeyinde iğne ucu kadar delik ya da yumuşayan, içe
+                        göçen çukur varsa zeytini ayırın. Bunlar sinek ya da
+                        çürüme izidir ve tuz suyu çekerken bozulmayı yan
+                        zeytinlere de taşır.</span
+                      >
+                      Sert ve yüzeyi sığ çöküntülü zeytinler ise olgunluktan
+                      gelir, zararsızdır.
+                    </li>
+                    <li>
+                      Zeytinleri soğuk suyla kısaca yıkayıp temiz bir bez
+                      üzerinde iyice kurutun.
+                      <span class="puf"
+                        >Yüzeyde kalan su tuzu daha tuzlamaya başlamadan eritir
+                        ve kalıplaştırır, küf riskini artırır.</span
+                      >
+                    </li>
+                    <li>
+                      Zeytin ve tuzu tartın. Oranlar tuz güvenliğini belirlediği
+                      için gözle tahmin etmeyin.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Çizme</strong>
+                  <ul>
+                    <li>
+                      Her zeytini çekirdeğe ulaşmadan yüzeysel olarak bir ya da
+                      iki kez çizin ya da çatalla delin. Çizik, acı suyun dışarı
+                      çıkış yolunu açar ve süreyi kısaltır.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Çizilmeyen zeytin 5-6 haftada, çizilen 3-4 haftada
+                        olgunlaşır. Çizilen zeytin daha az dolgun kalır,
+                        çizmediğiniz zeytin ise daha dolgun ama daha geç yenir
+                        hâle gelir.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Tuzla Katmanlama</strong>
+                  <ul>
+                    <li>
+                      Kabın tabanına ince bir kaya tuzu tabakası serin, üzerine
+                      zeytinleri tek sıra dizin, sonra tekrar tuz koyun. Bu
+                      şekilde tüm zeytinler tuzla çevrelenir. En üst katmanı tuz
+                      yapın.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Tuzun tamamını tek seferde koymayın, katman katman
+                        paylaştırın. Tuz bir yerde toplanırsa bazı zeytinler
+                        tuzsuz kalır ve küflenir.</span
+                      >
+                    </li>
+                    <li>
+                      Kabı serin, güneş görmeyen ve havadar bir yere, altındaki
+                      tepsiyle birlikte koyun. Tuz suyu çektikçe tepsiye acı su
+                      akacaktır.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Günlük Çalkalama</strong>
+                  <ul>
+                    <li>
+                      İlk hafta kabı her gün sallayıp zeytinleri karıştırın,
+                      tepsiye akan acı suyu boşaltın. İkinci haftadan sonra iki
+                      günde bir yapın. Karıştırma, tuzun eşit dağılmasını sağlar
+                      ve acı suyun zeytinde birikmesini önler.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Tuz tamamen erirse üzerine biraz taze tuz ekleyin.
+                        Tuzun bitmesi, zeytinin korumasız kalması
+                        demektir.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Dinlendirme ve Tadım</strong>
+                  <ul>
+                    <li>
+                      Zeytinler zamanla buruşur, küçülür ve su bırakmayı keser.
+                      Bu, tuzun işini tamamladığının işaretidir.
+                    </li>
+                    <li>
+                      3. haftadan itibaren bir zeytini yıkayıp tadın. Hoş bir
+                      buruklukla acılık gitmişse sonraki adıma geçin. Hâlâ
+                      belirgin acı varsa 1-2 hafta daha bekleyip tekrar deneyin.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Tuzu Giderme ve Kurutma</strong>
+                  <ul>
+                    <li>
+                      Zeytinleri süzgeçte soğuk suyla birkaç saniye çalkalayarak
+                      yüzeydeki tuzu alın.
+                      <span class="puf"
+                        >Yıkamayı kısa tutun. Uzun beklerse tuzun yanında aroma
+                        ve suda çözünen polifenoller de zeytinden çıkar.</span
+                      >
+                    </li>
+                    <li>
+                      Zeytinleri temiz bir bez üzerine serip gölgede, havadar
+                      bir yerde 1-2 gün kurutun.
+                      <span class="puf"
+                        >Doğrudan güneşe koymayın. Güneş yağı ve aromayı bozar.
+                        Islak zeytini yağlarsanız yağ tutmaz ve kısa sürede
+                        ekşir.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Yağlama</strong>
+                  <ul>
+                    <li>
+                      Kuru zeytinleri geniş bir kapta zeytinyağı, kekik ve limon
+                      kabuğuyla karıştırın. Yağ zeytinlere parlaklık verir ve
+                      yüzeyi havadan yalıtarak bozulmayı geciktirir.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Önce yağı ve zeytinleri karıştırıp ardından baharatı
+                        ekleyin. Baharat yağlı yüzeye daha eşit yapışır.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis</strong>
+                  <ul>
+                    <li>
+                      Zeytinleri oda sıcaklığında servis edin, böylece yağ akıcı
+                      kalır ve aroma daha belirgin olur.
+                    </li>
+                    <li>
+                      Fazla tuzluysa servisten 1-2 saat önce soğuk suda bekletip
+                      süzün, ardından yeniden hafifçe yağlayın.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>
+                    Zeytinleri sıkıştırmadan temiz bir kavanoza doldurun ve
+                    üstünü zeytinyağıyla kapatın. Yağ, hava temasını keser.
+                  </li>
+                  <li>
+                    Buzdolabında 3-6 ay dayanır. Dışarıda saklayacaksanız serin
+                    ve karanlık bir yer seçin.
+                  </li>
+                  <li>
+                    Küf, ekşi ya da kötü koku fark ederseniz zeytinleri
+                    kullanmayın.
+                  </li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>
+                    Zeytin suya yatırılmadığı için suda çözünen bileşenlerin
+                    kaybı salamura yöntemine göre daha azdır.
+                  </li>
+                  <li>
+                    Isı uygulanmadığından antioksidanlar ve zeytinyağının
+                    kalitesi korunur.
+                  </li>
+                  <li>
+                    Sodyum oranı yüksektir. Tuza duyarlıysanız veya tansiyon
+                    sorununuz varsa durulamayı biraz uzatın. Bunun karşılığında
+                    bir miktar aroma ve polifenol kaybı olacaktır.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- Hazırlanışı. -->
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
+      addMainRow(
+        "Çiğ Siyah Zeytin",
+        "Memecik ya da Gemlik gibi ağaçta tam olgunlaşmış zeytin bu yöntem için en uygunudur. Bulamazsanız daha iri çeşitler kullanabilirsiniz, ancak acılığı daha geç gider ve süre uzar. Rengi tamamen kararmış, sert ve dolgun, ezik ile kurtsuz olanları seçin, çünkü kuru tuzlamada tek bir çürük zeytin yanındakileri de bozabilir. Pazarda yumuşamış, ekşi kokan ya da yüzeyinde iğne ucu delik taşıyan zeytinleri almayın. Tarifin ana malzemesi olduğu için diğer tüm oranlar bu miktarın yüzdesi olarak hesaplanır.",
+      );
+      addNormalRow(
+        "Kaya Tuzu",
+        25,
+        "İri taneli kaya tuzu en doğru seçimdir, bulamazsanız iri deniz tuzu kullanabilirsiniz, son çare olarak da iyotsuz sofra tuzu işinizi görür. İyotlu tuz zeytinin rengini ve tadını bozduğu için hiç kullanmayın. İri taneler zeytin yüzeyinde yavaş erir ve suyu uzun süre çekmeye devam eder, ince tuz ise hızla erir ve kalıplaşır. %25 oranı zeytinin suyunu osmozla çekmeye ve ortamı mikroplara kapatmaya yeter. %20'nin altına inildiğinde bozulma riski belirgin biçimde artar.",
+      );
+      addNormalRow(
+        "Sızma Zeytinyağı",
+        5,
+        "Soğuk sıkım sızma zeytinyağı en iyi tercihtir. Bulamazsanız naturel birinci kalite zeytinyağı da olur, ama rafine yağlar zeytinin aromasını taşıyamaz. Taze, ağır kokmayan ve acılığı dengeli bir yağ seçin, çünkü zeytinin yüzeyinde kalan yağın tadı doğrudan sonuca yansır. %5 oranı zeytinleri ince bir tabakayla kaplamaya yeter, yağ fazla olursa zeytinler kaygan kalır ve kavanozda dibe birikir.",
+      );
+      addNormalRow(
+        "Kuru Kekik",
+        0.5,
+        "Kuru kekik en uyumlu seçimdir, yoksa pul biber ya da toz kimyon kullanabilirsiniz. Taze otlar nem taşıdığı için küf riskini artırır, bu yüzden mutlaka kuru olanı alın. Yeni öğütülmüş, rengi canlı ve kokusu belirgin kekik daha iyi sonuç verir. Aroma maddesi olarak çok az gerekir, %0,5'in üzerine çıkarsanız zeytinin kendi tadı bastırılır. Tamamen isteğe bağlıdır.",
+      );
+      addNormalRow(
+        "Limon Kabuğu",
+        2,
+        "Organik limon en doğru seçimdir, onu bulamazsanız portakal ya da mandalina kabuğu da iş görür. Kabuk rendelendiği için yüzeyi doğrudan zeytine temas eder, bu yüzden mumsuz ve ilaçsız olmasına dikkat edin, ince rendelerken beyaz kısmı almayın çünkü acılık verir. Parfüm etkisi yaratması için %2 yeterlidir, fazlası zeytinin aromasını örter. Tamamen isteğe bağlıdır.",
+      ); // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>
