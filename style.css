@@ -215,6 +215,7 @@ body {
 .logo {
   display: flex;
   font-family: var(--font-kalin);
+  padding-right: 70px;
 }
 .logo-icon {
   height: 37px;
