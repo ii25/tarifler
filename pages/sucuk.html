@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+         <!--
+        <div class="recipe-title-container-single">
+          <div class="recipe-title-line-single">
+            <span></span>
+            <h1>SUCUK</h1>
+            <span></span>
+          </div>
+        </div>
+        -->
+      <div class="recipe-title-container-double">
+      <div class="recipe-title-line-double">
+      <span></span>
+      <h1>SUCUK</h1>
+      <span></span>
+      </div>
+      <p class="recipe-title-sub-text">AFYON USULÜ</p>
+      </div>
+      
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image"><img src="../images/sucuK.png" alt="" /></div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="info-note">
+          <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+          belirtir.
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>
+                Afyon Sucuğu, tescil belgesine göre sığır karkas eti ile en az
+                %15 oranında manda etinin birlikte kullanıldığı, iç yağı ve
+                baharatla hazırlanıp sığır bağırsağına doldurulan bir sucuktur.
+                Bu tarifte belgedeki bileşim oranları esas alınmış, izin verilen
+                üst sınırlar olan stabilizör, koruyucu ve antioksidan kalemleri
+                ise kullanılmamıştır. Ev ortamında fermantasyon ve kurutmanın
+                sıcaklık ile nemini güvenle kontrol etmek zor olduğundan sucuk
+                soğukta dinlendirilir ve kurutulur, belgede de yer alan ısıl
+                işlem yaklaşımına uygun olarak servis sırasında iyice
+                pişirilerek tüketilir.
+              </p>
+            </div>
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>
+                      Terazi, çekirdek ısı termometresi, zamanlayıcı, kıyma
+                      makinesi ve doldurma aparatı, geniş bir kap, sucuk ipi ve
+                      iğne hazırlayın; ayrıca sığır bağırsağı, öğütücü ve ezme
+                      için ufak bir kap bulundurun.
+                    </li>
+                    <li>
+                      Kıyma makinesinin metal parçalarını, plakalarını ve
+                      karıştırma kabını kullanmadan en az bir saat önce
+                      dondurucuya koyun; iş boyunca et ve yağ soğuk kalırsa yağ
+                      erimez, hamur lekelenmez ve bakteriler çoğalmaz.
+                      <span class="puf"
+                        >Et ve yağın sıcaklığı hiçbir aşamada 10 °C'yi
+                        geçmemeli; ısınmaya başladıklarını hissederseniz işi
+                        durdurup dondurucuya alın.</span
+                      >
+                    </li>
+                    <li>
+                      Bağırsak tuzlu geliyorsa bol ılık suda yarım saat bekletip
+                      tuzunu giderin, sonra bir ucundan su akıtarak delik olup
+                      olmadığını kontrol edin; delik bağırsakta hava ve sızıntı
+                      bırakır.
+                      <span class="puf"
+                        >Delikli kısmı kesip atın, geri kalanı kullanın.</span
+                      >
+                    </li>
+                    <li>
+                      Baharatları tarifteki oranlara göre tartıp ayrı ayrı
+                      hazırlayın; tane olanları kullanmadan hemen önce öğütün ki
+                      aromaları uçmasın.
+                    </li>
+                    <li>
+                      Tezgâhı, kapları ve elleri iyice yıkayın; çiğ et ile
+                      çalışırken kullandığınız her şeyi sonradan yıkamak üzere
+                      ayırın.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Etlerin Temizlenmesi ve Dinlendirilmesi</strong>
+                  <ul>
+                    <li>
+                      Sığır ve manda etlerinden tendon, fasya, kan damarları ve
+                      lenf bezlerini ayıklayın; bunlar kıymada lastiksi parçalar
+                      bırakır ve tadı bozabilir.
+                    </li>
+                    <li>
+                      Etleri iri parçalara ayırıp kapağı kapalı kapta
+                      buzdolabında en az bir gün dinlendirin; dinlenme sırasında
+                      et gevşer, su tutma gücü artar ve tadı oturur.
+                      <span class="puf"
+                        >Dolabın en alt rafında, diğer yiyeceklerin altında
+                        saklayın ki su damlamasın.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>İri Çekim</strong>
+                  <ul>
+                    <li>
+                      Sığır ve manda etlerini birlikte, kıyma makinesinin 8-10
+                      mm'lik iri plakasından çekin; iki etin baştan karışması
+                      manda tadının hamura eşit dağılmasını sağlar.
+                      <span class="puf"
+                        >Etleri çekmeden önce dondurucuda 20-30 dakika bekletip
+                        kenarları hafif sertleştirirseniz plaka kesmeden ezmez
+                        ve hamur daha taneli çıkar.</span
+                      >
+                    </li>
+                    <li>
+                      Çektiğiniz eti hemen soğuk bir kaba alın ve buzdolabına
+                      koyun.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Yağ ve Baharatın Eklenmesi</strong>
+                  <ul>
+                    <li>
+                      İç yağını soğukken 1 cm'lik küpler hâlinde doğrayıp iri
+                      çekilmiş etin üzerine ekleyin; yağın ince çekimde etle
+                      birlikte parçalanması hamurda eşit dağılmasını sağlar.
+                    </li>
+                    <li>
+                      Tuz, şeker ve tüm toz baharatları ayrı bir kapta
+                      karıştırıp etin üzerine eşit serpin; önceden karıştırmak,
+                      küçük miktardaki zencefil ve yenibaharın bir yerde
+                      toplanmasını önler.
+                      <span class="puf"
+                        >Sarımsağı en son, kullanmadan hemen önce ezip ekleyin;
+                        çünkü ezilince oluşan allisin adlı bileşik uçucudur ve
+                        bekledikçe kaybolur.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>İnce Çekim ve Yoğurma</strong>
+                  <ul>
+                    <li>
+                      Karışımı kıyma makinesinin 3-4 mm'lik ince plakasından
+                      yeniden çekin; belgedeki yöntemde de karışım ikinci kez
+                      ince çekilerek dolum kıvamına getirilir.
+                    </li>
+                    <li>
+                      Çıkan hamuru soğuk kapta 3-5 dakika elle yoğurun; ilk
+                      yapışkan ve bağlı kıvama gelince bırakın; bu aşamada tuzla
+                      çözünen proteinler hamuru birbirine bağlar ve sucuğa
+                      dilimlenebilir bir yapı kazandırır.
+                      <span class="puf"
+                        >Kabın altına buzlu su dolu bir tepsi koyarsanız hamur
+                        yoğurma sırasında ısınmaz.</span
+                      >
+                    </li>
+                    <li>
+                      Küçük bir parça hamuru tavada iyice pişirip tadına bakın;
+                      tuz ve baharat dengesini böyle kontrol edebilirsiniz, çiğ
+                      tadılmaz. Ayar gerekirse ilgili malzemeyi azar azar
+                      ekleyip yeniden yoğurun.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Hamurun Dinlendirilmesi</strong>
+                  <ul>
+                    <li>
+                      Hamuru kapalı bir kapta, yüzeyine streç temas edecek
+                      biçimde buzdolabında (0-4 °C) 12-24 saat dinlendirin;
+                      baharat dinlendikçe hamura işler ve aroma dolgunlaşır,
+                      streçin temas etmesi ise yüzeyin kurumasını ve renk
+                      değiştirmesini önler.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Bağırsağa Doldurma</strong>
+                  <ul>
+                    <li>
+                      Hazırlanmış bağırsağı doldurma aparatına geçirip ucunu
+                      düğümleyin; hamuru, hava boşluğu kalmayacak biçimde
+                      basınçla doldurun, çünkü içeride kalan hava hem pişerken
+                      patlamaya hem de bozulmaya yol açar.
+                      <span class="puf"
+                        >Doldurma sırasında bağırsağı gevşek tutmayın ama aşırı
+                        gerdirmeyin; aşırı dolan bağırsak büküm sırasında
+                        yırtılır.</span
+                      >
+                    </li>
+                    <li>
+                      Havadan oluşan kabarcıkları iğneyle hafifçe delip
+                      sıkıştırın.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Şekil Verme</strong>
+                  <ul>
+                    <li>
+                      Kangal tipi için bağırsağı doldururken sucuğun
+                      kendiliğinden at nalı biçiminde bükülmesine izin verin,
+                      iki ucunu sıkıca boğumlayıp iple birbirine bağlayın.
+                    </li>
+                    <li>
+                      Düz kesim (parmak) tipi için bağırsağı bükmeden
+                      dilediğiniz uzunlukta keserek her iki ucunu boğumlayın.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Soğukta Kurutma</strong>
+                  <ul>
+                    <li>
+                      Sucukları askıya alıp ya da ızgaralı bir tepsiye dizip
+                      buzdolabının alt rafında, açıkta 2-3 gün bekletin; yüzey
+                      hafifçe kurur, bağırsak sucuğa yapışır ve dokusu
+                      sıkılaşır. Belgedeki 22-30 °C'lik fermantasyon sıcaklığı
+                      ev şartlarında bakteri riski taşıdığı için bu aşama
+                      soğukta yapılır.
+                    </li>
+                    <li>
+                      Bu sırada diğer yiyeceklerle temas etmesini önleyin ve bir
+                      tepsiyle altını örtün ki sızan sıvı dolaba yayılmasın.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis</strong>
+                  <ul>
+                    <li>
+                      Sucuğu 0,5-1 cm kalınlığında dilimleyip yağsız, orta
+                      ısıdaki tavada kendi yağıyla pişirin; çekirdek ısısı en az
+                      72 °C'ye ulaşmalıdır, çünkü sucuk çiğ ette
+                      hazırlandığından bu ısı güvenlik için gereklidir.
+                      <span class="puf"
+                        >Yüksek ateşte yakmayın; yanık kısımlarda zararlı
+                        bileşikler oluşur ve baharatın aroması acılaşır.</span
+                      >
+                    </li>
+                    <li>
+                      Yumurta, ekmek arası, pilav veya lavaşla sıcak servis
+                      edin; tavada kalan yağı sosa veya ekmeğe katın, çünkü
+                      yağda çözünen aroma ve vitaminlerin bir kısmı oradadır.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>
+                    Soğukta kurutulmuş çiğ sucuk buzdolabında (0-4 °C) 3-5 gün
+                    saklanır; açıkta değil, kapalı kapta ve diğer yiyeceklerden
+                    ayrı tutun.
+                  </li>
+                  <li>
+                    Daha uzun saklamak için porsiyonlara ayırıp vakumlayın ya da
+                    sıkıca streçleyip -18 °C'de dondurucuda en fazla 3 ay
+                    saklayın; çözdürmeyi buzdolabında yapın ve çözülmüş sucuğu
+                    tekrar dondurmayın.
+                  </li>
+                  <li>
+                    Pişmiş sucuğu buzdolabında kapalı kapta saklayıp 2-3 gün
+                    içinde tüketin.
+                  </li>
+                  <li>
+                    Sucuğu tescil belgesindeki gibi fermente edip kurutmak ev
+                    ortamında sıcaklık, nem ve asitlik kontrolü gerektirir ve
+                    bakteri riski taşır; bu yüzden bu tarifte uygulanmamıştır.
+                  </li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>
+                    Et, B12, B6 ve niasin vitaminleri ile demir ve çinko
+                    bakımından zengindir; bunlar pişirmeye görece dayanıklıdır,
+                    ısıya duyarlı olan B1 vitamini ise kısa ve orta ısıda
+                    pişirerek daha iyi korunur.
+                  </li>
+                  <li>
+                    Güvenlik için çekirdek ısının 72 °C'ye ulaşması zorunlu
+                    olduğundan bu noktada besin korunumu için esneklik yoktur;
+                    ancak bu ısıyı geçmeden, orta ateşte ve kısa sürede pişirmek
+                    kaybı en aza indirir.
+                  </li>
+                  <li>
+                    Tavada kalan yağ ve et suyu çözünen vitaminleri ve aromayı
+                    taşır; bunları atmayıp sofraya katmak kaybı azaltır.
+                  </li>
+                  <li>
+                    Baharatların ışık ve havayla temasta aroma ile renk
+                    bileşenleri (özellikle biberdeki karotenoidler) bozulur; bu
+                    yüzden tane baharatı kullanmadan hemen önce öğütmek ve
+                    baharatları kapalı, kuru ve karanlıkta saklamak gerekir.
+                  </li>
+                  <li>
+                    Sarımsağın allisin bileşiği ezilince oluşur ve ısıya
+                    duyarlıdır; sarımsağı hamura son aşamada eklemek hem
+                    aromasını hem bu bileşiği korur.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- Hazırlanışı. -->
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
+      addMainRow(
+        "Sığır Eti (Karkas Eti)",
+        "Sucuğun iskeletini bu et kurar; en uygunu yağı az, bağ dokusu temizlenmiş sığır but veya kol etidir, bulunamazsa sığır kol-boyun karışımı, o da olmazsa dana but eti gelir, en sonda ise kasaba iri çektirilmiş hazır sığır kıyması yer alır. Dana eti daha az aromalı olduğu için sucuğun karakterini zayıflatır; hazır kıymada ise et cinsi ve yağ oranı belirsiz olduğundan baharat dengesi tutmayabilir. Kırmızı, parlak, kokusuz ve suyunu salmamış et alın; kesimden sonra 1-2 gün dinlenmiş et hem daha yumuşak hem daha aromalıdır. Bu malzeme ana malzeme olduğu için diğer tüm oranlar bunun ağırlığı üzerinden hesaplanır; tescil belgesindeki 100 kg'lık bileşimde 59,772 kg ile en büyük paya sahiptir.",
+      );
+      addNormalRow(
+        "Manda Eti",
+        17.65,
+        "Afyon usulünün imzası bu malzemedir; ilk tercih manda but veya kol etidir, ardından kasaba iri çektirilmiş yağsız manda kıyması gelir, hiç bulunamazsa sığır etiyle tamamlanabilir ama ortaya çıkan sucuk lezzetli olsa da Afyon sucuğunun karakterini taşımaz. Manda eti sığırdan daha koyu kırmızı, daha az yağlı ve daha sıkı liflidir; sucuğa belirgin bir damak tadı verir. Oran sığır etinin %17,65'i, yani toplam etin %15'idir ve bu tescildeki alt sınırdır; altına inmeyin, artırırsanız yağsız et çoğalacağı için sucuk kurulaşıp sertleşebilir.",
+      );
+      addNormalRow(
+        "Sığır İç Yağı",
+        36.81,
+        "Sucuğun sululuğunu ve yumuşaklığını bu yağ sağlar; sert, bembeyaz, böbrek çevresinden alınan sığır iç yağı birinci tercihtir, ardından sığır sırt (dış) yağı, en sonda ise koyun kuyruk yağı gelir; kuyruk yağı belirgin bir aroma bırakır ve tescildeki tariften uzaklaştırır. Kokusuz, sararmamış ve acımamış olmalıdır; soğuk ve sert olduğunda küp doğramak ve çekmek kolaylaşır. Oran sığır etinin %36,81'i, toplam karışımın %22'sidir; altında sucuk kuru ve lifli, üstünde pişerken fazla yağ bırakan ve dağılgan olur.",
+      );
+      addNormalRow(
+        "Tuz",
+        3.35,
+        "Tuz burada yalnızca tat vermez, et proteinlerinin çözünüp birbirine tutunmasını da sağlar; iyotsuz ince sofra tuzu birinci tercihtir, ardından iyotsuz ince deniz tuzu, en sonda iyotlu sofra tuzu gelir ve iyotlu tuz hafif metalik bir ize yol açabilir. Kuru, topaklanmamış ve katkısız olmasına dikkat edin. Oran sığır etinin %3,35'i, toplam karışımın %2'sidir; altına inerseniz hamur yeterince bağlanmaz ve tat yavan kalır.",
+      );
+      addNormalRow(
+        "Kırmızı Biber (Acı)",
+        1.34,
+        "Sucuğun acısını ve rengini bu biber verir; saf, katkısız acı pul biberi kendi öğütücünüzde toz hâline getirmek birinci tercihtir, ardından hazır saf toz acı biber, en sonda ise baharatçıdan alınan karışık toz biber gelir ve karışıklarda boya veya dolgu riski vardır. Parlak kırmızı, nem kokusu olmayan, yağlanmamış biber seçin. Oran sığır etinin %1,34'ü olup tatlı biberle birebir aynıdır; acıyı azaltmak isterseniz acıdan düşüp aynı miktarı tatlıya ekleyin ki toplam biber oranı bozulmasın.",
+      );
+      addNormalRow(
+        "Kırmızı Biber (Tatlı)",
+        1.34,
+        "Sucuğun kırmızı rengini ve yuvarlak tatlımsı gövdesini taşıyan malzeme budur; saf, katkısız tatlı pul biberi kendi öğütücünüzde öğütmek ilk sıradadır, ardından hazır saf toz tatlı biber gelir, en sonda ise paprika yer alır ve paprika daha yavan, dumansız bir tat verir. Canlı kırmızı renkli, kuru ve hafif meyvemsi kokulu olmalıdır. Oran sığır etinin %1,34'ü; acı biberle toplamı %2,68 eder ve bu toplam renk ile aromanın temelidir.",
+      );
+      addNormalRow(
+        "Kimyon",
+        1.67,
+        "Sucuğa özgü kokunun büyük bölümü kimyondan gelir; tane kimyonu kullanmadan hemen önce öğütücüde çekmek birinci tercihtir, ardından hazır saf toz kimyon gelir, bekleyen toz kimyon aromasını çabuk yitirdiği için en sona kalır. Kimyon tanesi kuru, esmer yeşil ve kokulu olmalıdır. Oran sığır etinin %1,67'sidir; fazlası acımsı ve baskın bir iz bırakır, azı ise sucuğu sıradan kıymaya yaklaştırır.",
+      );
+      addNormalRow(
+        "Sarımsak",
+        2.01,
+        "Çiğ hamurda en canlı aromayı veren malzeme budur; taze sarımsağı kullanmadan hemen önce ezmek birinci tercihtir, ardından granül sarımsak gelir ve granülü taze sarımsağın yaklaşık beşte biri kadar kullanmanız gerekir, en sonda sarımsak tozu yer alır. Dişleri sert, filizlenmemiş ve kuru olmalıdır. Oran sığır etinin %2,01'i; taze sarımsakta hamurun içine eşit dağılması için ezme kıvamında olması önemlidir.",
+      );
+      addNormalRow(
+        "Şeker",
+        1.0,
+        "Burada şekerin görevi tatlandırmak değil, tuzu ve baharatın keskinliğini dengelemektir; toz şeker birinci tercihtir, ardından esmer şeker gelir, esmer şeker hafif karamelimsi bir ize yol açar; şekersiz de yapılabilir ve fark küçüktür. Kuru ve topaklanmamış olmalıdır. Oran sığır etinin %1'i olup çok düşüktür; artırmak sucuğun tadını tatlıya çalar ve pişirirken yüzeyin çabuk yanmasına neden olur.",
+      );
+      addNormalRow(
+        "Karabiber",
+        0.84,
+        "Keskin ama ince bir sıcaklık veren bu baharat için taze kırılmış tane karabiber birinci tercihtir, ardından hazır saf toz karabiber gelir; hazır tozu açık poşette bekleyenlerden değil, mühürlü ve yakın tarihlisinden alın. Taneler sert, iri ve kokulu olmalıdır. Oran sığır etinin %0,84'üdür; fazlası boğazı yakar ve biberlerin aromasını bastırır.",
+      );
+      addNormalRow(
+        "Yenibahar",
+        0.5,
+        "Yenibahar, sucuğa hafif tarçınımsı, karanfilimsi bir derinlik katar; tane yenibaharı öğütücüde çekmek birinci tercihtir, ardından hazır toz yenibahar gelir; bulunamazsa eksik bırakılabilir ama sucuğun bu derin ucu kaybolur. Taneler koyu kahverengi ve kokulu olmalıdır. Oran sığır etinin %0,50'sidir; çok az bir miktar olduğu için tartıya mutlaka güvenin, göz kararı eklenirse baskın bir tat bırakır.",
+      );
+      addNormalRow(
+        "Zencefil",
+        0.17,
+        "Zencefil, sucuğun ağır ve yağlı tadını hafifçe aydınlatır; kuru kök zencefili öğütücüde çekmek birinci tercihtir, ardından hazır saf toz zencefil gelir, taze zencefil ise nemi hamura taşıdığı için en sona kalır. Toz zencefil açık sarı, keskin kokulu ve topaklanmamış olmalıdır. Oran sığır etinin %0,17'sidir; çok küçüktür, amacı belli olmadan hissedilmek değil, dengeyi tamamlamaktır.",
+      ); // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

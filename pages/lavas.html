@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarifler</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- FULL WIDTH HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="header-left">
+
+        <!-- Logo -->
+        <div class="logo" onclick="window.location.href='../index.html';" style="cursor:pointer;">
+          <img src="../images/icon-logo.svg" class="logo-icon">
+          <span class="logo-text">tarifler</span>
+        </div>
+        <!-- Logo. -->
+      </div>
+      <!-- Tarif Başlığı -->
+      <div class="recipe-title-container-single">
+        <div class="recipe-title-line-single">
+          <span></span>
+          <h1>LAVAŞ</h1>
+          <span></span>
+        </div>
+      </div>
+      <!--
+      <div class="recipe-title-container-double">
+      <div class="recipe-title-line-double">
+      <span></span>
+      <h1>TARİF BAŞLIĞI</h1>
+      <span></span>
+      </div>
+      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
+      </div>
+      -->
+      <!-- Tarif Başlığı. -->
+      <div class="header-right">
+        <!-- Arama Kutusu -->
+        <div class="search-container"><input type="text" id="searchInput" class="mainLoginInput" placeholder="&#61442;"
+            oninput="search()" />
+          <div id="results" class="results-dropdown"></div>
+        </div>
+        <!-- Arama Kutusu. -->
+      </div>
+    </div>
+  </header>
+  <!-- FULL WIDTH HEADER. -->
+  <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+  <div class="recipe-image"><img src="../images/lavas.png" alt=""></div>
+  <!-- İçerik -->
+  <div class="container">
+    <!-- Malzemeler Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-mal">
+          <img src="../images/icon-mal.svg" class="icon-mal">
+          <span class="text-mal">Malzemeler</span>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="malzeme-tablosu">
+          <tbody id="malzemeBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Malzemeler Kartı -->
+    <!-- Tarif Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-haz">
+          <img src="../images/icon-haz.svg" alt="" class="icon-haz">
+          <span class="text-haz">Hazırlanışı</span>
+        </div>
+      </div>
+      <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
+      <div class="table-container">
+    <!-- Hazırlanışı -->
+        <section class="recipe">
+          <!-- Genel Bakış: adımlardan önce gelir -->
+          <div class="genel-bakis">
+            <h3>Genel Bakış</h3>
+            <p>Lavaş, mayasız veya çok az mayalı, kağıt inceliğinde açılan geleneksel bir yassı ekmektir. Başarısı iki şeye bağlıdır: hamurun iyi dinlenmesi ve çok sıcak, yağsız bir yüzeyde çok kısa pişirilmesi.</p>
+          </div>
+          <!-- Genel Bakış. -->
+          <ol class="steps">
+            <li>
+              <div class="step-content">
+                <strong>Ön Hazırık</strong>
+                <ul>
+                  <li>Terazi, termometre, zamanlayıcı, geniş bir kap, oklava (ince ve uzunsa daha iyi), yapışmaz veya dökme demir tava (ya da sac), nemli bir bez ve açma için ayrı bir kâse un hazırlayın.</li>
+                  <li>Tüm malzemeleri tartın. Suyu ısıtıp termometreyle 30-32 °C’ye getirin.</li>
+                  <li>Hamur gramaj ve sıcaklığa duyarlıdır. Bu iki ölçü sabitlenirse sonuç her seferinde tekrarlanabilir.</li>
+                  <li>Aşağıda belirtilen malzemeleri hazır edin:</li>
+                  <li>Hamur yoğurma makinesi ve aparatları</li>
+                  <li>Mutfak terazisi</li>
+                  <li>Lavaş Tavası</li>
+                  <li>Bezler</li>
+                  <li>Soğuk Su (Yazın)</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Yoğurma</strong>
+                <ul>
+                  <li>Hamur yoğurma makinesinin haznesine unu, tuzu ve kuru mayayı ekleyip karıştırın.</li>
+                  <li>Suyu ekleyerek 5-6 dk yoğurun</li>
+                  <li>Hamur toparlanmaya başladığında zeytinyağını ekleyin ve pürüzsüz bir hamur elde edene kadar yoğurun</li>
+                  <li>Pürüzsüz, elastik ve yapışmayan bir top elde etmelisiniz.</li>
+                  <li>Hamur ekmek hamurundan daha sert olacaktır. Yumuşatmak için su eklemeyin.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Dinlendirme</strong>
+                <ul>
+                  <li>Hamuru üzeri kapalı, oda sıcaklığında 45-60 dakika dinlendirin. Hacmi yalnızca biraz artacak, iki katına çıkmayacaktır.</li>
+                  <li>Gluten gevşer, hamur açarken geri çekilmez. Hafif fermantasyon da lezzet verir.</li>
+                </ul>
+              </div>
+            </li>
+              <li>
+              <div class="step-content">
+                <strong>Bölme ve Beze Yapma</strong>
+                <ul>
+                  <li>Hamuru bezelere ayırıp top şeklini verin (Dürüm için ideal: 90 gr 20–22 cm çap)</li>
+                  <li>Hafif unlanmış tepsiye alın, üzerini örtün ve 20–30 dk ara dinlendirme yapın oda sıcaklığında</li>
+                  <li>Nemli bezle örtüp 15 dakika daha dinlendirin. Bölme ve toplama gluteni tekrar gerdi. Kısa dinlenme onu yeniden gevşetir.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Açma</strong>
+                <ul>
+                  <li>Hafif unlanmış tezgâhta toplardan birini ortadan dışa doğru açın, ara sıra çeyrek tur çevirin. Kalınlık 1-2 mm olmalıdır.</li>
+                  <li>Hamuru ara ara kaldırıp tezgâhtan ayırın. Yapışmış hamur ince açılırken yırtılır. Diğer toplar bezin altında beklesin ki kurumasın.</li>
+                  <li>Dinlenmiş hamur oda sıcaklığında olmalı. Soğuk hamur daha gevrektir, açarken yırtılır.</li>
+                  <li>Lavaşı açın(90–100 g beze → 20–22 cm çap → 2 mm kalınlık)</li>
+                  <li>Hafifçe unla, ama fazlasını fırçayla silin</li>
+                  <li>Açılan lavaşları pişene kadar bez altında tutun, kurumasın</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Pişirme</strong>
+                <ul>
+                  <li>Fazla unu pişirmeden önce silkeleyin. Tavada yanarak acı tat verir.</li>
+                  <li>Yağsız tavayı orta-yüksek ateşte iyice ısıtın. Lavaşı koyup yüzeyde kabarcıklar çıkana ve altı kahverengi lekeler alana kadar yaklaşık 30-60 saniye pişirin. Çevirip diğer yüzü aynı şekilde pişirin. Yüksek ısı suyu hızla buharlaştırır, ekmek kuruyup sertleşmeden pişer. Kısa pişme süresi besin öğelerini de korur. Tava yeterince sıcak değilse lavaş uzun sürede pişer ve kraker gibi kurur.</li>
+                  <li>Döküm tavayı önceden ısıın – en az 10 dakika.Isı hedefi: 260–280 °C</li>
+                  <li>IR termometreyle tavanın ortasından ölçüm alın. Tava sıcaklığı: 260–300 °C olmalı</li>
+                  <li>pişirmeye başlayın</li>
+                  <li>Lavaş baloncuk yapmalı, hafif yanık izleri olmalı. Baloncuk oluşmazsa ısı düşük olabilir.</li>
+                  <li>İlk yüz: 20–25 sn → büyük baloncuklar oluşur</li>
+                  <li>Spatula ile hafifçe bastırın → daha iyi kabarma.</li>
+                  <li>Çevirin: 15–20 sn pişirin. toplam 45–60 sn</li>
+                  <li>Çok kısa ve çok sıcak pişirin. 1-2 dakika, yüksek ısı 260°C+. Uzun pişirme, fazla nem kaybı, kırılganlık. Amaç, hafif kabarcıklanma ve benek benek kahverengilik. Tamamen kuru, bisküvi gibi bir renk değil.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Yumuşatma</strong>
+                <ul>
+                  <li>Pişen lavaşları üst üste dizip nemli bir bezle örtün. Kendi buharları ekmeği yumuşak ve esnek tutar.</li>
+                  <li>Sıcakken nemli bir beze sarın veya üst üste istifleyip üzerini bezle örtün.** Lavaş fırından çıktığında kısa süre gevrek olabilir ama kendi buharıyla birkaç dakika içinde yumuşayıp esner. Bu adımı atlarsanız (açıkta soğutursanız) nem hızla kaçar ve kırılganlaşır.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+          <!-- Bilgi Notları: son adımdan sonra gelir -->
+          <div class="bilgi-notlari">
+            <h3>Bilgi Notları</h3>
+            <div class="not-grubu">
+              <h4>Saklama</h4>
+              <ul>
+                <li>Soğuyunca poşete koyun, oda sıcaklığında 2 gün saklanır, buzdolabında 5 güne kadar dayanır. Dondurucu için aralarına yağlı kâğıt koyup 2-3 ay saklayabilirsiniz. Isıtırken kuru tavada her yüzü birkaç saniye tutun, çok kuruysa üzerine birkaç damla su serpin.</li>
+            </ul>
+            </div>
+            <div class="not-grubu">
+              <h4>Besin Öğesi Korunumu</h4>
+              <ul>
+                <li>Kısa ve yüksek ısıda pişirme B vitaminlerinin bozulmasını azaltır. Unun bir kısmını tam buğday ununa çevirmek lif ve mineral miktarını artırır, ama hamuru sertleştirir ve ince açmayı zorlaştırır. Bu yüzden en fazla %30'luk bir karışımı öneririm. Hamuru buzdolabında 12-24 saat dinlendirirseniz fitik asit azalır, mineral emilimi iyileşir. Bu, lavaşın kendine özgü yumuşak lezzetini de biraz değiştirir.</li>
+                <li>Profesyonel İpucu: Hamura 1 çay kaşığı üzüm sirkesi (yaklaşık %0.2) eklersen, pişme sırasında daha canlı kabarır ve ekşi bir aroma olmadan gluten direnci artar.</li>
+            </div>
+          </div>
+          <!-- Bilgi Notları. -->
+        </section>    <!-- Hazırlanışı. -->    
+      </div>
+    </div>
+  </div>
+  <!-- Icerik -->
+  <!-- JavaScript -->
+  <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+  <script src="../recipe.js"></script>
+  <script>
+    // Malzemeler
+    addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
+    addMainRow("Un", "ekmeklik un (protein %11-13) > çok amaçlı un. Protein oranı yüksek un daha güçlü gluten yapar. Bu sayede hamur ince açılırken yırtılmaz.");
+    addCustomRow("Su", "Yüksek hidrasyon lavaşı daha esnek yapar. Ancak, su arttıkça açmak zorlaşır, açmadan önce hamuru iyice dinlendirmek gerekir. %58-60 hidrasyon, Hamuru açılabilecek kadar sert, esneyecek kadar yumuşak tutar. Daha fazla su hamuru yapıştırır ve açarken fazla un çektirir. Daha azı hamuru gerer ve yırtar. Su sıcaklığı mayayı rahatça başlatacak, glutenin hızla gevşemesine yol açmayacak düzeydedir.(%58-64)" );
+    addNormalRow("Tuz", 2, "ince deniz tuzu (iyotsuz) > ince sofra tuzu. %2 hem lezzet verir hem gluteni güçlendirir. Maya faaliyetini de dizginler.");
+    addDropdownRow(
+      [
+        { label: "İnstant Kuru Maya", value: 0.12, aciklama: "instant kuru maya > taze maya (%1,5, ufalanıp suda eritilir) > aktif kuru maya (%0,75, önce ılık suda 10 dk bekletilir). Neden: %0,5 hamuru çok kabartmaz, hafif gaz ve aroma verir. Lavaşın ince ve esnek kalması için bu miktar yeterlidir." },
+        { label: "Aktir Kuru Maya", value: 0.25, aciklama: "Lavaş yapımı için maya kullanımı düşük miktarlarda tutulur çünkü lavaş genellikle ince açılan ve minimal kabarma istenen bir ekmektir. Maya çok az konmalıdır hiç konmasa daha iyidir:" },
+        { label: "Yaş Maya", value: 0.4, aciklama: "Lavaş yapımı için maya kullanımı düşük miktarlarda tutulur çünkü lavaş genellikle ince açılan ve minimal kabarma istenen bir ekmektir. Maya çok az konmalıdır hiç konmasa daha iyidir:" },
+        { label: "Ekşi Maya", value: 5, aciklama: "Lavaş yapımı için maya kullanımı düşük miktarlarda tutulur çünkü lavaş genellikle ince açılan ve minimal kabarma istenen bir ekmektir. Maya çok az konmalıdır hiç konmasa daha iyidir:" }
+      ],
+      "Genel açıklama (seçeneğin kendi açıklaması yoksa bu görünür)",
+      "Değiştir" // düğme yazısı (isteğe bağlı)
+    );
+    addNormalRow("Yağ", 2.5, "Zeytinyağı > Ayçiçek yağı.hamura elastikiyet katar, kurumasını engeller. %2–3" );
+    addNormalRow("Şeker", 0.1, "Hem mayayı besler hem de nemi hamurda tutmaya yardımcı olur higroskopik etki, bu da kırılmayı azaltır");
+    addNormalRow("Sirke (opsiyonel) ", 0.2, "%0.2–0.3 oranında (yaklaşık 5 g üzüm sirkesi) eklenirse, Gluteni güçlendirir, Elastikiyeti artırır, Hafif aroma verir.");
+    addNormalRow("Yoğurt (opsiyonel)", 0, "%3 yoğurt (30 g / 1 kg un) → pişme sonrası daha esnek yapı sağlar. Laktoz ve protein, suyu hapseder.");    // Malzemeler.
+  </script>
+  <script src="../script.js" defer></script>
+  <!-- JavaScript. -->
+</body>
+
+</html>
