@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <div class="recipe-title-container-single">
+          <div class="recipe-title-line-single">
+            <span></span>
+            <h1>LİMONLU KEK</h1>
+            <span></span>
+          </div>
+        </div>
+        <!--
+      <div class="recipe-title-container-double">
+      <div class="recipe-title-line-double">
+      <span></span>
+      <h1>TARİF BAŞLIĞI</h1>
+      <span></span>
+      </div>
+      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
+      </div>
+      -->
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/limonlu-kek.png" alt="" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="info-note">
+          <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+          belirtir.
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <!-- Genel Bakış: adımlardan önce gelir -->
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>...</p>
+            </div>
+            <!-- Genel Bakış. -->
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlıklar</strong>
+                  <ul>
+                    <li>
+                      Yumurta, limon, maden sodaası/gazoz gibi buzdolabında
+                      muhafaza edilen malzemeleri önceden çıkararak oda
+                      sıcaklığına getirin.
+                    </li>
+                    <li>Kek kalıbının pişirme kağıdını ayarlayın</li>
+                    <li>Cevizleri hazırlayın</li>
+                    <li>
+                      Limon kabuklarını beyaz kısımlarına geçmeden rendeleyin
+                    </li>
+                    <li>Limonu sıkıp suyunu süzün</li>
+                    <li>
+                      Kabartma tozu ve vanilin paketlerinin uçlarını kesin.
+                    </li>
+                    <li>Fırının tel ızgarasını yerleştirin</li>
+                    <li>Mikseri hazırlayın</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Yumurta ve Şekeri Çırpın</strong>
+                  <ul>
+                    <li>Yumurta ve şekeri bir kaba alın</li>
+                    <li>Köpüklenmeye başlayıp rengi açılana kadar çırpın.</li>
+                    <li>
+                      Bu aşamanın sonunda fırınınızı ön ısıtmaya alın
+                      (180-190°C)
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Sıvıları Ekleyin</strong>
+                  <ul>
+                    <li>Yağı koyun/li></li>
+                    <li>Limon suyunu ilave edin</li>
+                    <li>Soda/Gazoz'u ilave edip çırpın</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Katıları Ekleyin</strong>
+                  <ul>
+                    <li>
+                      Limon kabuğu rendesini ilave edin bir miktar daha çırpın
+                    </li>
+                    <li>
+                      Unu, kabartma tozunu, vanilini (eleyerek), tarçını ve tuzu
+                      ilave edip, nazikçe karıştırın, karıştırırken spatula
+                      tercih edin.
+                    </li>
+                    <li>
+                      Mikser kullanmak istiyorsanız da en düşük ayarda ve kısa
+                      süre karıştırınız
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Ceviz vs. Ekleyin</strong>
+                  <ul>
+                    <li>
+                      İsteğe bağlı, ceviz, meyve parçaları, kuru üzüm gibi
+                      eklemeleri yapıp,
+                    </li>
+                    <li>Bir-iki dakika daha çırpın.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Harcı Kalıba Boşaltın</strong>
+                  <ul>
+                    <li>
+                      Hazır olan kek harcını, pişirme kağıdı koyduğunuz kalıba
+                      boşaltın
+                    </li>
+                    <li>
+                      Harcı kalıba silme doldurmayın, yarısını geçmesin taşıyor
+                      sonra😞
+                    </li>
+                    <li>
+                      Harcı koyduktan sonra Kalıbı birkaç defa tezgaha vurarak
+                      havasını alın
+                    </li>
+                    <li>Bekletmeden fırına verin</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Pişirin</strong>
+                  <ul>
+                    <li>
+                      Tel ızgara üzeri kek kalıbı (Metal kek kalıbı tercih edin)
+                    </li>
+                    <li>
+                      Süre ve Sıcaklık: İlk 20 dk. 180°C sonraki 45 dk 160°C ve
+                      son olarak fırını kapadıkatan sonra kendi ısısı ile 5 dk.
+                      Toplam süre 1 saat 10 dk.
+                    </li>
+                    <li>
+                      Fan: Fan terih ederseniz kabarma işlemi biraz daha fazla
+                      olabilir fakat pişme esnasında içindeki nemi aldığı için
+                      çabuk bayatlar. İsteğe bağlı fanlı yada fansız
+                      pişirebilirsiniz.
+                    </li>
+                    <li>Raf: 2</li>
+                    <li>
+                      Pişirme sırasında çok gerekmedikçe fırının kapağını
+                      açmayın. Açmannız gerekiyorsa da ilk 20 dakika bunu
+                      yapmayın.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Soğutun</strong>
+                  <ul>
+                    <li>
+                      Kekiniz pişince fırın kapağını açıp biraz bekleyin. hemen
+                      almayın
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis Edin</strong>
+                  <ul>
+                    <li>
+                      İsteğe bağlı olarak, üzerine pudra şekeri, hindistan
+                      cevizi serperek servis edebilirsiniz.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <!-- Bilgi Notları: son adımdan sonra gelir -->
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>
+                    Kekinizi buzdolabı poşetinde ya da kapaklı bir saklama
+                    kabında muhafaza edebilirsiniz
+                  </li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>...</li>
+                  <li>...</li>
+                  <li>...</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Bilgi Notları. -->
+          </section>
+          <!-- Hazırlanışı. -->
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
+      addMainRow("Yumurta", "Yumurtayı kırıp, sadece içini tartınız. 3-4 adet");
+      addNormalRow("Şeker", 90, "Toz şeker");
+      addNormalRow("Yağ", 50, "Ayçiçek yağı");
+      addNormalRow(
+        "Soda/Gazoz",
+        120,
+        "Su kullanmayın. soda ya da gazoz kullanın.",
+      );
+      addNormalRow("Limon Suyu", 30, "...");
+      addNormalRow("Limon Kabuğu Rendesi", 10, "...");
+      addNormalRow(
+        "Un",
+        170,
+        "Kek yapımına özel unlardan, alternatif olarak genel amaçlı unlardan yada ekmek unlarından kullanabilirsiniz. Unu miktarının 3 de 1'i nişasta ile dığiştirilip formüle eklenecek.",
+      );
+      addNormalRow("Kabartma Tozu", 12, "...");
+      addNormalRow("Vanilin", 8, "...");
+      addNormalRow("Tuz", 0, "...");
+      addNormalRow(
+        "Tarçın",
+        0,
+        "İsteğe bağlı olarak çay kaşığının ucu ile bir miktar",
+      );
+      addNormalRow("ceviz, meyve parçaları", 27, "...");
+      addNormalRow(
+        "Üzerine Konulacaklar",
+        0,
+        "Tercihen üzerine, hindistan cevizi, pudra şekeri serpebilirsiniz. Miktar isteğe bağlıdır.",
+      );
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>
