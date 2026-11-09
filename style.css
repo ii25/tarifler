@@ -53,6 +53,14 @@
   --font-imza: CanelaBarkPersonal; /* imza */
   --font-ikon: "Font Awesome 6 Free", FontAwesome; /* arama ikonu */
 
+  /* Header yerleşimi (tarif sayfaları) */
+  /* logo ve arama kutusu sütunlarının en küçük genişliği (iki yan sütun hep eşit kalır, başlık ortada durur) */
+  --header-yan-min: 160px;
+  /* arama kutusunun en büyük genişliği; sayfa daraldıkça kutu kendiliğinden küçülür */
+  --arama-genislik: 200px;
+  /* mobil görünümde tarif başlığı satırının arka plan rengi */
+  --renk-mobil-baslik-arka: #3f3e4c;
+
   /* Renk değişkenleri: yalnızca birden fazla yerde kullanılan renkler.
      Tek yerde kullanılan renkler ilgili kuralın içinde durur. */
   --renk-beyaz: #ffffff;
@@ -365,6 +373,96 @@ body {
   background-color: #f1f1f11c;
 }
 /* Arama Kutusu. */
+/* Header Yerleşimi (tarif sayfaları; ana sayfanın .index-header'ı etkilenmez) */
+/* 3 sütun: logo (sola yaslı) | başlık | arama kutusu (sağa yaslı).
+   Yan sütunlar eşit genişlikte (1fr) olduğundan, logo veya arama kutusu ne kadar değişirse değişsin başlık tam ortada kalır. */
+.header .header-inner {
+  display: grid;
+  grid-template-columns: minmax(var(--header-yan-min), 1fr) auto minmax(var(--header-yan-min), 1fr);
+  grid-template-areas: "logo baslik arama";
+  grid-template-rows: minmax(0, 1fr); /* satır, header yüksekliği (50px) kadar olur: öğeler dikeyde tam ortalanır */
+  align-items: center;
+  column-gap: 20px;
+}
+.header .header-left {
+  grid-area: logo;
+  justify-content: flex-start;
+  min-width: 0;
+}
+.header .header-right {
+  grid-area: arama;
+  justify-content: flex-end;
+  min-width: 0;
+}
+.header .logo {
+  padding-right: 0;
+}
+.header .recipe-title-container-single,
+.header .recipe-title-container-double {
+  grid-area: baslik;
+  min-width: 0;
+}
+/* Başlığın yanındaki çizgiler: yer daralınca önce onlar küçülür, başlık yazısı kısalmaz */
+.header .recipe-title-line-single span,
+.header .recipe-title-line-double span {
+  width: 200px; /* başlık sütununun genişliğini belirler; boş öğenin kendi genişliği olmazsa çizgiler 0'a düşer */
+  flex: 0 1000 auto; /* yer daralınca önce çizgiler küçülür */
+  min-width: 0;
+}
+.header .recipe-title-line-single h1,
+.header .recipe-title-line-double h1 {
+  flex: 0 1 auto;
+}
+.header .recipe-title-line-single h1,
+.header .recipe-title-line-double h1,
+.header .recipe-title-sub-text {
+  white-space: nowrap;
+}
+/* Arama kutusu: en çok --arama-genislik kadar, yer daraldıkça küçülür */
+.header .search-container {
+  width: 100%;
+  max-width: var(--arama-genislik);
+  min-width: 0;
+}
+/* Mobil görünüm: üstte logo + arama kutusu, başlık alt satıra geçer */
+@media (max-width: 768px) {
+  .header .header-inner {
+    height: auto;
+    padding: 6px 1rem 0;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "logo arama"
+      "baslik baslik";
+  }
+  /* Başlık satırı: header'ın tam genişliğinde, farklı renkli bir şerit */
+  .header .recipe-title-container-single,
+  .header .recipe-title-container-double {
+    margin: 6px -1rem 0;
+    padding: 6px 1rem 8px;
+    background-color: var(--renk-mobil-baslik-arka);
+  }
+  .header .recipe-title-line-single h1,
+  .header .recipe-title-line-double h1,
+  .header .recipe-title-sub-text {
+    white-space: normal;
+  }
+  /* başlık yazısı kendi genişliğinde kalır (çizgiler küçülür); satıra sığmayacak kadar uzunsa alt satıra sarar */
+  .header .recipe-title-line-single h1,
+  .header .recipe-title-line-double h1 {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+  .header .recipe-title-line-single h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+  .header .recipe-title-line-double h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+}
+/* Header Yerleşimi. */
 /* imza */
 .imza {
   font-family: var(--font-imza);
