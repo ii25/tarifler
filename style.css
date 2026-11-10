@@ -698,28 +698,50 @@ td {
   text-align: left;
   padding-left: 30px;
 }
+/* ===== MALZEME SATIRI DÜZENİ =====
+   Her satır (<tr>) bir ızgaradır. Sütunlar soldan sağa:
+     30px boşluk | malzeme adı (kalan alan) | 30px boşluk | gram sonucu (90px) | 30px boşluk
+   Satırın ilk satırında malzeme adı ile gram sonucu yan yana durur. Akordiyon açılınca açıklama, ızgaranın ikinci satırına
+   (adın solundan gramın sağına kadar, tam genişlikte) açılır. Gram sonucu ilk satırda sabit kalır, aşağı inmez ve açıklamayı daraltmaz.
+   Ayarlamak için: kenar boşlukları = baştaki ve sondaki 30px; gram sütunu genişliği = 90px.
+   HTML yapısı (recipe.js) değişmedi: ilk <td> "display: contents" ile kutusunu kaybeder, içindeki .cell-header ve .normal-text ızgaraya doğrudan yerleşir. */
+.malzeme-tablosu,
+.malzeme-tablosu tbody {
+  display: block;
+}
+table.malzeme-tablosu tr {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 30px 90px 30px;
+  padding-left: 0; /* genel "tr { padding-left: 20px }" kuralını bu tablo için iptal eder; soldaki boşluk ızgaranın ilk sütunudur */
+  border-bottom: 1px solid var(--renk-cizgi);
+}
 .malzeme-tablosu td:nth-child(1) {
-  width: calc(
-    100% - 120px
-  ); /* İkinci sütun sabit 120px, birinci sütun geri kalan alan */
-  min-width: calc(100% - 120px);
-  max-width: calc(100% - 120px);
+  display: contents;
+}
+.malzeme-tablosu td:nth-child(1) > .cell-header {
+  grid-column: 2;
+  grid-row: 1;
+}
+.malzeme-tablosu td:nth-child(1) > .normal-text {
+  grid-column: 2 / 5; /* açıklama: malzeme adının solundan gram sonucunun sağına kadar */
+  grid-row: 2;
 }
 .malzeme-tablosu td:nth-child(2) {
-  width: 150px; /* Sabit genişlik */
+  grid-column: 4; /* gram sonucu: ilk satırda, sağda; açıklama açılınca yerinden oynamaz */
+  grid-row: 1;
+  display: flex;
+  align-items: center; /* ilk satırın (malzeme adı satırının) dikey ortasında */
+  justify-content: flex-end;
+  padding: 0;
   font-size: var(--malzeme-yazi);
   font-weight: normal;
   color: #666666;
-  background-color: var(--renk-beyaz);
   text-align: right;
-  padding-right: 30px;
+  white-space: nowrap;
 }
 /* Tablo satırları için hover efekti */
-table.malzeme-tablosu tr:hover td {
+table.malzeme-tablosu tr:hover {
   background-color: #f6f6f6b2;
-}
-table.malzeme-tablosu tr {
-  border-bottom: 1px solid var(--renk-cizgi);
 }
 /* Hücre içi stil ayarları */
 .cell-header {
@@ -758,6 +780,7 @@ table.malzeme-tablosu tr {
 
 /* Input alanı ve "g" yazısını hizalamak için kapsayıcı */
 .input-container {
+  width: 100%; /* gram sütununun tamamı */
   display: flex;
   align-items: center;
   /* input ve span'ı dikey olarak ortalar */
