@@ -101,9 +101,13 @@
   /* Ana başlıkların (Genel Bakış, Ön Hazırlık/Adım/Servis, Bilgi Notları) altındaki boşluk */
   --baslik-alt-bosluk: 10px;
 
-  /* Mobilde (kartlar alt alta) tarif görseli oyuğunun yay yarıçapı: küçüldükçe oyuk daralır, büyüdükçe yassılaşır.
-     Masaüstünde .card içindeki --R (493px) kullanılır. */
-  --oyuk-yaricap: 260px;
+  /* ===== TARİF GÖRSELİ OYUĞU (kartların üstündeki yuvarlak kesik) =====
+     Masaüstü: kartlar yan yana; oyuk iki kartın tam ortasındadır, her kart oyuğun yarısını taşır (daire yayı).
+     Mobil (768px ve altı): kartlar alt alta; oyuk üstteki kartın ortasındadır ve kartın iki kenarında biter.
+     Bu iki değişken MASAÜSTÜ değerleridir; mobil değeri aşağıdaki "@media (max-width: 768px) { :root {...} }" bloğundadır.
+     Oyuğun görsele göre konumu için ayrıca .card içindeki margin-top ve .recipe-image içindeki margin-bottom'a bakın. */
+  --oyuk-derinlik: 56px; /* oyuğun en derin noktası, kartın üst kenarından bu kadar aşağıdadır. Büyüdükçe oyuk derinleşir, görsel daha aşağı oturabilir */
+  --oyuk-yaricap: 493px; /* yalnızca masaüstü: oyuğu çizen dairenin yarıçapı. Büyüdükçe yay yassılaşır ve oyuk genişler, küçüldükçe daralır */
 
   /* Tarif görselinin yüksekliği. auto = PNG dosyasının kendi boyutu. Örn: 320px
      Genişlik oranı koruyarak kendiliğinden ayarlanır. Tüm tariflerde geçerli olur;
@@ -122,6 +126,7 @@
     --arama-yazi: 16px; /* iOS Safari 16px altındaki kutuya odaklanınca sayfayı yakınlaştırır */
     --arama-yukseklik: 40px;
     --kart-ikon: 32px;
+    --oyuk-derinlik: 60px; /* mobil: oyuğun derinliği. Oyuğun genişliği ayarlanmaz; kartın iki kenarına kadar uzanır (aşağıda .card:first-child::before) */
     --kart-baslik-yazi: 18px;
     --malzeme-yazi: 17px;
     --metin-yazi: 16px;
@@ -524,12 +529,12 @@ body {
 .recipe-image {
   position: relative;
   display: block;
-  width: max-content; /* görselin kendi genişliği kadar, daralmaz */
+  width: max-content; /* görselin kendi genişliği kadar (mobilde ekrandan taşmaması için dosya sonundaki mobil bloğa bakın) */
   max-width: none;
   flex: none; /* flex/grid içindeyse sıkışmasın */
   margin-inline: auto; /* yatayda ortala */
   margin-top: 10px;
-  margin-bottom: -10px;
+  margin-bottom: -10px; /* altındaki kartın görselle örtüşmesinin bir parçası (kartın margin-top: -30px değeriyle birlikte çalışır) */
   opacity: 0;
   transform-origin: center; /* Animasyonun merkezden başlamasını sağlar */
   animation: bounceZoomIn 0.9s ease-out forwards;
@@ -570,12 +575,12 @@ body {
 
 /* Tarif Görseli. */
 .card {
-  --R: 493px; /* dairenin yarıçapı (büyüdükçe yay yassılaşır) */
-  --d: 56px; /* oyuğun derinliği */
-  --m: 0.8rem; /* kartın margin değeri, merkezi boşluğun ortasına getirir */
+  --R: var(--oyuk-yaricap); /* oyuğu çizen dairenin yarıçapı (:root'tan; büyüdükçe yay yassılaşır). Mobilde kullanılmaz */
+  --d: var(--oyuk-derinlik); /* oyuğun derinliği (:root'tan; masaüstü ve mobil için ayrı değer) */
+  --m: 0.8rem; /* kartın margin değeri, merkezi boşluğun ortasına getirir (yalnızca masaüstü oyuğu bunu kullanır) */
   position: relative;
   margin: var(--m);
-  margin-top: -30px;
+  margin-top: -30px; /* kart yukarı çıkarak görselin altıyla örtüşür; görsel oyuğun içine bu sayede oturur. Büyütürseniz kart görsele daha çok girer */
   padding-bottom: 10px;
   padding-right: 7%;
   padding-left: 7%;
@@ -590,7 +595,10 @@ body {
   inset: 0;
   z-index: -1;
   border-radius: 10px;
-  /* varsayılan: sol kart, merkez sağ kenarın dışında ve üstte */
+  /* Masaüstü oyuğu: daire (yarıçap --R). Dairenin merkezi kartın üstünde, iki kartın tam ortasındadır.
+     Sol kartta merkez sağ kenarın dışında (burada), sağ kartta sol kenarın dışında (aşağıdaki .card:last-child::before).
+     --cx merkezin yatay konumudur; oyuğu sağa/sola kaydırmak için bunu değiştirin.
+     Mobilde bu radial-gradient yerine, dosyanın sonundaki .card:first-child::before kullanılır. */
   --cx: calc(100% + var(--m));
   /* Oyuklu kart şekli: beyaz dolgu, daire içi şeffaf.
      Gölge yalnızca bu şekle uygulanır; kartın içindeki ikon ve yazılar gölgeden etkilenmez. */
@@ -1294,22 +1302,31 @@ ul li::marker {
     padding-bottom: 20px;
   }
   .card {
-    --R: var(--oyuk-yaricap); /* oyuğun yay yarıçapı; küçüldükçe oyuk daralır ve derinleşir */
-    --m: 0.6rem;
+    --m: 0.6rem; /* kartın dış boşluğu (mobil) */
     height: auto;
     flex: none;
     padding-top: 14px;
     padding-right: 6%;
     padding-left: 6%;
   }
-  /* üst kart: oyuk kartın tam ortasında */
+  /* üst kart: oyuk kartın tam ortasında, iki kenarda biter */
   .card:first-child {
     padding-top: calc(var(--d) + 12px); /* başlık oyuğun altında başlasın */
   }
   .card:first-child::before {
-    --cx: 50%;
+    /* Mobil oyuğu: elips. Kart genişliği ne olursa olsun kartın üst köşelerinde (iki kenarında) biter,
+       en derin noktası kartın tam ortasında ve --oyuk-derinlik kadar aşağıdadır.
+       Ayarlanacak tek değer :root'taki mobil --oyuk-derinlik'tir (daha derin/sığ oyuk için).
+       Sayılar (150%, 17.49, -16.49) elipsin köşelerden geçmesini sağlayan sabit orandır; değiştirmeyin.
+       Oyuğun kenarlardaki eğimini değiştirmek isterseniz: yatay yarıçapı (150%) büyütüp dikey çarpanı (17.49 ve -16.49)
+       şu formüle göre yeniden hesaplayın: çarpan = 1 / (1 - karekök(1 - 1/s²)), s = yatay yarıçap / (kart genişliği / 2); burada s = 3. */
+    background: radial-gradient(
+      ellipse 150% calc(var(--oyuk-derinlik) * 17.49) at 50% calc(var(--oyuk-derinlik) * -16.49),
+      transparent 100%,
+      var(--renk-beyaz) calc(100% + 0.5px)
+    );
   }
-  /* alt kart: oyuksuz, düz beyaz */
+  /* alt kart: oyuksuz, düz beyaz (görsel oyuğu yalnızca üst kartta olur) */
   .card:last-child {
     margin-top: 0;
   }
@@ -1334,3 +1351,15 @@ ul li::marker {
   }
 }
 /* Mobil Kart Düzeni. */
+/* Mobil tarif görseli: ekran genişliğini aşmasın (en/boy oranı korunur) */
+@media (max-width: 768px) {
+  .recipe-image {
+    max-width: calc(100% - 20px); /* ekranın iki yanında 10'ar px boşluk kalır */
+  }
+  .recipe-image > img {
+    height: auto; /* yükseklik görselin oranından gelir */
+    max-height: var(--gorsel-yukseklik); /* masaüstündeki gibi en çok bu yükseklik (:root --gorsel-yukseklik) */
+    max-width: 100%; /* genişlik ekrana sığmıyorsa görsel oranıyla birlikte küçülür */
+  }
+}
+/* Mobil tarif görseli. */
