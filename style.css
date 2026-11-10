@@ -61,6 +61,27 @@
   /* mobil görünümde tarif başlığı satırının arka plan rengi */
   --renk-mobil-baslik-arka: #3f3e4c;
 
+  /* Yazı ve ikon boyutları (masaüstü değerleri; mobil değerleri aşağıdaki @media bloğunda) */
+  --logo-ikon: 36px;
+  --logo-yazi: 28px;
+  --baslik-yazi: 23px; /* tarif başlığı */
+  --baslik-harf-araligi: 2px;
+  --alt-yazi: 13px; /* başlık alt açıklaması */
+  --arama-yazi: 16px;
+  --arama-yukseklik: 35px;
+  --kart-ikon: 44px; /* Malzemeler / Hazırlanışı ikonları */
+  --kart-baslik-yazi: 20px;
+  --malzeme-yazi: 18px; /* malzeme adı ve gram sonucu */
+  --metin-yazi: 17px; /* açıklama, adım ve not metinleri */
+  --adim-baslik-yazi: 19px;
+  --adim-no: 32px; /* adım numarası rozeti */
+  --miktar-yazi: 20px; /* ana malzeme miktar kutusu */
+  --dugme-yazi: 16px; /* hidrasyon ve Değiştir düğmesi */
+  --dugme-yukseklik: 26px; /* mobilde büyür; satır yüksekliği değişmesin diye kenar boşluğu otomatik hesaplanır */
+  --dugme-ikon: 16px;
+  --dugme-ikon-genislik: 34px; /* Değiştir düğmesinin simge hali */
+  --not-yazi: 14px; /* bilgi satırı */
+
   /* Renk değişkenleri: yalnızca birden fazla yerde kullanılan renkler.
      Tek yerde kullanılan renkler ilgili kuralın içinde durur. */
   --renk-beyaz: #ffffff;
@@ -80,11 +101,39 @@
   /* Ana başlıkların (Genel Bakış, Ön Hazırlık/Adım/Servis, Bilgi Notları) altındaki boşluk */
   --baslik-alt-bosluk: 10px;
 
+  /* Mobilde (kartlar alt alta) tarif görseli oyuğunun yay yarıçapı: küçüldükçe oyuk daralır, büyüdükçe yassılaşır.
+     Masaüstünde .card içindeki --R (493px) kullanılır. */
+  --oyuk-yaricap: 260px;
+
   /* Tarif görselinin yüksekliği. auto = PNG dosyasının kendi boyutu. Örn: 320px
      Genişlik oranı koruyarak kendiliğinden ayarlanır. Tüm tariflerde geçerli olur;
      tek bir sayfa için sayfadaki
      <div class="recipe-image" style="--gorsel-yukseklik: 260px"> ile ezilebilir. */
   --gorsel-yukseklik: 130px;
+}
+/* Mobil yazı ve ikon boyutları (yalnızca değişkenlerin değerleri değişir) */
+@media (max-width: 768px) {
+  :root {
+    --logo-ikon: 28px;
+    --logo-yazi: 22px;
+    --baslik-yazi: 18px;
+    --baslik-harf-araligi: 1px;
+    --alt-yazi: 12px;
+    --arama-yazi: 16px; /* iOS Safari 16px altındaki kutuya odaklanınca sayfayı yakınlaştırır */
+    --arama-yukseklik: 40px;
+    --kart-ikon: 32px;
+    --kart-baslik-yazi: 18px;
+    --malzeme-yazi: 17px;
+    --metin-yazi: 16px;
+    --adim-baslik-yazi: 17px;
+    --adim-no: 28px;
+    --miktar-yazi: 18px;
+    --dugme-yazi: 14px;
+    --dugme-yukseklik: 34px;
+    --dugme-ikon: 14px;
+    --dugme-ikon-genislik: 40px;
+    --not-yazi: 13px;
+  }
 }
 /* Fontlar. */
 
@@ -226,12 +275,12 @@ body {
   padding-right: 70px;
 }
 .logo-icon {
-  height: 37px;
-  width: 37px;
+  height: var(--logo-ikon);
+  width: var(--logo-ikon);
   margin-right: 4px;
 }
 .logo-text {
-  font-size: 28px;
+  font-size: var(--logo-yazi);
   color: var(--renk-beyaz);
   filter: drop-shadow(0 0 20px rgba(14, 0, 65, 0.6)) drop-shadow(0 1px 2px rgba(9, 0, 41, 0.35));
 }
@@ -263,15 +312,15 @@ body {
   gap: 18px;
 }
 .recipe-title-line-single h1 {
-  font-size: 23px;
-  letter-spacing: 2px;
+  font-size: var(--baslik-yazi);
+  letter-spacing: var(--baslik-harf-araligi);
   font-family: var(--font-dar);
   font-weight: 500;
 }
 .recipe-title-line-double h1 {
   margin: 0;
-  font-size: 23px;
-  letter-spacing: 2px;
+  font-size: var(--baslik-yazi);
+  letter-spacing: var(--baslik-harf-araligi);
   font-family: var(--font-dar);
   font-weight: 500;
   margin-top: 9px;
@@ -297,7 +346,7 @@ body {
 }
 .recipe-title-sub-text {
   margin-top: 6px;
-  font-size: 12px;
+  font-size: var(--alt-yazi);
   letter-spacing: 3px;
   font-family: var(--font-ince);
   color: #ffffffad;
@@ -310,11 +359,11 @@ body {
 #searchInput {
   width: 100%;
   padding: 6px 10px;
-  font-size: 15px;
+  font-size: var(--arama-yazi);
   border: 1px solid #4d4e55;
   border-radius: 10px;
   outline: none;
-  height: 35px;
+  height: var(--arama-yukseklik);
   margin: 5px 0;
   background-color: #2b2b33a2;
   color: var(--renk-beyaz);
@@ -455,11 +504,9 @@ body {
   }
   .header .recipe-title-line-single h1 {
     margin: 0;
-    font-size: 20px;
   }
   .header .recipe-title-line-double h1 {
     margin: 0;
-    font-size: 20px;
   }
 }
 /* Header Yerleşimi. */
@@ -580,12 +627,12 @@ body {
   animation: slideInFromLeft 0.5s ease-out forwards; /* 1 saniyelik animasyon */
 }
 .icon-mal {
-  width: 55px;
-  height: 55px;
+  width: var(--kart-ikon);
+  height: var(--kart-ikon);
   opacity: 0.7;
 }
 .text-mal {
-  font-size: 20px;
+  font-size: var(--kart-baslik-yazi);
   font-weight: 500;
   color: var(--renk-baslik);
   display: flex;
@@ -599,12 +646,12 @@ body {
   animation: slideInFromRight 0.5s ease-out forwards; /* 1 saniyelik animasyon */
 }
 .icon-haz {
-  width: 42px;
-  height: 53px;
+  width: calc(var(--kart-ikon) * 0.76);
+  height: calc(var(--kart-ikon) * 0.96);
   opacity: 0.7;
 }
 .text-haz {
-  font-size: 20px;
+  font-size: var(--kart-baslik-yazi);
   font-weight: 500;
   color: var(--renk-baslik);
   display: flex;
@@ -652,7 +699,7 @@ td {
 }
 .malzeme-tablosu td:nth-child(2) {
   width: 150px; /* Sabit genişlik */
-  font-size: 19px;
+  font-size: var(--malzeme-yazi);
   font-weight: normal;
   color: #666666;
   background-color: var(--renk-beyaz);
@@ -668,7 +715,7 @@ table.malzeme-tablosu tr {
 }
 /* Hücre içi stil ayarları */
 .cell-header {
-  font-size: 19px;
+  font-size: var(--malzeme-yazi);
   text-transform: capitalize;
   color: var(--renk-siyah);
   padding: 20px 0;
@@ -694,7 +741,7 @@ table.malzeme-tablosu tr {
   transition: max-height 0.4s ease-out;
   display: block;
   color: #4d4d4d;
-  font-size: 17px;
+  font-size: var(--metin-yazi);
 }
 
 .normal-text.active::after {
@@ -719,7 +766,7 @@ table.malzeme-tablosu tr {
   outline: none; /* Odak çizgisi yok */
   color: var(--renk-miktar);
   background-color: rgba(253, 253, 253, 0);
-  font-size: 20px; /* Girilen rakamların yazı boyutu */
+  font-size: var(--miktar-yazi); /* Girilen rakamların yazı boyutu */
   text-align: right; /* Rakamları sağdan başlat */
   padding-top: 19px;
   padding-bottom: 19px;
@@ -728,7 +775,7 @@ table.malzeme-tablosu tr {
 }
 /* Ana malzeme satırındaki "g": diğer satırlardaki sonuç metniyle aynı boyut ve sağ kenar hizası */
 .unit {
-  font-size: 19px;
+  font-size: var(--malzeme-yazi);
   color: var(--renk-miktar);
   line-height: 26px;
   font-weight: normal;
@@ -738,7 +785,7 @@ table.malzeme-tablosu tr {
 }
 /* Placeholder (Miktar girin) yazısı için stil */
 #anaMalzeme::placeholder {
-  font-size: 17px; /* Placeholder yazısının boyutu */
+  font-size: var(--metin-yazi); /* Placeholder yazısının boyutu */
   color: #349e5d; /* Placeholder yazısı rengi */
   text-align: center; /* Placeholder solda kalacak */
 }
@@ -768,12 +815,12 @@ table.malzeme-tablosu tr {
 /* Dropdown satır */
 .hidrasyon {
   box-sizing: border-box;
-  height: 26px; /* .cell-header satır yüksekliğiyle (26px) aynı: satırı yükseltmez */
-  line-height: 24px; /* kenarlıklar düşünce 24px kalır, yazı dikey ortalı */
+  height: var(--dugme-yukseklik); /* .cell-header satır yüksekliğiyle (26px) aynı: satırı yükseltmez */
+  line-height: calc(var(--dugme-yukseklik) - 2px); /* kenarlıklar düşünce 24px kalır, yazı dikey ortalı */
   margin-left: min(10px, 25%); /* etiketle hidrasyon kutusu arasındaki boşluk */
   padding: 0 8px;
   color: #b7b7b7;
-  font-size: 16px;
+  font-size: var(--dugme-yazi);
   font-weight: normal;
   text-decoration: none;
   background-color: #f7f7f7;
@@ -792,7 +839,7 @@ table.malzeme-tablosu tr {
 .custom-input {
   box-sizing: border-box;
   width: 45px;
-  height: 26px; /* hidrasyon etiketiyle aynı yükseklik */
+  height: var(--dugme-yukseklik); /* hidrasyon etiketiyle aynı yükseklik */
   padding: 0;
   text-align: center;
   color: #999999; /* girilen rakam: % işaretinden biraz daha koyu */
@@ -805,16 +852,16 @@ table.malzeme-tablosu tr {
 /* Seçenekli malzeme satırının "değiştir" düğmesi: yazı tipi ve renk düzeni hidrasyon kutusuyla aynı */
 .degistir {
   box-sizing: border-box;
-  height: 26px; /* .cell-header satır yüksekliğiyle (26px) aynı: satırı yükseltmez */
+  height: var(--dugme-yukseklik); /* .cell-header satır yüksekliğiyle (26px) aynı: satırı yükseltmez */
   margin-left: min(10px, 25%); /* başlıkla düğme arasındaki boşluk */
   padding: 0 8px;
   color: #b7b7b7;
   font-family: inherit;
-  font-size: 16px;
+  font-size: var(--dugme-yazi);
   font-weight: normal;
   letter-spacing: inherit;
   text-transform: inherit;
-  line-height: 24px;
+  line-height: calc(var(--dugme-yukseklik) - 2px);
   background-color: #f7f7f7;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
@@ -838,12 +885,19 @@ table.malzeme-tablosu tr {
   box-shadow: 0 0 0 2px #c8dbe0;
 }
 
+/* Düğme/kutu 26px'ten büyükse (mobil) satır yüksekliği değişmesin: fark, üst ve alt kenar boşluğundan düşülür */
+.hidrasyon,
+.custom-input,
+.degistir {
+  margin-top: calc((26px - var(--dugme-yukseklik)) / 2);
+  margin-bottom: calc((26px - var(--dugme-yukseklik)) / 2);
+}
 /* Satır daralınca düğme ve hidrasyon kutusu yazısız, simge olarak görünür (recipe.js kendiliğinden .ikon ekler) */
 .degistir .ikon-simge,
 .hidrasyon .ikon-simge {
   display: none;
-  width: 16px;
-  height: 16px;
+  width: var(--dugme-ikon);
+  height: var(--dugme-ikon);
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
@@ -860,7 +914,7 @@ table.malzeme-tablosu tr {
   padding: 0;
 }
 .degistir.ikon {
-  width: 34px;
+  width: var(--dugme-ikon-genislik);
 }
 .hidrasyon.ikon {
   width: 32px;
@@ -917,8 +971,8 @@ ol.steps > li {
 /* Numara rozeti */
 ol.steps > li::before {
   content: counter(step);
-  min-width: 32px;
-  height: 32px;
+  min-width: var(--adim-no);
+  height: var(--adim-no);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -929,8 +983,8 @@ ol.steps > li::before {
   border-radius: 29%;
   flex-shrink: 0;
   transition: all 0.5s ease;
-  margin-right: -25px;
-  margin-top: 4px;
+  margin-right: calc(7px - var(--adim-no));
+  margin-top: calc((38px - var(--adim-no)) / 2 + 1px);
 }
 
 /* İçerik alanı */
@@ -949,14 +1003,14 @@ ol.steps > li::before {
 }
 
 .step-content ul li {
-  font-size: 17px;
+  font-size: var(--metin-yazi);
   padding-bottom: 1px;
 }
 
 /* Başlık (li içindeki strong) */
 ol.steps strong {
   display: block;
-  font-size: 19px;
+  font-size: var(--adim-baslik-yazi);
   /* madde işareti ilk satırı 4px yükselttiği için 4px düşülür: görünen boşluk bölüm başlıklarıyla aynı olur */
   margin-bottom: calc(var(--baslik-alt-bosluk) - 4px);
   color: var(--renk-siyah);
@@ -985,14 +1039,14 @@ ol.steps strong {
 .bilgi-notlari h3 {
   margin: 0 0 var(--baslik-alt-bosluk);
   line-height: 38px; /* adım başlıklarıyla aynı satır yüksekliği: başlık-içerik arası her yerde aynı */
-  font-size: 19px;
+  font-size: var(--adim-baslik-yazi);
   font-weight: bold;
   letter-spacing: 0.3px;
   color: var(--renk-siyah);
 }
 .genel-bakis p {
   margin: 0;
-  font-size: 17px;
+  font-size: var(--metin-yazi);
   line-height: 1.6;
 }
 .not-grubu {
@@ -1001,7 +1055,7 @@ ol.steps strong {
 .not-grubu h4 {
   margin: 0 0 4px;
   line-height: 1.6;
-  font-size: 17px;
+  font-size: var(--metin-yazi);
   font-weight: bold;
   color: #666666; /* gri alt başlık (beyaz zeminde kontrast 5,7:1) */
 }
@@ -1011,7 +1065,7 @@ ol.steps strong {
   list-style: disc;
 }
 .not-grubu ul li {
-  font-size: 17px;
+  font-size: var(--metin-yazi);
   line-height: 1.6;
   padding-bottom: 1px;
 }
@@ -1181,7 +1235,7 @@ ul li::marker {
   display: block;
   margin-top: 20px;
   text-align: center;
-  font-size: 14px;
+  font-size: var(--not-yazi);
   line-height: 1.6;
   color: #a9a9a9;
   font-family: var(--font-ana);
@@ -1222,3 +1276,61 @@ ul li::marker {
   );
   mask-image: linear-gradient(to bottom, #000 calc(100% - 40px), transparent);
 }
+
+/* Mobil Kart Düzeni (768px ve altı) */
+/* Kartlar alt alta dizilir. Tarif görselinin oyuğu yalnızca üstteki kartta (Malzemeler) kalır ve ortalanır;
+   alttaki kart (Hazırlanışı) düz, yuvarlak köşeli bir karttır.
+   Kartlar içeriğe göre uzar ve sayfa kaydırılır (masaüstündeki "sayfa kaydırma kapalı, kart içinde kaydır" düzeni mobilde uygun değil). */
+@media (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  body {
+    overflow: visible;
+  }
+  .container {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .card {
+    --R: var(--oyuk-yaricap); /* oyuğun yay yarıçapı; küçüldükçe oyuk daralır ve derinleşir */
+    --m: 0.6rem;
+    height: auto;
+    flex: none;
+    padding-top: 14px;
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+  /* üst kart: oyuk kartın tam ortasında */
+  .card:first-child {
+    padding-top: calc(var(--d) + 12px); /* başlık oyuğun altında başlasın */
+  }
+  .card:first-child::before {
+    --cx: 50%;
+  }
+  /* alt kart: oyuksuz, düz beyaz */
+  .card:last-child {
+    margin-top: 0;
+  }
+  .card:last-child::before {
+    background: var(--renk-beyaz);
+  }
+  /* Kart başlığı (ikon + yazı): masaüstündeki gibi kartın dışına değil, kartın içine, üste yerleşir */
+  .icon-text-mal,
+  .icon-text-haz {
+    position: static;
+    margin-bottom: 0;
+  }
+  /* Kart içinde kaydırma yok: liste kartla birlikte uzar */
+  .table-container,
+  .info-note + .table-container {
+    max-height: none;
+    overflow-y: visible;
+  }
+  .table-container.devam-var {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+/* Mobil Kart Düzeni. */
