@@ -114,6 +114,8 @@
      Bu iki değişken MASAÜSTÜ değerleridir; mobil değeri aşağıdaki "@media (max-width: 768px) { :root {...} }" bloğundadır.
      Oyuğun görsele göre konumu için ayrıca .card içindeki margin-top ve .recipe-image içindeki margin-bottom'a bakın. */
   --oyuk-derinlik: 56px; /* oyuğun en derin noktası, kartın üst kenarından bu kadar aşağıdadır. Büyüdükçe oyuk derinleşir, görsel daha aşağı oturabilir */
+  --gorsel-kart-bosluk: 0px; /* TARİF GÖRSELİ İLE KART ARASINDAKİ BOŞLUK: masaüstünde ek boşluk yok (0px). Artırırsanız kartlar aşağı iner, görselle kart arası açılır.
+     Dikkat: masaüstünde sayfa kaydırması kapalı olduğu için kartlar çok aşağı inerse alt kısım ekrandan taşar. Mobil değeri aşağıdaki @media bloğundaki :root'ta */
   --oyuk-yaricap: 493px; /* yalnızca masaüstü: oyuğu çizen dairenin yarıçapı. Büyüdükçe yay yassılaşır ve oyuk genişler, küçüldükçe daralır */
 
   /* Tarif görselinin yüksekliği. auto = PNG dosyasının kendi boyutu. Örn: 320px
@@ -133,6 +135,7 @@
     --arama-yazi: 16px; /* iOS Safari 16px altındaki kutuya odaklanınca sayfayı yakınlaştırır */
     --arama-yukseklik: 40px;
     --kart-ikon: 32px;
+    --gorsel-kart-bosluk: 16px; /* MOBİL: tarif görseli ile Malzemeler kartı arasındaki ek boşluk. Artırırsanız kart aşağı iner, görselle kart arası açılır; 0px yaparsanız eski görünüme döner */
     --oyuk-derinlik: 40px; /* mobil: oyuğun derinliği. Oyuğun genişliği ayarlanmaz; kartın iki kenarına kadar uzanır (aşağıda .card:first-child::before) */
     --kart-baslik-yazi: 18px;
     --malzeme-yazi: 17px;
@@ -592,7 +595,10 @@ body {
   --m: 0.8rem; /* kartın margin değeri, merkezi boşluğun ortasına getirir (yalnızca masaüstü oyuğu bunu kullanır) */
   position: relative;
   margin: var(--m);
-  margin-top: -30px; /* kart yukarı çıkarak görselin altıyla örtüşür; görsel oyuğun içine bu sayede oturur. Büyütürseniz kart görsele daha çok girer */
+  /* Kart yukarı çıkarak görselin altıyla örtüşür (-30px); görsel oyuğun içine bu sayede oturur.
+     Görsel ile kart arasındaki boşluğu artırmak için bu sayıyı değil, :root'taki --gorsel-kart-bosluk değişkenini değiştirin
+     (masaüstü ve mobil için ayrı değerleri vardır). Değişken eklenen boşluktur: -30px + değişken. */
+  margin-top: calc(-30px + var(--gorsel-kart-bosluk));
   padding-bottom: 10px;
   padding-right: var(--kart-ic-yan);
   padding-left: var(--kart-ic-yan);
