@@ -81,6 +81,7 @@
   --dugme-ikon: 16px;
   --dugme-ikon-genislik: 34px; /* Değiştir düğmesinin simge hali */
   --not-yazi: 14px; /* bilgi satırı */
+  --not-ust-bosluk: 22px; /* BİLGİ SATIRININ ÜST BOŞLUĞU ("Tüm malzemelerde doğal ve taze olanları..." satırının üstündeki boşluk). Azaltırsanız satır yukarı çıkar; masaüstü değeri. Mobil değeri @media bloğundaki :root'ta */
 
   /* Yan boşluklar (masaüstü değerleri; mobil değerleri aşağıdaki @media (max-width: 768px) :root bloğunda) */
   --sayfa-yan-bosluk: 10px; /* ekranın kenarı ile kartlar arasındaki boşluk (.container) */
@@ -148,6 +149,7 @@
     --dugme-ikon: 14px;
     --dugme-ikon-genislik: 40px;
     --not-yazi: 13px;
+    --not-ust-bosluk: 16px; /* MOBİL: bilgi satırının üst boşluğu (masaüstü değeri yukarıdaki :root'ta) */
     --sayfa-yan-bosluk: 4px;
     --kart-ic-yan: 3%;
     --satir-kenar: 14px;
@@ -1282,13 +1284,13 @@ ul li::marker {
    İki kartta da aynı sınıfı kullandığı için iki kartın içeriği aynı hizadan başlar. */
 .info-note {
   display: block;
-  margin-top: 20px;
+  margin-top: 0; /* üst boşluk artık padding'in üst değerinden (--not-ust-bosluk) gelir */
   text-align: center;
   font-size: var(--not-yazi);
   line-height: 1.6;
   color: #a9a9a9;
   font-family: var(--font-ana);
-  padding: 20px 30px;
+  padding: var(--not-ust-bosluk) 30px 20px; /* üst: --not-ust-bosluk (:root'tan ayarlanır) | yanlar: 30px | alt: 20px */
   border-bottom: 1px solid var(--renk-cizgi);
 }
 .info-note:empty::before {
@@ -1312,7 +1314,7 @@ ul li::marker {
 }
 .info-note + .table-container {
   margin-top: 0;
-  max-height: calc(90% - 64px); /* bilgi satırının yüksekliği kadar daralt */
+  max-height: calc(90% - 24px - var(--not-ust-bosluk)); /* bilgi satırının yüksekliği kadar daralt (üst boşluk değişince liste de buna uyar) */
 }
 
 /* Kaydırma ipucu: kartın altında devam eden içerik varsa alt kenar hafifçe solar.
@@ -1349,7 +1351,7 @@ ul li::marker {
     padding-top: 14px; /* yan boşluklar :root'taki --kart-ic-yan'dan gelir */
   }
   .info-note {
-    padding: 16px 14px;
+    padding: var(--not-ust-bosluk) 14px 16px; /* üst: --not-ust-bosluk (mobil değeri) | yanlar: 14px | alt: 16px */
   }
   /* Gram sütunu dar olduğu için miktar kutusundaki ipucu yazısı küçülür */
   #anaMalzeme::placeholder {
