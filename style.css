@@ -133,7 +133,7 @@
     --arama-yazi: 16px; /* iOS Safari 16px altındaki kutuya odaklanınca sayfayı yakınlaştırır */
     --arama-yukseklik: 40px;
     --kart-ikon: 32px;
-    --oyuk-derinlik: 60px; /* mobil: oyuğun derinliği. Oyuğun genişliği ayarlanmaz; kartın iki kenarına kadar uzanır (aşağıda .card:first-child::before) */
+    --oyuk-derinlik: 40px; /* mobil: oyuğun derinliği. Oyuğun genişliği ayarlanmaz; kartın iki kenarına kadar uzanır (aşağıda .card:first-child::before) */
     --kart-baslik-yazi: 18px;
     --malzeme-yazi: 17px;
     --metin-yazi: 16px;
