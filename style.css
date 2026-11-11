@@ -82,6 +82,13 @@
   --dugme-ikon-genislik: 34px; /* Değiştir düğmesinin simge hali */
   --not-yazi: 14px; /* bilgi satırı */
 
+  /* Yan boşluklar (masaüstü değerleri; mobil değerleri aşağıdaki @media (max-width: 768px) :root bloğunda) */
+  --sayfa-yan-bosluk: 10px; /* ekranın kenarı ile kartlar arasındaki boşluk (.container) */
+  --kart-ic-yan: 7%; /* kartın iç yan boşluğu: kart kenarı ile malzeme satırı çizgileri ve metinler arasındaki boşluk */
+  --satir-kenar: 30px; /* malzeme satırında, çizginin ucu ile malzeme adı (soldan) ve gram (sağdan) arasındaki boşluk */
+  --satir-bosluk: 30px; /* malzeme adı sütunu ile gram sütunu arasındaki boşluk */
+  --gram-genislik: 90px; /* gram sütununun genişliği; ana malzemedeki miktar kutusu da bu genişliktedir */
+
   /* Renk değişkenleri: yalnızca birden fazla yerde kullanılan renkler.
      Tek yerde kullanılan renkler ilgili kuralın içinde durur. */
   --renk-beyaz: #ffffff;
@@ -138,6 +145,11 @@
     --dugme-ikon: 14px;
     --dugme-ikon-genislik: 40px;
     --not-yazi: 13px;
+    --sayfa-yan-bosluk: 4px;
+    --kart-ic-yan: 3%;
+    --satir-kenar: 14px;
+    --satir-bosluk: 8px;
+    --gram-genislik: 84px;
   }
 }
 /* Fontlar. */
@@ -251,7 +263,7 @@ body {
 .container {
   max-width: 1900px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 var(--sayfa-yan-bosluk);
   display: flex;
 }
 /* Header iç düzen */
@@ -582,8 +594,8 @@ body {
   margin: var(--m);
   margin-top: -30px; /* kart yukarı çıkarak görselin altıyla örtüşür; görsel oyuğun içine bu sayede oturur. Büyütürseniz kart görsele daha çok girer */
   padding-bottom: 10px;
-  padding-right: 7%;
-  padding-left: 7%;
+  padding-right: var(--kart-ic-yan);
+  padding-left: var(--kart-ic-yan);
   height: 80vh;
   flex: 1;
   isolation: isolate; /* ::before'un z-index:-1 ile kartın içinde kalması için */
@@ -700,10 +712,10 @@ td {
 }
 /* ===== MALZEME SATIRI DÜZENİ =====
    Her satır (<tr>) bir ızgaradır. Sütunlar soldan sağa:
-     30px boşluk | malzeme adı (kalan alan) | 30px boşluk | gram sonucu (90px) | 30px boşluk
+     kenar boşluğu | malzeme adı (kalan alan) | ad-gram boşluğu | gram sonucu | kenar boşluğu
    Satırın ilk satırında malzeme adı ile gram sonucu yan yana durur. Akordiyon açılınca açıklama, ızgaranın ikinci satırına
    (adın solundan gramın sağına kadar, tam genişlikte) açılır. Gram sonucu ilk satırda sabit kalır, aşağı inmez ve açıklamayı daraltmaz.
-   Ayarlamak için: kenar boşlukları = baştaki ve sondaki 30px; gram sütunu genişliği = 90px.
+   Ayarlamak için :root'taki --satir-kenar (baştaki ve sondaki boşluk), --satir-bosluk (ad ile gram arası) ve --gram-genislik değişkenlerini değiştirin (mobil değerleri @media bloğundaki :root'ta).
    HTML yapısı (recipe.js) değişmedi: ilk <td> "display: contents" ile kutusunu kaybeder, içindeki .cell-header ve .normal-text ızgaraya doğrudan yerleşir. */
 .malzeme-tablosu,
 .malzeme-tablosu tbody {
@@ -711,7 +723,7 @@ td {
 }
 table.malzeme-tablosu tr {
   display: grid;
-  grid-template-columns: 30px minmax(0, 1fr) 30px 90px 30px;
+  grid-template-columns: var(--satir-kenar) minmax(0, 1fr) var(--satir-bosluk) var(--gram-genislik) var(--satir-kenar);
   padding-left: 0; /* genel "tr { padding-left: 20px }" kuralını bu tablo için iptal eder; soldaki boşluk ızgaranın ilk sütunudur */
   border-bottom: 1px solid var(--renk-cizgi);
 }
@@ -1325,12 +1337,17 @@ ul li::marker {
     padding-bottom: 20px;
   }
   .card {
-    --m: 0.6rem; /* kartın dış boşluğu (mobil) */
+    --m: 0.35rem; /* kartın dış boşluğu (mobil); ekran kenarına olan toplam boşluk = bu + --sayfa-yan-bosluk */
     height: auto;
     flex: none;
-    padding-top: 14px;
-    padding-right: 6%;
-    padding-left: 6%;
+    padding-top: 14px; /* yan boşluklar :root'taki --kart-ic-yan'dan gelir */
+  }
+  .info-note {
+    padding: 16px 14px;
+  }
+  /* Gram sütunu dar olduğu için miktar kutusundaki ipucu yazısı küçülür */
+  #anaMalzeme::placeholder {
+    font-size: 14px;
   }
   /* üst kart: oyuk kartın tam ortasında, iki kenarda biter */
   .card:first-child {
