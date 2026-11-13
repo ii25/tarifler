@@ -29,23 +29,15 @@
           <!-- Logo. -->
         </div>
         <!-- Tarif Başlığı -->
-        <div class="recipe-title-container-single">
-          <div class="recipe-title-line-single">
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
             <span></span>
             <h1>LİMONLU KEK</h1>
             <span></span>
           </div>
         </div>
-        <!--
-      <div class="recipe-title-container-double">
-      <div class="recipe-title-line-double">
-      <span></span>
-      <h1>TARİF BAŞLIĞI</h1>
-      <span></span>
-      </div>
-      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
-      </div>
-      -->
         <!-- Tarif Başlığı. -->
         <div class="header-right">
           <!-- Arama Kutusu -->
@@ -66,7 +58,7 @@
     <!-- FULL WIDTH HEADER. -->
     <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
     <div class="recipe-image">
-      <img src="../images/limonlu-kek.png" alt="" />
+      <img src="../images/limonlu-kek.png" alt="Limonlu Kek" />
     </div>
     <!-- İçerik -->
     <div class="container">
@@ -92,10 +84,6 @@
             <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
             <span class="text-haz">Hazırlanışı</span>
           </div>
-        </div>
-        <div class="info-note">
-          <span class="puf-isareti"></span> renkli yazılar püf noktalarını
-          belirtir.
         </div>
         <div class="table-container">
           <!-- Hazırlanışı -->
@@ -278,6 +266,11 @@
             <!-- Bilgi Notları. -->
           </section>
           <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
         </div>
       </div>
     </div>
@@ -287,7 +280,6 @@
     <script src="../recipe.js"></script>
     <script>
       // Malzemeler
-      addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
       addMainRow("Yumurta", "Yumurtayı kırıp, sadece içini tartınız. 3-4 adet");
       addNormalRow("Şeker", 90, "Toz şeker");
       addNormalRow("Yağ", 50, "Ayçiçek yağı");
@@ -316,8 +308,7 @@
         "Üzerine Konulacaklar",
         0,
         "Tercihen üzerine, hindistan cevizi, pudra şekeri serpebilirsiniz. Miktar isteğe bağlıdır.",
-      );
-      // Malzemeler.
+      ); // Malzemeler.
     </script>
     <script src="../script.js" defer></script>
     <!-- JavaScript. -->

@@ -24,23 +24,15 @@
         <!-- Logo. -->
       </div>
       <!-- Tarif Başlığı -->
-      <div class="recipe-title-container-single">
-        <div class="recipe-title-line-single">
+      <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+      <div class="recipe-title">
+        <div class="recipe-title-line">
           <span></span>
           <h1>ACUKA</h1>
           <span></span>
         </div>
       </div>
-      <!--
-      <div class="recipe-title-container-double">
-      <div class="recipe-title-line-double">
-      <span></span>
-      <h1>TARİF BAŞLIĞI</h1>
-      <span></span>
-      </div>
-      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
-      </div>
-      -->
       <!-- Tarif Başlığı. -->
       <div class="header-right">
         <!-- Arama Kutusu -->
@@ -54,7 +46,7 @@
   </header>
   <!-- FULL WIDTH HEADER. -->
   <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
-  <div class="recipe-image"><img src="../images/acuka.png" alt=""></div>
+  <div class="recipe-image"><img src="../images/acuka.png" alt="Acuka"></div>
   <!-- İçerik -->
   <div class="container">
     <!-- Malzemeler Kartı -->
@@ -80,7 +72,6 @@
           <span class="text-haz">Hazırlanışı</span>
         </div>
       </div>
-      <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
       <div class="table-container">
     <!-- Hazırlanışı -->
 <section class="recipe">
@@ -127,8 +118,9 @@
 <li>Isıl işlem yalnızca salçanın kavrulmasıyla sınırlıdır; bu hem salçanın tadını iyileştirir hem de besin kaybını en aza indirir. Salçayı daha uzun pişirmek lezzeti artırabilir ancak bazı vitaminlerde ek kayıp yaratır.</li>
 </ul></div>
 </div>
-</section>
-    <!-- Hazırlanışı. -->    
+</section>    <!-- Hazırlanışı. -->    
+        <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+        <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
       </div>
     </div>
   </div>
@@ -138,7 +130,6 @@
   <script src="../recipe.js"></script>
   <script>
     // Malzemeler
-    addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
 addMainRow("Tatlı-acı biber salçası", "Tercih sırasında ilk sıra, güneşte kurutulmuş ev yapımı biber salçasıdır; ardından içeriğinde sadece biber ve tuz bulunan üretici salçası gelir, en sonda ise domates salçası ile pul biberin karışımı yer alır ve bu durumda tat daha ekşi ve daha az aromatik olur. İyi bir biber salçası koyu kırmızı, kıvamlı, su salmayan ve içerik listesinde katkı maddesi bulunmayan salçadır. Salça acukanın tat ve renk temelidir ve tarifin ana malzemesi olduğu için diğer tüm oranlar salçaya göre hesaplanır; salçanız çok tuzluysa tuz miktarını azaltın.");
 addNormalRow("Ceviz içi", 50, "Tercih sırasında ilk sıra, bu yıl hasat edilmiş kabuklu cevizi kendiniz kırıp kullanmaktır; ardından taze hasat, kapalı paketli ve soğukta saklanmış ceviz içi gelir, en sonda ise açıkta satılan ve ne kadar beklediği bilinmeyen ceviz içi yer alır. Ceviz yerine aynı oranda fındık veya badem de kullanabilirsiniz ancak acukanın karakteristik tadı değişir. Ceviz içi açık sarı-krem renkte, kırıldığında gevrek, kokusu tatlımsı olmalıdır; koyulaşmış, buruk veya boya benzeri kokan ceviz acı olur ve tüm tarifi bozar, bu yüzden alırken tadına bakın. Ceviz oranı salçadan biraz fazladır; bu oran ezmeye hem dolgunluk hem de tatlımsı bir yağlılık verir. Oran düşerse acuka salça tadı baskın ve keskin, yükselirse kuru ve ağır olur.");
 addNormalRow("Galeta", 25, "Tercih sırasında ilk sıra, kurutulmuş gerçek ekmeği (tercihen ekşi mayalı) kendiniz öğütüp elde ettiğiniz galetadır; ardından katkısız hazır galeta gelir, en sonda ise baharatlı veya renklendirilmiş galetalar yer alır ve bunlar kullanılmamalıdır. Galeta tamamen kuru, hafif kokulu ve beyaz-krem renkli olmalıdır. Galetanın görevi salçanın ve zeytinyağının fazla nemini ve yağını bağlayıp karışıma sürülebilir bir kıvam kazandırmaktır; oranı arttıkça acuka kuruyup sertleşir, azaldıkça yağ salar.");
@@ -148,9 +139,8 @@ addNormalRow("Nar ekşisi", 12.5, "Tercih sırasında ilk sıra, sadece nar suyu
 addNormalRow("Pul biber", 4, "Tercih sırasında ilk sıra, yağlı ve kırmızı renkli Maraş biberidir; ardından Urfa biber (isot) gelir ve daha koyu, dumanlı bir tat verir, en sonda ise sıradan acı pul biber yer alır. İyi pul biber parlak kırmızı, hafif yağlı, hafif nemli ve belirgin kokulu olmalıdır; rengi solmuş, kuru ve tozlaşmış olması bayatlığın işaretidir. Pul biber acıyı verir, oranı zevkinize göre artırabilir veya azaltabilirsiniz; acı sevmiyorsanız azaltın, salça zaten rengi ve tadı sağladığı için karışım sönük kalmaz.");
 addNormalRow("Kimyon", 2, "Tercih sırasında ilk sıra, bütün kimyonu kendiniz öğütmenizdir; ardından yeni öğütülmüş taze kimyon tozu gelir, en sonda ise uzun süre açık kalmış kimyon tozu yer alır. Taze kimyon tozu keskin, sıcak ve hafif tatlımsı kokar, bayatlayınca kokusu kaybolur. Kimyon acukaya sıcak ve toprağımsı bir derinlik katar ancak baskın olmamalıdır; oran artarsa tat ilaçlı ve ağırlaşır.");
 addNormalRow("Tuz", 1, "Tercih sırasında ilk sıra katkısız kaya tuzu veya deniz tuzudur; ardından sofra tuzu gelir. İnce öğütülmüş, topaklanmayan ve katkısız tuz tercih edilmelidir. Salça zaten tuz içerdiği için tuz oranı düşük tutulmuştur; tadına bakıp son aşamada ayarlanmalıdır.");
-addNormalRow("Diğer Baharatlar", 1, "Pul Biber, Kekik, Kimyon, Toz kırmızı biber, Nane, Karabiber. Salça zaten tuzlu olduğu için çok gerekmedikçe tuz ilavesi yapmayın. Yan taraftaki miktar tüm baharatların toplam miktarıdır. Tüm tarifteki toplam baharat %8");
-
-    // Malzemeler.
+addNormalRow("Diğer Baharatlar", 1, "Pul Biber, Kekik, Kimyon, Toz kırmızı biber, Nane, Karabiber. Salça zaten tuzlu olduğu için çok gerekmedikçe tuz ilavesi yapmayın. Yan taraftaki miktar tüm baharatların toplam miktarıdır. Tüm tarifteki toplam baharat %8");    
+// Malzemeler.
   </script>
   <script src="../script.js" defer></script>
   <!-- JavaScript. -->

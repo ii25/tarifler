@@ -66,7 +66,12 @@
   --logo-yazi: 28px;
   --baslik-yazi: 23px; /* tarif başlığı */
   --baslik-harf-araligi: 2px;
-  --alt-yazi: 13px; /* başlık alt açıklaması */
+  --alt-yazi: 12px; /* başlık alt açıklaması (font-size) */
+  --alt-harf-araligi: 3px; /* başlık alt açıklaması harf aralığı (letter-spacing) */
+  --baslik-aciklama-bosluk: 6px; /* iki satırlı tarif başlığında başlık ile alt açıklama arasındaki boşluk: mobilde ve text-box-trim desteklemeyen tarayıcılarda geçerlidir (yazı kutuları arasındaki mesafe) */
+  --baslik-dikey-ayar: -0.5px; /* masaüstü iki satırlı başlık bloğunun dikey ince ayarı: üst boşluk fazlaysa eksi değer (blok yukarı çıkar), alt boşluk fazlaysa artı değer (blok aşağı iner). Ekranda yaklaşık 1px'lik adımlarla görünür; 0px tam ortalı (ölçülen) konumdur */
+  --baslik-aciklama-bosluk-masaustu: 14px; /* masaüstünde (yazı kutuları kırpıldığı için) başlığın alt çizgisi ile alt açıklamanın harf üst kenarı arasındaki GÖRÜNEN boşluk */
+  --baslik-cizgi-dikey: 0px; /* başlığın iki yanındaki süs çizgilerinin dikey ince ayarı (tek blok başlıkta): + değer çizgiyi aşağı, - değer yukarı kaydırır */
   --arama-yazi: 16px;
   --arama-yukseklik: 35px;
   --kart-ikon: 44px; /* Malzemeler / Hazırlanışı ikonları */
@@ -81,7 +86,9 @@
   --dugme-ikon: 16px;
   --dugme-ikon-genislik: 34px; /* Değiştir düğmesinin simge hali */
   --not-yazi: 14px; /* bilgi satırı */
-  --not-ust-bosluk: 22px; /* BİLGİ SATIRININ ÜST BOŞLUĞU ("Tüm malzemelerde doğal ve taze olanları..." satırının üstündeki boşluk). Azaltırsanız satır yukarı çıkar; masaüstü değeri. Mobil değeri @media bloğundaki :root'ta */
+  --liste-ust-bosluk: 60px; /* KARTIN ÜSTÜ İLE LİSTE/ADIMLAR ARASI BOŞLUK (masaüstü): içerik tarif görselinin oyuğunun altından başlasın diye. Azaltırsanız içerik yukarı çıkar ve oyuğa girebilir. Mobil değeri @media bloğundaki :root'ta */
+  --kart-alt-bosluk: 42px; /* KARTLARIN ALT BOŞLUĞU (masaüstü): Malzemeler ve Hazırlanışı kartlarında, kayan listenin altında bırakılan boş şeridin yüksekliği. İki karta aynı değer uygulanır, alt kısımları eşit kalır. Mobilde kullanılmaz */
+  --not-ust-bosluk: 22px; /* (kartın ÜSTÜNDE yer alan eski tip bilgi satırı için) satırın üst boşluğu; masaüstü değeri. Mobilde ise alt bilgi satırının çizgi ile yazı arası boşluğu olarak da kullanılır; mobil değeri @media bloğundaki :root'ta */
 
   /* Yan boşluklar (masaüstü değerleri; mobil değerleri aşağıdaki @media (max-width: 768px) :root bloğunda) */
   --sayfa-yan-bosluk: 10px; /* ekranın kenarı ile kartlar arasındaki boşluk (.container) */
@@ -132,7 +139,8 @@
     --logo-yazi: 22px;
     --baslik-yazi: 18px;
     --baslik-harf-araligi: 1px;
-    --alt-yazi: 12px;
+    --alt-yazi: 10px; /* mobil: başlık alt açıklaması (başlık 18px olduğu için orantılı küçültüldü) */
+    --alt-harf-araligi: 2px; /* mobil: alt açıklama harf aralığı */
     --arama-yazi: 16px; /* iOS Safari 16px altındaki kutuya odaklanınca sayfayı yakınlaştırır */
     --arama-yukseklik: 40px;
     --kart-ikon: 32px;
@@ -149,6 +157,7 @@
     --dugme-ikon: 14px;
     --dugme-ikon-genislik: 40px;
     --not-yazi: 13px;
+    --liste-ust-bosluk: 12px; /* MOBİL: kart başlığı (ikon + yazı) ile liste/adımlar arasındaki boşluk */
     --not-ust-bosluk: 16px; /* MOBİL: bilgi satırının üst boşluğu (masaüstü değeri yukarıdaki :root'ta) */
     --sayfa-yan-bosluk: 4px;
     --kart-ic-yan: 3%;
@@ -369,9 +378,71 @@ body {
 .recipe-title-sub-text {
   margin-top: 6px;
   font-size: var(--alt-yazi);
-  letter-spacing: 3px;
+  letter-spacing: var(--alt-harf-araligi);
   font-family: var(--font-ince);
   color: #ffffffad;
+}
+/* TEK BLOK TARİF BAŞLIĞI (önerilen yapı): <div class="recipe-title"> içinde başlık satırı (.recipe-title-line: çizgi | h1 | çizgi) ve isteğe bağlı alt açıklama <p>.
+   Alt açıklama varsa iki satırlı, yoksa tek satırlı görünür; ayrı "single/double" kod parçaları gerekmez.
+   Süs çizgileri başlığın (h1) iki yanına, başlıktan 18px uzaklıkta yerleşir; alt açıklama başlıktan geniş olsa bile çizgileri itmez, başlığın altında ortalı durur.
+   Tek satırda çizgiler başlığın dikey ortasında; alt açıklama varsa başlığın ALT HİZASINDA (yazının taban çizgisinde) durur. Tüm blok yatayda ortalıdır. */
+.recipe-title {
+  flex: 1;
+  text-align: center;
+  animation: slideInFromTop 0.5s ease-out forwards;
+}
+.recipe-title-line {
+  display: flex;
+  align-items: center; /* tek satırlı başlık: çizgiler başlığın dikey ortasında */
+  justify-content: center;
+  gap: 18px; /* çizgi ile başlık arası */
+}
+.recipe-title:has(.recipe-title-sub-text) .recipe-title-line {
+  align-items: baseline; /* iki satırlı başlık: çizgilerin alt kenarı başlık yazısının taban çizgisiyle (alt hizasıyla) aynı hizada */
+}
+.recipe-title-line h1 {
+  margin: 0;
+  font-size: var(--baslik-yazi);
+  letter-spacing: var(--baslik-harf-araligi);
+  font-family: var(--font-dar);
+  font-weight: 500;
+}
+.recipe-title-line span {
+  flex: 1;
+  height: 1px;
+  max-width: 200px; /* çizgi uzunluğu */
+  background: linear-gradient(to right, transparent, var(--renk-baslik-cizgi));
+  position: relative;
+  top: var(--baslik-cizgi-dikey); /* çizgiyi yukarı/aşağı ince ayar için (:root) */
+}
+.recipe-title-line span:last-child {
+  background: linear-gradient(to left, transparent, var(--renk-baslik-cizgi));
+}
+.recipe-title .recipe-title-sub-text {
+  margin-top: var(--baslik-aciklama-bosluk); /* başlık ile alt açıklama arası (:root'taki --baslik-aciklama-bosluk) */
+  margin-bottom: 0; /* <p>'nin varsayılan alt boşluğu sıfırlanır: blok header'ın dikey ortasında kalır */
+  line-height: 1.2;
+}
+/* MASAÜSTÜNDE İKİ SATIRLI BAŞLIK: header içinde üst ve alt boşluklar eşit olsun.
+   Normalde bir yazının kutusu, harflerin üstünde ve altında yazı tipine bağlı boşluk taşır; bu yüzden blok ortalansa bile harflerin üstündeki ve altındaki
+   boşluk eşit görünmeyebilir. "text-box: trim-both cap alphabetic" kutuyu harf üst kenarına (cap) ve taban çizgisine (alphabetic) kırpar:
+   böylece blok ortalanınca BAŞLIĞIN harf üst kenarı ile header üstü arası, ALT AÇIKLAMANIN taban çizgisi ile header altı arası eşit olur.
+   Mobilde değişiklik yoktur (zaten eşit). Desteklemeyen tarayıcılarda (örn. eski Firefox) bu blok yok sayılır, önceki düzen geçerli kalır. */
+@media (min-width: 769px) {
+  @supports (text-box: trim-both cap alphabetic) {
+    .recipe-title:has(.recipe-title-sub-text) .recipe-title-line h1,
+    .recipe-title:has(.recipe-title-sub-text) .recipe-title-sub-text {
+      text-box: trim-both cap alphabetic;
+    }
+    .recipe-title:has(.recipe-title-sub-text) .recipe-title-sub-text {
+      margin-top: var(--baslik-aciklama-bosluk-masaustu); /* kırpıldığı için görünen boşluk bu değerdir */
+      line-height: 1;
+    }
+    .recipe-title:has(.recipe-title-sub-text) {
+      position: relative;
+      top: var(--baslik-dikey-ayar); /* bloğu dikeyde ince ayarlamak için (:root'ta) */
+    }
+  }
 }
 /* Tarif Başlığı. */
 /* Arama Kutusu */
@@ -468,22 +539,26 @@ body {
 .header .logo {
   padding-right: 0;
 }
+.header .recipe-title,
 .header .recipe-title-container-single,
 .header .recipe-title-container-double {
   grid-area: baslik;
   min-width: 0;
 }
 /* Başlığın yanındaki çizgiler: yer daralınca önce onlar küçülür, başlık yazısı kısalmaz */
+.header .recipe-title-line span,
 .header .recipe-title-line-single span,
 .header .recipe-title-line-double span {
   width: 200px; /* başlık sütununun genişliğini belirler; boş öğenin kendi genişliği olmazsa çizgiler 0'a düşer */
   flex: 0 1000 auto; /* yer daralınca önce çizgiler küçülür */
   min-width: 0;
 }
+.header .recipe-title-line h1,
 .header .recipe-title-line-single h1,
 .header .recipe-title-line-double h1 {
   flex: 0 1 auto;
 }
+.header .recipe-title-line h1,
 .header .recipe-title-line-single h1,
 .header .recipe-title-line-double h1,
 .header .recipe-title-sub-text {
@@ -507,22 +582,28 @@ body {
       "baslik baslik";
   }
   /* Başlık satırı: header'ın tam genişliğinde, farklı renkli bir şerit */
+  .header .recipe-title,
   .header .recipe-title-container-single,
   .header .recipe-title-container-double {
     margin: 6px -1rem 0;
     padding: 6px 1rem 8px;
     background-color: var(--renk-mobil-baslik-arka);
   }
+  .header .recipe-title-line h1,
   .header .recipe-title-line-single h1,
   .header .recipe-title-line-double h1,
   .header .recipe-title-sub-text {
     white-space: normal;
   }
   /* başlık yazısı kendi genişliğinde kalır (çizgiler küçülür); satıra sığmayacak kadar uzunsa alt satıra sarar */
+  .header .recipe-title-line h1,
   .header .recipe-title-line-single h1,
   .header .recipe-title-line-double h1 {
     flex: 0 0 auto;
     max-width: 100%;
+  }
+  .header .recipe-title-line-double span {
+    margin-top: 0; /* eski iki satırlı başlıkta çizgiler başlıkla aynı hizada kalsın (h1'in üst boşluğu mobilde sıfır) */
   }
   .header .recipe-title-line-single h1 {
     margin: 0;
@@ -691,7 +772,7 @@ body {
   max-height: 90%;
   padding: 0;
   margin: 0;
-  margin-top: 20px;
+  margin-top: var(--liste-ust-bosluk); /* kartın üst kenarı ile liste/adımlar arasındaki boşluk (:root'tan ayarlanır) */
   line-height: 1.6;
   overflow-y: auto;
   scroll-behavior: auto;
@@ -1293,6 +1374,30 @@ ul li::marker {
   padding: var(--not-ust-bosluk) 30px 20px; /* üst: --not-ust-bosluk (:root'tan ayarlanır) | yanlar: 30px | alt: 20px */
   border-bottom: 1px solid var(--renk-cizgi);
 }
+/* SAYFA SONU BİLGİ SATIRI: .table-container içindeki, tarifin en sonunda yer alan .info-note (Hazırlanışı kartındaki püf noktası bilgisi).
+   Kayan alanın parçasıdır: içerikle birlikte kayar, en sona gelince görünür. Üstünde listeden ayıran ince bir çizgi vardır. */
+.table-container > .info-note {
+  margin-top: 16px; /* son adım ile çizgi arasındaki boşluk */
+  border-top: 1px solid var(--renk-cizgi);
+  border-bottom: 0;
+  padding: 14px 30px 6px; /* üst: çizgi ile yazı arası | yanlar: 30px | alt: 6px */
+}
+/* MASAÜSTÜNDE İKİ KARTIN ALT KISMI EŞİT OLSUN: Hazırlanışı kartında (içinde sayfa sonu bilgi satırı olan kart) ve yanındaki Malzemeler kartında,
+   kayan alanın altında aynı yükseklikte boş bir şerit kalır (--kart-alt-bosluk). Liste ve adımlar bu şeridin üstünde biter ve kayar. */
+@media (min-width: 769px) {
+  .card:has(> .table-container > .info-note),
+  .card:has(~ .card > .table-container > .info-note) {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: calc(10px + var(--kart-alt-bosluk)); /* 10px: kartın olağan alt boşluğu */
+  }
+  .card:has(> .table-container > .info-note) > .table-container,
+  .card:has(~ .card > .table-container > .info-note) > .table-container {
+    flex: 1 1 auto;
+    min-height: 0; /* kayan alan kalan yüksekliğe sığıp kendi içinde kayabilsin */
+    max-height: none;
+  }
+}
 .info-note:empty::before {
   content: "\00a0"; /* içi boş bırakılsa da satır yer kaplasın */
 }
@@ -1352,6 +1457,10 @@ ul li::marker {
   }
   .info-note {
     padding: var(--not-ust-bosluk) 14px 16px; /* üst: --not-ust-bosluk (mobil değeri) | yanlar: 14px | alt: 16px */
+  }
+  .table-container > .info-note {
+    margin-top: 8px;
+    padding: 12px 14px 4px; /* sayfa sonu bilgi satırı (mobil): üst: çizgi ile yazı arası | yanlar: 14px | alt: 4px */
   }
   /* Gram sütunu dar olduğu için miktar kutusundaki ipucu yazısı küçülür */
   #anaMalzeme::placeholder {

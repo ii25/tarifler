@@ -29,24 +29,15 @@
           <!-- Logo. -->
         </div>
         <!-- Tarif Başlığı -->
-         <!--
-        <div class="recipe-title-container-single">
-          <div class="recipe-title-line-single">
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
             <span></span>
             <h1>SUCUK</h1>
             <span></span>
           </div>
         </div>
-        -->
-      <div class="recipe-title-container-double">
-      <div class="recipe-title-line-double">
-      <span></span>
-      <h1>SUCUK</h1>
-      <span></span>
-      </div>
-      <p class="recipe-title-sub-text">AFYON USULÜ</p>
-      </div>
-      
         <!-- Tarif Başlığı. -->
         <div class="header-right">
           <!-- Arama Kutusu -->
@@ -66,7 +57,9 @@
     </header>
     <!-- FULL WIDTH HEADER. -->
     <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
-    <div class="recipe-image"><img src="../images/sucuK.png" alt="" /></div>
+    <div class="recipe-image">
+      <img src="../images/sucuK.png" alt="Sucuk" />
+    </div>
     <!-- İçerik -->
     <div class="container">
       <!-- Malzemeler Kartı -->
@@ -91,10 +84,6 @@
             <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
             <span class="text-haz">Hazırlanışı</span>
           </div>
-        </div>
-        <div class="info-note">
-          <span class="puf-isareti"></span> renkli yazılar püf noktalarını
-          belirtir.
         </div>
         <div class="table-container">
           <!-- Hazırlanışı -->
@@ -407,6 +396,11 @@
             </div>
           </section>
           <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
         </div>
       </div>
     </div>
@@ -416,7 +410,6 @@
     <script src="../recipe.js"></script>
     <script>
       // Malzemeler
-      addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
       addMainRow(
         "Sığır Eti (Karkas Eti)",
         "Sucuğun iskeletini bu et kurar; en uygunu yağı az, bağ dokusu temizlenmiş sığır but veya kol etidir, bulunamazsa sığır kol-boyun karışımı, o da olmazsa dana but eti gelir, en sonda ise kasaba iri çektirilmiş hazır sığır kıyması yer alır. Dana eti daha az aromalı olduğu için sucuğun karakterini zayıflatır; hazır kıymada ise et cinsi ve yağ oranı belirsiz olduğundan baharat dengesi tutmayabilir. Kırmızı, parlak, kokusuz ve suyunu salmamış et alın; kesimden sonra 1-2 gün dinlenmiş et hem daha yumuşak hem daha aromalıdır. Bu malzeme ana malzeme olduğu için diğer tüm oranlar bunun ağırlığı üzerinden hesaplanır; tescil belgesindeki 100 kg'lık bileşimde 59,772 kg ile en büyük paya sahiptir.",
@@ -475,7 +468,8 @@
         "Zencefil",
         0.17,
         "Zencefil, sucuğun ağır ve yağlı tadını hafifçe aydınlatır; kuru kök zencefili öğütücüde çekmek birinci tercihtir, ardından hazır saf toz zencefil gelir, taze zencefil ise nemi hamura taşıdığı için en sona kalır. Toz zencefil açık sarı, keskin kokulu ve topaklanmamış olmalıdır. Oran sığır etinin %0,17'sidir; çok küçüktür, amacı belli olmadan hissedilmek değil, dengeyi tamamlamaktır.",
-      ); // Malzemeler.
+      );
+       // Malzemeler.
     </script>
     <script src="../script.js" defer></script>
     <!-- JavaScript. -->

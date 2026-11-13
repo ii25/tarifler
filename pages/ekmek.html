@@ -1,258 +1,365 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarifler</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
-</head>
-
-<body>
-  <!-- FULL WIDTH HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <div class="header-left">
-
-        <!-- Logo -->
-        <div class="logo" onclick="window.location.href='../index.html';" style="cursor:pointer;">
-          <img src="../images/icon-logo.svg" class="logo-icon">
-          <span class="logo-text">tarifler</span>
-        </div>
-        <!-- Logo. -->
-      </div>
-      <!-- Tarif Başlığı -->
-      <div class="recipe-title-container-single">
-        <div class="recipe-title-line-single">
-          <span></span>
-          <h1>EKMEK</h1>
-          <span></span>
-        </div>
-      </div>
-      <!--
-      <div class="recipe-title-container-double">
-      <div class="recipe-title-line-double">
-      <span></span>
-      <h1>TARİF BAŞLIĞI</h1>
-      <span></span>
-      </div>
-      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
-      </div>
-      -->
-      <!-- Tarif Başlığı. -->
-      <div class="header-right">
-        <!-- Arama Kutusu -->
-        <div class="search-container"><input type="text" id="searchInput" class="mainLoginInput" placeholder="&#61442;"
-            oninput="search()" />
-          <div id="results" class="results-dropdown"></div>
-        </div>
-        <!-- Arama Kutusu. -->
-      </div>
-    </div>
-  </header>
-  <!-- FULL WIDTH HEADER. -->
-  <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
-  <div class="recipe-image"><img src="../images/ekmek.png" alt=""></div>
-  <!-- İçerik -->
-  <div class="container">
-    <!-- Malzemeler Kartı -->
-    <div class="card">
-      <div class="card-header">
-        <div class="icon-text-mal">
-          <img src="../images/icon-mal.svg" class="icon-mal">
-          <span class="text-mal">Malzemeler</span>
-        </div>
-      </div>
-      <div class="table-container">
-        <table class="malzeme-tablosu">
-          <tbody id="malzemeBody"></tbody>
-        </table>
-      </div>
-    </div>
-    <!-- Malzemeler Kartı -->
-    <!-- Tarif Kartı -->
-    <div class="card">
-      <div class="card-header">
-        <div class="icon-text-haz">
-          <img src="../images/icon-haz.svg" alt="" class="icon-haz">
-          <span class="text-haz">Hazırlanışı</span>
-        </div>
-      </div>
-      <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
-      <div class="table-container">
-        <section class="recipe">
-          <!-- Genel Bakış: adımlardan önce gelir -->
-          <div class="genel-bakis">
-            <h3>Genel Bakış</h3>
-            <p>...</p>
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
           </div>
-          <!-- Genel Bakış. -->
-          <ol class="steps">
-            <li>
-              <div class="step-content">
-                <strong>Ön Hazırlık</strong>
-                <ul>
-                  <li>Aşağıda belirtilen malzemeleri hazır edin:</li>
-                  <li>Hamur Yoğurma Makinesi</li>
-                  <li>Terazi</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="step-content">
-                <strong>Otoliz</strong>
-                <ul>
-                  <li>Makinanın haznesi terazinin üzerine alın. Hazneye önce suyu koyup, üzerine eleyerek unu ilave edin.</li>
-                  <li>Hazneyi makinaya takıp 1.kademede 2 dk yoğurun</li>
-                  <li>Hazneyi makinadan çıkartmayın. Üzerini nemli bir bezle örtüp 30-60 dakika bekletin.</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="step-content">
-                <strong>Yoğurma</strong>
-                <ul>
-                  <li>Mayayı koyup 1.kademede 2 dk yoğurun ardından tuzu ilave edip 1. kademede 2 dk daha yoğurun.</li>
-                  <li>Hamuru hazneden dışarı alıp toparlayın ve içini yağladığınız geniş bir kaba alın.</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="step-content">
-                <strong>Fermentasyon</strong>
-                <ul>
-                  <li>Kabın üzerini örtüp hamur yaklaşık iki katına çıkana kadar ilk fermentasyona bırakın</li>
-                  <li>Bundan sonraki adımlardaki dinlendirmelerde de fermantasyon devam edecektir</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="step-content">
-                <strong>Laminasyon</strong>
-                <ul>
-                  <li>(Bu adım opsiyonel, isterseniz atlayabilirsiniz)</li>
-                  <li>Hamuru hafif unladığınız/yağladığınız bir tezgaha alıp laminasyonu yapın.</li>
-                  <li>Katlama yapacağınız kaba alıp 30-60 dk bekletin</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="step-content">
-                <strong>Katlama</strong>
-                <ul>
-                  <li>Hamurunun katlamasını yapın.</li>
-                  <li>Üstünü örtüp 30-60 dk bekletin.</li>
-                  <li>Katlama adımını en az 2-3 set yapınız.</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="step-content">
-                <strong>Ön Şekillendirme</strong>
-                <ul>
-                  <li>Hamru hafif unlanmış/yağlanmış tezgaha alın.</li>
-                  <li>istediğiniz miktarda parçalara bölün</li>
-                  <li>Beze haline geririn</li>
-                  <li>Üzerine nemli bir bez koyup 15-30 dk dinlendirin</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="step-content">
-                <strong>Son Şekillendirme</strong>
-                <ul>
-                  <li>Bezeleri unladığınz/yağladığınz bir yüzeye alın</li>
-                  <li>Hamuru uzunlamasına açın</li>
-                  <li>Sağ ve sol kenarlar tekrar merkeze doğru katlayıp ve dikiş yeri yukarı gelecek şekilde çevririn</li>
-                  <li>Üstten başlayarak aşağı doğru sıkı ama nazik bir şekilde rulo yapın.</li>
-                  <li>Rulolama sırasında her seferinde ellerinizle orta kısma hafif baskı yaparak yüzeyi biraz gerersiniz</li>
-                  <li>Uçları hafif sivriltilerek klasik baget formu veriln.</li>
-                  <li>Çok sıkı rulo yaparsanız hamur yeterince genişleyemez, gözenekler küçük olur.</li>
-                  <li>Çok gevşek yaparsanız ekmek yayılır.</li>
-                  <li>Kat yerini aşağıda bırak: Son katlama çizgisi altta kalmalı ki ekmek düzgün kabarsın.</li>
-                  <li>Şekil verdiğiniz hamurları üzerine pişirme kağıdı koyup un serptiğiniz fırın tepsisine koyun üzerine nemli bir bez örtün ve ... dakika kadar bekletin.</li>
-                  <li>Uzun mayalama yapacaksanız hamurlarınızı unlanmış bir bez ya da hamur mayalama sepetine koyun ve buzdolabına alın (4°C ile 7°C).</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="step-content">
-                <strong>Pişirme</strong>
-                <ul>
-                  <li><span class="puf">Fırını en yüksek ısıya ayarlayarak önceden Isıtın</span></li>
-                  <li>Fırın hazır olmaya yakın somunların üzerine çizik atıp susam ve çörekotu serpin</li>
-                  <li>Tepsinizi fırına verin ve şu ayarlarda pişirin:</li>
-                  <li>Süre ve Sıcaklık: İlk 7 dakika: 250°C, İkinci 7 dakika: 220°C, Üçüncü 7 dakika: 200°C, Her 7
-                    dakikanın sonunda buhar çıkartın</li>
-                  <li>Resistans: Alt ve üst İkisi de açık olmalı.</li>
-                  <li>Fan: Açık</li>
-                  <li>Buhar: Evet (200ml su). Su verme zamanı ön ısıtma sonrası(25dk)</li>
-                  <li>Raf: 2.raf - Orta göz yada bir tık altı</li>
-                  <li>Ayrıca pişirme sürecinde buhar tahliyesi haricinde fırın kapağını açmamaya özen gösterin, buhar tahliyelerini de hızlı yapın.</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="step-content">
-                <strong>Soğutma</strong>
-                <ul>
-                  <li>Ekmeği fırından çıkardıktan sonra tel ızgaraya alın</li>
-                  <li>Üzerini bir bez ile örtüp soğumaya bırakın</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
-          <!-- Bilgi Notları: son adımdan sonra gelir -->
-          <div class="bilgi-notlari">
-            <h3>Bilgi Notları</h3>
-            <div class="not-grubu">
-              <h4>Saklama</h4>
-              <ul>
-                <li>...</li>
-              </ul>
-            </div>
-            <div class="not-grubu">
-              <h4>Besin Öğesi Korunumu</h4>
-              <ul>
-             <li><a href="https://www.youtube.com/watch?v=9sOPFIUsmBY" target="_blank" rel="noopener noreferrer">Özel Ders Niteliğinde - Tüm Detaylarıyla Ekşi Maya Ekmek Yapımı</a></li>
-              </ul>
-            </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>EKMEK</h1>
+            <span></span>
           </div>
-          <!-- Bilgi Notları. -->
-        </section>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/ekmek.png" alt="Ekmek" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <!-- Genel Bakış: adımlardan önce gelir -->
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>...</p>
+            </div>
+            <!-- Genel Bakış. -->
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>Aşağıda belirtilen malzemeleri hazır edin:</li>
+                    <li>Hamur Yoğurma Makinesi</li>
+                    <li>Terazi</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Otoliz</strong>
+                  <ul>
+                    <li>
+                      Makinanın haznesi terazinin üzerine alın. Hazneye önce
+                      suyu koyup, üzerine eleyerek unu ilave edin.
+                    </li>
+                    <li>Hazneyi makinaya takıp 1.kademede 2 dk yoğurun</li>
+                    <li>
+                      Hazneyi makinadan çıkartmayın. Üzerini nemli bir bezle
+                      örtüp 30-60 dakika bekletin.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Yoğurma</strong>
+                  <ul>
+                    <li>
+                      Mayayı koyup 1.kademede 2 dk yoğurun ardından tuzu ilave
+                      edip 1. kademede 2 dk daha yoğurun.
+                    </li>
+                    <li>
+                      Hamuru hazneden dışarı alıp toparlayın ve içini
+                      yağladığınız geniş bir kaba alın.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Fermentasyon</strong>
+                  <ul>
+                    <li>
+                      Kabın üzerini örtüp hamur yaklaşık iki katına çıkana kadar
+                      ilk fermentasyona bırakın
+                    </li>
+                    <li>
+                      Bundan sonraki adımlardaki dinlendirmelerde de
+                      fermantasyon devam edecektir
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Laminasyon</strong>
+                  <ul>
+                    <li>(Bu adım opsiyonel, isterseniz atlayabilirsiniz)</li>
+                    <li>
+                      Hamuru hafif unladığınız/yağladığınız bir tezgaha alıp
+                      laminasyonu yapın.
+                    </li>
+                    <li>Katlama yapacağınız kaba alıp 30-60 dk bekletin</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Katlama</strong>
+                  <ul>
+                    <li>Hamurunun katlamasını yapın.</li>
+                    <li>Üstünü örtüp 30-60 dk bekletin.</li>
+                    <li>Katlama adımını en az 2-3 set yapınız.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Ön Şekillendirme</strong>
+                  <ul>
+                    <li>Hamru hafif unlanmış/yağlanmış tezgaha alın.</li>
+                    <li>istediğiniz miktarda parçalara bölün</li>
+                    <li>Beze haline geririn</li>
+                    <li>Üzerine nemli bir bez koyup 15-30 dk dinlendirin</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Son Şekillendirme</strong>
+                  <ul>
+                    <li>Bezeleri unladığınz/yağladığınz bir yüzeye alın</li>
+                    <li>Hamuru uzunlamasına açın</li>
+                    <li>
+                      Sağ ve sol kenarlar tekrar merkeze doğru katlayıp ve dikiş
+                      yeri yukarı gelecek şekilde çevririn
+                    </li>
+                    <li>
+                      Üstten başlayarak aşağı doğru sıkı ama nazik bir şekilde
+                      rulo yapın.
+                    </li>
+                    <li>
+                      Rulolama sırasında her seferinde ellerinizle orta kısma
+                      hafif baskı yaparak yüzeyi biraz gerersiniz
+                    </li>
+                    <li>
+                      Uçları hafif sivriltilerek klasik baget formu veriln.
+                    </li>
+                    <li>
+                      Çok sıkı rulo yaparsanız hamur yeterince genişleyemez,
+                      gözenekler küçük olur.
+                    </li>
+                    <li>Çok gevşek yaparsanız ekmek yayılır.</li>
+                    <li>
+                      Kat yerini aşağıda bırak: Son katlama çizgisi altta
+                      kalmalı ki ekmek düzgün kabarsın.
+                    </li>
+                    <li>
+                      Şekil verdiğiniz hamurları üzerine pişirme kağıdı koyup un
+                      serptiğiniz fırın tepsisine koyun üzerine nemli bir bez
+                      örtün ve ... dakika kadar bekletin.
+                    </li>
+                    <li>
+                      Uzun mayalama yapacaksanız hamurlarınızı unlanmış bir bez
+                      ya da hamur mayalama sepetine koyun ve buzdolabına alın
+                      (4°C ile 7°C).
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Pişirme</strong>
+                  <ul>
+                    <li>
+                      <span class="puf"
+                        >Fırını en yüksek ısıya ayarlayarak önceden Isıtın</span
+                      >
+                    </li>
+                    <li>
+                      Fırın hazır olmaya yakın somunların üzerine çizik atıp
+                      susam ve çörekotu serpin
+                    </li>
+                    <li>Tepsinizi fırına verin ve şu ayarlarda pişirin:</li>
+                    <li>
+                      Süre ve Sıcaklık: İlk 7 dakika: 250°C, İkinci 7 dakika:
+                      220°C, Üçüncü 7 dakika: 200°C, Her 7 dakikanın sonunda
+                      buhar çıkartın
+                    </li>
+                    <li>Resistans: Alt ve üst İkisi de açık olmalı.</li>
+                    <li>Fan: Açık</li>
+                    <li>
+                      Buhar: Evet (200ml su). Su verme zamanı ön ısıtma
+                      sonrası(25dk)
+                    </li>
+                    <li>Raf: 2.raf - Orta göz yada bir tık altı</li>
+                    <li>
+                      Ayrıca pişirme sürecinde buhar tahliyesi haricinde fırın
+                      kapağını açmamaya özen gösterin, buhar tahliyelerini de
+                      hızlı yapın.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Soğutma</strong>
+                  <ul>
+                    <li>Ekmeği fırından çıkardıktan sonra tel ızgaraya alın</li>
+                    <li>Üzerini bir bez ile örtüp soğumaya bırakın</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <!-- Bilgi Notları: son adımdan sonra gelir -->
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>...</li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/watch?v=9sOPFIUsmBY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Özel Ders Niteliğinde - Tüm Detaylarıyla Ekşi Maya Ekmek
+                      Yapımı</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Bilgi Notları. -->
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- Icerik -->
-  <!-- JavaScript -->
-  <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
-  <script src="../recipe.js"></script>
-  <script>
-    // Malzeme Satırları (her tarifte burası değişir)
-    addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
-    addMainRow("Un", "%11-13 arası protein oranına sahip ekmeklik un");
-    addCustomRow("Su", "Unumuzun kaldırabildiği ölçüde, mümkün olduğunca yüksek oranda su kullanmalıyız. Örneğin, 1000 gr un için 670 gr su  kullanarak hamurunuzu ideal kıvama (ne çok cıvık, ne çok sert) getirdi iseniz ununuzda kullanacağınız su hidrasyonun oranınız % 67 dir. Birkaç denemeden sonra ideal oranınınzı artık tespit etmiş olursunuz. Daha sonraki ekmek yapımılarında aynı unu kullanacaksanız artık tespit edttiğiniz bu oran üzerinden gidiniz. ");
-    addDropdownRow(
-      [
-        { label: "İnstant Kuru Maya", value: 0.5, aciklama: "Tarifte 40 gr. yaş maya geçiyorsa, yerine 40*0.35=14 gr. İnstant maya" },
-        { label: "Aktif Kuru Maya", value: 1, aciklama: "Aktif Kuru Maya Açıklamaları" },
-        { label: "Yaş Maya", value: 1.5, aciklama: "Yaş Maya Açıklamaları" },
-        { label: "Ekşi Maya", value: 20, aciklama: "Ekşi Maya Açıklamaları" }
-      ],
-      "Genel açıklama (seçeneğin kendi açıklaması yoksa bu görünür)",
-      "Maya Tipi" // düğme yazısı (isteğe bağlı)
-    );
-    addNormalRow("Tuz", 2, "Uzun mayalama yapılacaksa (buzdoabında geceden bekletme) oran %1.7-%1.8'e düşürülebilir.");
-    addNormalRow("Şeker", 0, "Klasik ekmek yapımında şeker mecburi değildir. Şeker, mayalanma sürecini hızlandırma, kabuğun daha kahverengi olması ve tat verici özellikler sağlar. Şekerin bu özelliklerini kullanmak istiyorsanız, şeker de ilave edebilirsiniz. %1-2 civarı yeterlidir");
-    addNormalRow("Yağ", 0, "Hamuru katlamda kullanacağımız kabın içini yağlamak için çok az bir miktar kullanacağız. Bunun haricindeki yağ kullanımı mecburi değildir. Ancak daha pidemsi dokuda bir ekmek yapmak istiyorsanız %1-2 civarı yağ ilave edebilirsiniz.");
-    addNormalRow("Susam ve Çörekotu", 0, "Kişisel tercihe bağlıdır. Miktarı da zevkinize göre ayarlayabilirsiniz.");
-    addNormalRow("Ekstralar", 0, "Mahlep, alfa amilaz enzimi");
-    //Malzeme Satırları.
-  </script>
-  <script src="../script.js" defer></script>
-  <!-- JavaScript. -->
-</body>
-
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow("Un", "%11-13 arası protein oranına sahip ekmeklik un");
+      addCustomRow(
+        "Su",
+        "Unumuzun kaldırabildiği ölçüde, mümkün olduğunca yüksek oranda su kullanmalıyız. Örneğin, 1000 gr un için 670 gr su  kullanarak hamurunuzu ideal kıvama (ne çok cıvık, ne çok sert) getirdi iseniz ununuzda kullanacağınız su hidrasyonun oranınız % 67 dir. Birkaç denemeden sonra ideal oranınınzı artık tespit etmiş olursunuz. Daha sonraki ekmek yapımılarında aynı unu kullanacaksanız artık tespit edttiğiniz bu oran üzerinden gidiniz. ",
+      );
+      addDropdownRow(
+        [
+          {
+            label: "İnstant Kuru Maya",
+            value: 0.5,
+            aciklama:
+              "Tarifte 40 gr. yaş maya geçiyorsa, yerine 40*0.35=14 gr. İnstant maya",
+          },
+          {
+            label: "Aktif Kuru Maya",
+            value: 1,
+            aciklama: "Aktif Kuru Maya Açıklamaları",
+          },
+          { label: "Yaş Maya", value: 1.5, aciklama: "Yaş Maya Açıklamaları" },
+          { label: "Ekşi Maya", value: 20, aciklama: "Ekşi Maya Açıklamaları" },
+        ],
+        "Genel açıklama (seçeneğin kendi açıklaması yoksa bu görünür)",
+        "Maya Tipi", // düğme yazısı (isteğe bağlı)
+      );
+      addNormalRow(
+        "Tuz",
+        2,
+        "Uzun mayalama yapılacaksa (buzdoabında geceden bekletme) oran %1.7-%1.8'e düşürülebilir.",
+      );
+      addNormalRow(
+        "Şeker",
+        0,
+        "Klasik ekmek yapımında şeker mecburi değildir. Şeker, mayalanma sürecini hızlandırma, kabuğun daha kahverengi olması ve tat verici özellikler sağlar. Şekerin bu özelliklerini kullanmak istiyorsanız, şeker de ilave edebilirsiniz. %1-2 civarı yeterlidir",
+      );
+      addNormalRow(
+        "Yağ",
+        0,
+        "Hamuru katlamda kullanacağımız kabın içini yağlamak için çok az bir miktar kullanacağız. Bunun haricindeki yağ kullanımı mecburi değildir. Ancak daha pidemsi dokuda bir ekmek yapmak istiyorsanız %1-2 civarı yağ ilave edebilirsiniz.",
+      );
+      addNormalRow(
+        "Susam ve Çörekotu",
+        0,
+        "Kişisel tercihe bağlıdır. Miktarı da zevkinize göre ayarlayabilirsiniz.",
+      );
+      addNormalRow("Ekstralar", 0, "Mahlep, alfa amilaz enzimi"); // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
 </html>

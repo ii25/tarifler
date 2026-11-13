@@ -24,23 +24,15 @@
         <!-- Logo. -->
       </div>
       <!-- Tarif Başlığı -->
-      <div class="recipe-title-container-single">
-        <div class="recipe-title-line-single">
+      <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+      <div class="recipe-title">
+        <div class="recipe-title-line">
           <span></span>
-          <h1>LAVAŞ</h1>
+          <h1>LAVAS</h1>
           <span></span>
         </div>
       </div>
-      <!--
-      <div class="recipe-title-container-double">
-      <div class="recipe-title-line-double">
-      <span></span>
-      <h1>TARİF BAŞLIĞI</h1>
-      <span></span>
-      </div>
-      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
-      </div>
-      -->
       <!-- Tarif Başlığı. -->
       <div class="header-right">
         <!-- Arama Kutusu -->
@@ -54,7 +46,7 @@
   </header>
   <!-- FULL WIDTH HEADER. -->
   <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
-  <div class="recipe-image"><img src="../images/lavas.png" alt=""></div>
+  <div class="recipe-image"><img src="../images/lavas.png" alt="Lavas"></div>
   <!-- İçerik -->
   <div class="container">
     <!-- Malzemeler Kartı -->
@@ -80,7 +72,6 @@
           <span class="text-haz">Hazırlanışı</span>
         </div>
       </div>
-      <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
       <div class="table-container">
     <!-- Hazırlanışı -->
         <section class="recipe">
@@ -195,7 +186,10 @@
             </div>
           </div>
           <!-- Bilgi Notları. -->
-        </section>    <!-- Hazırlanışı. -->    
+        </section> 
+            <!-- Hazırlanışı. -->    
+        <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+        <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
       </div>
     </div>
   </div>
@@ -205,7 +199,6 @@
   <script src="../recipe.js"></script>
   <script>
     // Malzemeler
-    addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
     addMainRow("Un", "ekmeklik un (protein %11-13) > çok amaçlı un. Protein oranı yüksek un daha güçlü gluten yapar. Bu sayede hamur ince açılırken yırtılmaz.");
     addCustomRow("Su", "Yüksek hidrasyon lavaşı daha esnek yapar. Ancak, su arttıkça açmak zorlaşır, açmadan önce hamuru iyice dinlendirmek gerekir. %58-60 hidrasyon, Hamuru açılabilecek kadar sert, esneyecek kadar yumuşak tutar. Daha fazla su hamuru yapıştırır ve açarken fazla un çektirir. Daha azı hamuru gerer ve yırtar. Su sıcaklığı mayayı rahatça başlatacak, glutenin hızla gevşemesine yol açmayacak düzeydedir.(%58-64)" );
     addNormalRow("Tuz", 2, "ince deniz tuzu (iyotsuz) > ince sofra tuzu. %2 hem lezzet verir hem gluteni güçlendirir. Maya faaliyetini de dizginler.");
@@ -222,7 +215,8 @@
     addNormalRow("Yağ", 2.5, "Zeytinyağı > Ayçiçek yağı.hamura elastikiyet katar, kurumasını engeller. %2–3" );
     addNormalRow("Şeker", 0.1, "Hem mayayı besler hem de nemi hamurda tutmaya yardımcı olur higroskopik etki, bu da kırılmayı azaltır");
     addNormalRow("Sirke (opsiyonel) ", 0.2, "%0.2–0.3 oranında (yaklaşık 5 g üzüm sirkesi) eklenirse, Gluteni güçlendirir, Elastikiyeti artırır, Hafif aroma verir.");
-    addNormalRow("Yoğurt (opsiyonel)", 0, "%3 yoğurt (30 g / 1 kg un) → pişme sonrası daha esnek yapı sağlar. Laktoz ve protein, suyu hapseder.");    // Malzemeler.
+    addNormalRow("Yoğurt (opsiyonel)", 0, "%3 yoğurt (30 g / 1 kg un) → pişme sonrası daha esnek yapı sağlar. Laktoz ve protein, suyu hapseder."); 
+        // Malzemeler.
   </script>
   <script src="../script.js" defer></script>
   <!-- JavaScript. -->

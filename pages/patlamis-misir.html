@@ -1,202 +1,308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarifler</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
-</head>
-
-<body>
-  <!-- FULL WIDTH HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <div class="header-left">
-
-        <!-- Logo -->
-        <div class="logo" onclick="window.location.href='../index.html';" style="cursor:pointer;">
-          <img src="../images/icon-logo.svg" class="logo-icon">
-          <span class="logo-text">tarifler</span>
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
         </div>
-        <!-- Logo. -->
-      </div>
-      <!-- Tarif Başlığı -->
-      <div class="recipe-title-container-single">
-        <div class="recipe-title-line-single">
-          <span></span>
-          <h1>PATLAMIŞ MISIR</h1>
-          <span></span>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>PATLAMIŞ MISIR</h1>
+            <span></span>
+          </div>
         </div>
-      </div>
-      <!--
-      <div class="recipe-title-container-double">
-      <div class="recipe-title-line-double">
-      <span></span>
-      <h1>TARİF BAŞLIĞI</h1>
-      <span></span>
-      </div>
-      <p class="recipe-title-sub-text">BAŞLIK ALT AÇIKLAMASI</p>
-      </div>
-      -->
-      <!-- Tarif Başlığı. -->
-      <div class="header-right">
-        <!-- Arama Kutusu -->
-        <div class="search-container"><input type="text" id="searchInput" class="mainLoginInput" placeholder="&#61442;"
-            oninput="search()" />
-          <div id="results" class="results-dropdown"></div>
-        </div>
-        <!-- Arama Kutusu. -->
-      </div>
-    </div>
-  </header>
-  <!-- FULL WIDTH HEADER. -->
-  <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
-  <div class="recipe-image"><img src="../images/patlamis-misir.png" alt=""></div>
-  <!-- İçerik -->
-  <div class="container">
-    <!-- Malzemeler Kartı -->
-    <div class="card">
-      <div class="card-header">
-        <div class="icon-text-mal">
-          <img src="../images/icon-mal.svg" class="icon-mal">
-          <span class="text-mal">Malzemeler</span>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
         </div>
       </div>
-      <div class="table-container">
-        <table class="malzeme-tablosu">
-          <tbody id="malzemeBody"></tbody>
-        </table>
-      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/patlamis-misir.png" alt="Patlamış Mısır" />
     </div>
-    <!-- Malzemeler Kartı -->
-    <!-- Tarif Kartı -->
-    <div class="card">
-      <div class="card-header">
-        <div class="icon-text-haz">
-          <img src="../images/icon-haz.svg" alt="" class="icon-haz">
-          <span class="text-haz">Hazırlanışı</span>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
         </div>
       </div>
-      <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
-      <div class="table-container">
-    <!-- Hazırlanışı -->
-    <section class="recipe">
-  <div class="genel-bakis">
-    <h3>Genel Bakış</h3>
-    <p>Patlamış mısır, sert kabuklu tanenin içindeki nemin yaklaşık 180 °C'de buhara dönüşüp kabuğu patlatmasıyla oluşur. Tarifin tüm püf noktaları bu ısıyı doğru yakalamaya ve çıkan buharı kontrollü atmaya dayanır. Böylece taneler aynı anda patlar, kıtır kalır ve yanmaz.</p>
-  </div>
-  <ol class="steps">
-    <li>
-      <div class="step-content">
-        <strong>Ön Hazırlık</strong>
-        <ul>
-          <li>Kalın tabanlı, kapaklı, 3-4 litrelik bir tencere hazırlayın. Kalın taban ısıyı eşit yayar ve tanelerin dibe yanmasını önler.</li>
-          <li>Mısırı, yağı ve tuzu terazide tartın; patlama başladıktan sonra tartmaya vakit kalmaz.</li>
-          <li>Tuzu ince değilse baharat öğütücüsünde toz haline getirin. <span class="puf">Çok ince tuz, patlamış mısırın yüzeyine daha iyi yapışır ve daha az tuzla aynı lezzeti verir.</span></li>
-          <li>Servis için geniş bir kase hazırlayın; tuzu karıştırırken taşmaması için kasenin büyük olması gerekir.</li>
-          <li>Mısırı yıkamayın ve ıslatmayın; tanelerin nemi sabit kalmalıdır.</li>
-        </ul>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>
+                Patlamış mısır, sert kabuklu tanenin içindeki nemin yaklaşık 180
+                °C'de buhara dönüşüp kabuğu patlatmasıyla oluşur. Tarifin tüm
+                püf noktaları bu ısıyı doğru yakalamaya ve çıkan buharı
+                kontrollü atmaya dayanır. Böylece taneler aynı anda patlar,
+                kıtır kalır ve yanmaz.
+              </p>
+            </div>
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>
+                      Kalın tabanlı, kapaklı, 3-4 litrelik bir tencere
+                      hazırlayın. Kalın taban ısıyı eşit yayar ve tanelerin dibe
+                      yanmasını önler.
+                    </li>
+                    <li>
+                      Mısırı, yağı ve tuzu terazide tartın; patlama başladıktan
+                      sonra tartmaya vakit kalmaz.
+                    </li>
+                    <li>
+                      Tuzu ince değilse baharat öğütücüsünde toz haline getirin.
+                      <span class="puf"
+                        >Çok ince tuz, patlamış mısırın yüzeyine daha iyi
+                        yapışır ve daha az tuzla aynı lezzeti verir.</span
+                      >
+                    </li>
+                    <li>
+                      Servis için geniş bir kase hazırlayın; tuzu karıştırırken
+                      taşmaması için kasenin büyük olması gerekir.
+                    </li>
+                    <li>
+                      Mısırı yıkamayın ve ıslatmayın; tanelerin nemi sabit
+                      kalmalıdır.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Yağı Isıtma</strong>
+                  <ul>
+                    <li>
+                      Tencereye yağı ve 3 adet test tanesi koyun, kapağı kapatın
+                      ve orta-yüksek ateşte ısıtın.
+                    </li>
+                    <li>
+                      Test tanelerinden biri patladığında yağ yaklaşık 175-180
+                      °C'ye ulaşmış demektir; bu, tanelerin hemen patlaması için
+                      gereken ısıdır. Termometreniz varsa yağın ısısını da
+                      buradan doğrulayabilirsiniz.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Yağ duman çıkarmaya başlarsa ateşi kısın ve tencereyi
+                        birkaç saniye ocaktan alın; dumanlayan yağ acılaşır ve
+                        bozulur.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Tanelerin Eklenmesi</strong>
+                  <ul>
+                    <li>
+                      Patlayan test tanelerini çıkarın, kalan mısırı tencereye
+                      ekleyin ve kapağı kapatın.
+                    </li>
+                    <li>
+                      Tencereyi ocaktan alıp yaklaşık 30 saniye bekletin.
+                      <span class="puf"
+                        >Bu bekleme, tüm tanelerin yağdan eşit ısı almasını
+                        sağlar; böylece taneler aynı anda patlar ve patlamayan
+                        tane sayısı azalır.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Patlatma</strong>
+                  <ul>
+                    <li>
+                      Tencereyi tekrar orta-yüksek ateşe alın. Patlamalar
+                      başlayınca tencereyi arada hafifçe sallayın; taneler dibe
+                      yapışmadan hareket etsin.
+                    </li>
+                    <li>
+                      <span class="puf"
+                        >Kapağı hafif aralık tutun. Kapalı kalırsa tanelerden
+                        çıkan buhar tencerede birikir ve patlamış mısır nemlenip
+                        sünger gibi olur; aralıkta tutunca buhar çıkar ve mısır
+                        kıtır kalır. Sıçrayan taneler için kapağı hafif eğik
+                        tutmak yeterlidir.</span
+                      >
+                    </li>
+                    <li>
+                      Patlamalar arasındaki süre 2-3 saniyeye çıkınca tencereyi
+                      hemen ocaktan alın.
+                      <span class="puf"
+                        >Geç kalırsanız geride kalan taneler yanabilir.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Tuzlama</strong>
+                  <ul>
+                    <li>
+                      Patlamış mısırı hemen geniş kaseye aktarın ve sıcakken
+                      tuzu serpip karıştırın. Yüzeydeki ince yağ filmi sayesinde
+                      tuz tutunur.
+                    </li>
+                    <li>
+                      Tuz en sonda eklenir çünkü tuz tanelerin nemini çeker ve
+                      patlamayı bozar; ayrıca tencerede yanıp acılaşabilir.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis</strong>
+                  <ul>
+                    <li>
+                      Hemen veya ılıkken servis edin; en kıtır hali budur.
+                    </li>
+                    <li>
+                      Kasenin dibinde patlamamış sert taneleri ayırın; dişe
+                      zarar verebilirler.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>
+                    Patlamış mısır en iyi hemen yenir. Kalırsa hava geçirmeyen
+                    bir kapta oda sıcaklığında 1 gün içinde tüketilmelidir;
+                    zamanla havadaki nemi çekip yumuşar.
+                  </li>
+                  <li>
+                    Patlamamış ham mısır ise hava almayan bir kapta serin, kuru
+                    ve karanlık bir yerde saklanmalıdır. Nemini kaybeden taneler
+                    zamanla patlamaz hale gelir.
+                  </li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>
+                    Patlamış mısır, kabuğuyla yenen bir tam tahıl olduğu için
+                    lif ve fenolik bileşikler içerir. Pişirme kısa sürdüğü için
+                    bu bileşikler büyük oranda korunur.
+                  </li>
+                  <li>
+                    Yağı dumanlanma noktasının altında tutmak, yağın bozulup
+                    zararlı bileşiklere dönüşmesini önler; bu yüzden ateş ve
+                    süre kontrolü önemlidir.
+                  </li>
+                  <li>
+                    Yağ ve tuz oranları düşük tutulmuştur. Tereyağı, şeker veya
+                    karamel eklenirse kalori ve doymuş yağ belirgin şekilde
+                    artar.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
       </div>
-    </li>
-    <li>
-      <div class="step-content">
-        <strong>Yağı Isıtma</strong>
-        <ul>
-          <li>Tencereye yağı ve 3 adet test tanesi koyun, kapağı kapatın ve orta-yüksek ateşte ısıtın.</li>
-          <li>Test tanelerinden biri patladığında yağ yaklaşık 175-180 °C'ye ulaşmış demektir; bu, tanelerin hemen patlaması için gereken ısıdır. Termometreniz varsa yağın ısısını da buradan doğrulayabilirsiniz.</li>
-          <li><span class="puf">Yağ duman çıkarmaya başlarsa ateşi kısın ve tencereyi birkaç saniye ocaktan alın; dumanlayan yağ acılaşır ve bozulur.</span></li>
-        </ul>
-      </div>
-    </li>
-    <li>
-      <div class="step-content">
-        <strong>Tanelerin Eklenmesi</strong>
-        <ul>
-          <li>Patlayan test tanelerini çıkarın, kalan mısırı tencereye ekleyin ve kapağı kapatın.</li>
-          <li>Tencereyi ocaktan alıp yaklaşık 30 saniye bekletin. <span class="puf">Bu bekleme, tüm tanelerin yağdan eşit ısı almasını sağlar; böylece taneler aynı anda patlar ve patlamayan tane sayısı azalır.</span></li>
-        </ul>
-      </div>
-    </li>
-    <li>
-      <div class="step-content">
-        <strong>Patlatma</strong>
-        <ul>
-          <li>Tencereyi tekrar orta-yüksek ateşe alın. Patlamalar başlayınca tencereyi arada hafifçe sallayın; taneler dibe yapışmadan hareket etsin.</li>
-          <li><span class="puf">Kapağı hafif aralık tutun. Kapalı kalırsa tanelerden çıkan buhar tencerede birikir ve patlamış mısır nemlenip sünger gibi olur; aralıkta tutunca buhar çıkar ve mısır kıtır kalır. Sıçrayan taneler için kapağı hafif eğik tutmak yeterlidir.</span></li>
-          <li>Patlamalar arasındaki süre 2-3 saniyeye çıkınca tencereyi hemen ocaktan alın. <span class="puf">Geç kalırsanız geride kalan taneler yanabilir.</span></li>
-        </ul>
-      </div>
-    </li>
-    <li>
-      <div class="step-content">
-        <strong>Tuzlama</strong>
-        <ul>
-          <li>Patlamış mısırı hemen geniş kaseye aktarın ve sıcakken tuzu serpip karıştırın. Yüzeydeki ince yağ filmi sayesinde tuz tutunur.</li>
-          <li>Tuz en sonda eklenir çünkü tuz tanelerin nemini çeker ve patlamayı bozar; ayrıca tencerede yanıp acılaşabilir.</li>
-        </ul>
-      </div>
-    </li>
-    <li>
-      <div class="step-content">
-        <strong>Servis</strong>
-        <ul>
-          <li>Hemen veya ılıkken servis edin; en kıtır hali budur.</li>
-          <li>Kasenin dibinde patlamamış sert taneleri ayırın; dişe zarar verebilirler.</li>
-        </ul>
-      </div>
-    </li>
-  </ol>
-  <div class="bilgi-notlari">
-    <h3>Bilgi Notları</h3>
-    <div class="not-grubu">
-      <h4>Saklama</h4>
-      <ul>
-        <li>Patlamış mısır en iyi hemen yenir. Kalırsa hava geçirmeyen bir kapta oda sıcaklığında 1 gün içinde tüketilmelidir; zamanla havadaki nemi çekip yumuşar.</li>
-        <li>Patlamamış ham mısır ise hava almayan bir kapta serin, kuru ve karanlık bir yerde saklanmalıdır. Nemini kaybeden taneler zamanla patlamaz hale gelir.</li>
-      </ul>
     </div>
-    <div class="not-grubu">
-      <h4>Besin Öğesi Korunumu</h4>
-      <ul>
-        <li>Patlamış mısır, kabuğuyla yenen bir tam tahıl olduğu için lif ve fenolik bileşikler içerir. Pişirme kısa sürdüğü için bu bileşikler büyük oranda korunur.</li>
-        <li>Yağı dumanlanma noktasının altında tutmak, yağın bozulup zararlı bileşiklere dönüşmesini önler; bu yüzden ateş ve süre kontrolü önemlidir.</li>
-        <li>Yağ ve tuz oranları düşük tutulmuştur. Tereyağı, şeker veya karamel eklenirse kalori ve doymuş yağ belirgin şekilde artar.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-    <!-- Hazırlanışı. -->    
-      </div>
-    </div>
-  </div>
-  <!-- Icerik -->
-  <!-- JavaScript -->
-  <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
-  <script src="../recipe.js"></script>
-  <script>
-    // Malzemeler
-    addInfoRow("Tüm malzemelerde doğal ve taze olanları tercih ediniz.");
-    addMainRow(
-  "Patlamalık mısır",
-  "Tek doğru seçenek patlamalık (popcorn tipi) kuru mısırdır; tatlı mısır, at dişi mısır ya da konserve mısır patlamaz. Taneler küçük, sert, parlak ve çatlaksız olmalıdır, çünkü patlama tanenin içindeki nemin buhar basıncıyla gerçekleşir ve nemi kaçmış, eski tanelerde patlamayan tane oranı artar. Satın alırken sızdırmaz ambalajlı, mümkünse yeni sezon ürünü tercih edilmelidir. Bu tarifte ana malzeme olduğu için diğer tüm oranlar bunun ağırlığına göre hesaplanır."
-);
-addNormalRow(
-  "Yağ",
-  20,
-  "En uygun seçenek mısırözü yağıdır; nötr tadı, yüksek dumanlanma noktası ve mısırın kendi aromasını bastırmaması bunu öne çıkarır. Ardından rafine ayçiçek yağı gelir, o da benzer şekilde nötr ve ısıya dayanıklıdır. Sinema tadı isteniyorsa rafine hindistancevizi yağı kullanılabilir ama kendine has bir tadı vardır. Rafine (hafif) zeytinyağı da olur; sızma zeytinyağı ise tanelerin patladığı 180 °C civarında hızla bozulduğu için önerilmez. Yağın rafine ve taze olması önemlidir, çünkü daha önce kızartmada kullanılmış yağ bu ısıda çabuk oksitlenir. Oran, tanelerin yüzeyini ince bir filmle kaplayacak kadardır: fazlası patlamış mısırı yağlı ve ağır yapar, azı ise ısının taneler arasında eşit dağılmasını zorlaştırıp patlamayan tane sayısını artırır."
-);
-addNormalRow(
-  "Tuz",
-  2,
-  "İnce öğütülmüş deniz tuzu en iyisidir; ince tuz hafif ve geniş yüzeyli patlamış mısıra eşit yapışır. İnce sofra tuzu da aynı işi görür, iyotlu olması sorun değildir. Elinizde sadece iri tuz varsa baharat öğütücüsünde toz haline getirerek kullanabilirsiniz. Tuzun tanelerle birlikte pişmeye başlamaması için en sonda eklenmesi gerekir. Oran, hafif tuzlu bir lezzet verecek şekilde seçilmiştir; damak tadına göre %1,5 ile %3 arasında oynatılabilir."
-);
-    // Malzemeler.
-  </script>
-  <script src="../script.js" defer></script>
-  <!-- JavaScript. -->
-</body>
-
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow(
+        "Patlamalık mısır",
+        "Tek doğru seçenek patlamalık (popcorn tipi) kuru mısırdır; tatlı mısır, at dişi mısır ya da konserve mısır patlamaz. Taneler küçük, sert, parlak ve çatlaksız olmalıdır, çünkü patlama tanenin içindeki nemin buhar basıncıyla gerçekleşir ve nemi kaçmış, eski tanelerde patlamayan tane oranı artar. Satın alırken sızdırmaz ambalajlı, mümkünse yeni sezon ürünü tercih edilmelidir. Bu tarifte ana malzeme olduğu için diğer tüm oranlar bunun ağırlığına göre hesaplanır.",
+      );
+      addNormalRow(
+        "Yağ",
+        20,
+        "En uygun seçenek mısırözü yağıdır; nötr tadı, yüksek dumanlanma noktası ve mısırın kendi aromasını bastırmaması bunu öne çıkarır. Ardından rafine ayçiçek yağı gelir, o da benzer şekilde nötr ve ısıya dayanıklıdır. Sinema tadı isteniyorsa rafine hindistancevizi yağı kullanılabilir ama kendine has bir tadı vardır. Rafine (hafif) zeytinyağı da olur; sızma zeytinyağı ise tanelerin patladığı 180 °C civarında hızla bozulduğu için önerilmez. Yağın rafine ve taze olması önemlidir, çünkü daha önce kızartmada kullanılmış yağ bu ısıda çabuk oksitlenir. Oran, tanelerin yüzeyini ince bir filmle kaplayacak kadardır: fazlası patlamış mısırı yağlı ve ağır yapar, azı ise ısının taneler arasında eşit dağılmasını zorlaştırıp patlamayan tane sayısını artırır.",
+      );
+      addNormalRow(
+        "Tuz",
+        2,
+        "İnce öğütülmüş deniz tuzu en iyisidir; ince tuz hafif ve geniş yüzeyli patlamış mısıra eşit yapışır. İnce sofra tuzu da aynı işi görür, iyotlu olması sorun değildir. Elinizde sadece iri tuz varsa baharat öğütücüsünde toz haline getirerek kullanabilirsiniz. Tuzun tanelerle birlikte pişmeye başlamaması için en sonda eklenmesi gerekir. Oran, hafif tuzlu bir lezzet verecek şekilde seçilmiştir; damak tadına göre %1,5 ile %3 arasında oynatılabilir.",
+      ); 
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
 </html>
