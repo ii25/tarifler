@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarifler</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- FULL WIDTH HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="header-left">
+
+        <!-- Logo -->
+        <div class="logo" onclick="window.location.href='../index.html';" style="cursor:pointer;">
+          <img src="../images/icon-logo.svg" class="logo-icon">
+          <span class="logo-text">tarifler</span>
+        </div>
+        <!-- Logo. -->
+      </div>
+      <!-- Tarif Başlığı -->
+      <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+      <div class="recipe-title">
+        <div class="recipe-title-line">
+          <span></span>
+          <h1>İZGARA KÖFTE</h1>
+          <span></span>
+        </div>
+        <p class="recipe-title-sub-text">DÖKÜM TAVADA KASAP KÖFTE</p>
+      </div>
+      <!-- Tarif Başlığı. -->
+      <div class="header-right">
+        <!-- Arama Kutusu -->
+        <div class="search-container"><input type="text" id="searchInput" class="mainLoginInput" placeholder="&#61442;"
+            oninput="search()" />
+          <div id="results" class="results-dropdown"></div>
+        </div>
+        <!-- Arama Kutusu. -->
+      </div>
+    </div>
+  </header>
+  <!-- FULL WIDTH HEADER. -->
+  <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+  <div class="recipe-image"><img src="../images/izgara-kofte.jpg" alt="İzgara Köfte"></div>
+  <!-- İçerik -->
+  <div class="container">
+    <!-- Malzemeler Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-mal">
+          <img src="../images/icon-mal.svg" class="icon-mal">
+          <span class="text-mal">Malzemeler</span>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="malzeme-tablosu">
+          <tbody id="malzemeBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Malzemeler Kartı -->
+    <!-- Tarif Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-haz">
+          <img src="../images/icon-haz.svg" alt="" class="icon-haz">
+          <span class="text-haz">Hazırlanışı</span>
+        </div>
+      </div>
+      <div class="table-container">
+    <!-- Hazırlanışı -->
+        <section class="recipe">
+          <ol class="steps">
+            <li>
+              <div class="step-content">
+                <strong>Harcı Hazırlayın</strong>
+                <ul>
+                  <li>Kıyma + Tuz (Başka hiçbirşey koymayın), 1-2 dk yoğurun</li>
+                  <li>Sonra, üzeri kapalı olarak 0–4°C buzdolabında 4–8 saat dinlendirin. Bu süreçte et proteinleri çözünür → aroma derinleşir. 12 saati geçmeyin (kuruma başlar)</li>
+                  <li>Soğanı rendeleyip suyunu tamamen sıkın ve harca ekleyin ve kısa yoğurun. Soğan, tuzlanmış etten sonra eklenir. Soğan erken girerse eti “haşlar”.</li>
+                  <li>Bulgur'u sıcak suyla 10 dk şişirip suyunu sıkın. soğuyunca ekleyin</li>
+                  <li>Patates'i haşlayıp püre haline getirin, soğuyunca ekleyin</li>
+                  <li>Diğer bakliyatları da benzer işlemden geçirin.</li>
+                  <li>Baharatlar en son eklenir. (son 30 sn)</li>
+                  <li>Elinizle, bastırmadan 3–4 dakika yoğurun (fazlası köfteyi sertleştirir, lastikleştirir)</li>
+                  <li>Üzerini kapatıp 15–20 dk buzdolabında dinlendirin</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Şekil Verin & Dondurun</strong>
+                <ul>
+                  <li>Köftelere yassı oval şekil verin</li>
+                  <li>Tepsiye dizin, birbirine değmesin</li>
+                  <li>Buzdolabında 30–45 dk dinlendirin (Bu ikinci dinlenme aromayı sabitler)</li>
+                  <li>1–2 saat açık halde dondurun</li>
+                  <li>Ambalajlayıp kapalı bir kaba koyun ve buzluğa atın, -18°C’de 3 aya kadar güvenli</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Çözdürün</strong>
+                <ul>
+                  <li>Köfte pişireceğiniz zaman:</li>
+                  <li>Buzluktan → buzdolabına (8–12 saat yavaş çözülme)</li>
+                  <li>Pişirmeden 5 dk önce dışarı çıkarın</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Pişirin</strong>
+                <ul>
+                  <li>Tavayı orta-yüksek ateşte iyice kızdırın</li>
+                  <li>Tavayı az yağlayın</li>
+                  <li>Köfteleri koyun → ilk 1,5–2 dk dokunmayın</li>
+                  <li>Çevirip diğer tarafını da mühürleyin</li>
+                  <li>Ateşi düşürün, içi pişsin</li>
+                  <li>Bastrımayın, Çatal batırmayın (suyunu kaçırır)</li>
+                  <li>Pişmeye yakın tavaya 1 çay kaşığı tereyağı, Yanına 1 küçük parça dana iç yağı (opsiyonel) koyun</li>
+                  <li>Köpüklenince köfteyi çevirin</li>
+                </ul>
+              </div>
+            </li>
+             <li>
+              <div class="step-content">
+                <strong>Servis Edin</strong>
+                <ul>
+                  <li>...</li>
+                  <li>...</li>
+                  <li>Afiyet Olsun</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </section>
+            <!-- Hazırlanışı. -->    
+        <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+        <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
+      </div>
+    </div>
+  </div>
+  <!-- Icerik -->
+  <!-- JavaScript -->
+  <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+  <script src="../recipe.js"></script>
+  <script>
+    // Malzemeler
+    addMainRow("Kıyma", "%60 dana döş (yağ + aroma), %40 dana but (lif + yapı). Tek parça etle yapılmış köfte, hiçbir zaman gerçek köfteci tadını vermez. Yağ oranı: %18–20. Daha azı kuru, fazlası ağır olur.");
+    addNormalRow("Tuz", 1.7, "%1,6 – 1,8");
+    addNormalRow("Soğan", 13, "Rendelenmiş, suyu sıkılmış: %12–15. (%15 üstüne çıkma)");
+    addNormalRow("Patates", 10, "Haşlanmış patates (rendelenmiş/püre): %8–10 Kıymayı ciddi oranda çoğaltır, Köfteyi yumuşak ve sulu tutar, Döküm tavada içi kurumaz. 500 g kıyma → 1 orta boy haşlanmış patates. Daha kasap köftesi lezzetinde olsun diyorsanız patatesi çıarabilirsiniz.");
+    addNormalRow("Mantar", 0, "Kültür mantarı / kestane mantarı. 500 gr kıyma → 150–200 gr sotelenmiş mantar");
+    addNormalRow("Bulgur", 10, "İnce bulgur (şişmiş & suyu sıkılmış): %8–10");
+    addNormalRow("Nohut", 0, "500 gr kıyma → 50 gr");
+    addNormalRow("Yeşil Mercimek", 0, "500 gr kıyma → 50 gr");
+    addNormalRow("Kırmızı Mercimek", 0, "500 gr kıyma → 50 gr");
+    addNormalRow("Karabiber", 0.25, "%0,25 – 0,3");
+    addNormalRow("Kimyon", 0.2, "%0,2 – 0,25. Kasap köftesinde kimyon arka planda kalmalı");
+    addNormalRow("Kırmızı Tatlı Toz Biber (Opsiyonel)", 0.15, "%0,15");    // Malzemeler.
+  </script>
+  <script src="../script.js" defer></script>
+  <!-- JavaScript. -->
+</body>
+
+</html>

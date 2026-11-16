@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>MUHALLEBİ</h1>
+            <span></span>
+          </div>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/muhallebi.png" alt="Muhallebi" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Malzemelerin Karıştırılması</strong>
+                  <ul>
+                    <li>
+                      Süü uygun bir tencereye alıp ocağın altını kısık atesşte
+                      açın
+                    </li>
+                    <li>
+                      Şekeri ve tuzu ilave edin ve eriyene kadar karıştırın
+                    </li>
+                    <li>
+                      Nişastayı (varsa pirinç unu) topak yapmadan yavaş yavaş
+                      ekleyip karıştırmaya devam edin.Orta-kısık ateş
+                    </li>
+                    <li>
+                      Karışım kıvam almaya başlayana kadar karıştırmaya devam
+                      edin
+                    </li>
+                    <li>Vanilini ekleyip biraz daha karıştıp ocağı kapatın</li>
+                    <li>
+                      Damla sakızı (kullanıyorsanız) – süt kaynamaya yakınken,
+                      nişasta tamamen dağılmış ve karışım kıvam almaya
+                      başlamışken eklemek en güvenlisi; erken eklerse sakız
+                      parçaları nişasta jeliyle karışıp tam erimeden kalabilir.
+                    </li>
+                    <li>
+                      karışım ısınıp jelleşme noktasına (~60–65°C) yaklaşırken
+                      bir an bile durmadan karıştırmanız gerekir, yoksa dipte
+                      tutma ve topaklanma riski artar.
+                    </li>
+                    <li>
+                      Gül suyu (kullanıyorsanız) – en son, ocaktan aldıktan
+                      sonra. Kaynatılırsa aroması uçar.
+                    </li>
+                    <li>
+                      1. Aşama – Görsel kıvamlanma (jelleşme başlangıcı) Karışım
+                      kaşığın arkasını kaplamaya, tencere dibinde iz bırakmaya
+                      başlar. Bu noktada nişasta jelleşmiş görünür ama henüz tam
+                      pişmemiştir — hâlâ hafif unsu/ham bir tat vardır.
+                    </li>
+                    <li>
+                      2. Aşama – Kaynama + ek pişirme (asıl kritik kısım)
+                      Karışım gerçek anlamda kaynamaya başlamalı (yüzeyde büyük
+                      baloncuklar patlıyor olmalı, sadece kenarlarda fokurdama
+                      değil) ve bu kaynama noktasından itibaren 2–3 dakika daha,
+                      sürekli karıştırarak pişirilmeli. Nişastanın
+                      enzimatik/nişastalı tadının tamamen gitmesi ve pürüzsüz,
+                      parlak bir doku kazanması için bu ek süre şart.
+                    </li>
+                    <li>
+                      Pratikte nasıl anlarsınız. Kaşığı karışımdan çıkarıp
+                      arkasına baktığınızda: ince, düzgün bir tabaka halinde
+                      kalmalı, parmağınızla çizdiğinizde iz belirgin kalmalı
+                      (akıp kapanmamalı). Karışım kaynarken artık “ağırlaşmış”,
+                      karıştırırken kaşığa direnç veriyor olmalı. Görünüm mat
+                      değil, parlak/saten bir yüzeye dönüşmüş olmalı — mat/donuk
+                      görünüyorsa nişasta tam jelleşmemiş demektir
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Kaselere Bölme ve Soğutma</strong>
+                  <ul>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis</strong>
+                  <ul>
+                    <li>
+                      Tarçın, hindistan cevizi rendesi, Antep fıstığı, karamel
+                      sosu, muz
+                    </li>
+                    <li>...</li>
+                    <li>Afiyet Olsun</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow("Süt", "Tam yağlı, çiğ süt (Tencere 721 gr)");
+
+      addNormalRow(
+        "Şeker",
+        12,
+        "Toz Şeker. %12-14 arası klasik tatlılık. %10'a kadar düşürülebilir ",
+      );
+
+      addNormalRow(
+        "Mısır Nişastası",
+        5,
+        "Kıvam verici, ana bağlayıcı. %5–7 Nişasta oranını %6'nın altına düşürürseniz muhallebi akıcı kalır (pudding kıvamı); %8'e çıkarırsanız kesilebilir, bıçakla dilimlenebilir sertlikte olur (Osmanlı usulü kesme muhallebi gibi). Şeker oranını da damak zevkinize göre %10–16 arasında oynatabilirsiniz",
+      );
+
+      addNormalRow(
+        "Pirinç Unu (Opsiyonel)",
+        1,
+        "Dokuya ipeksilik ve hafif bulanıklık katar. %1–1.5",
+      );
+
+      addNormalRow(
+        "Vanilya",
+        0.2,
+        "Çubuk veya öz. Süt kaynatılırken infüze edilir. %0.3–0.5",
+      );
+
+      addNormalRow(
+        "Tuz",
+        0.1,
+        "Tadı dengeler, unutulmaması gereken kritik bir detay",
+      );
+
+      addNormalRow(
+        "Damla Sakızı (Opsiyonel)",
+        0.1,
+        "Damla sakızı çok belirgin, reçineli bir aroma verir ve muhallebinin sade, sütlü-vanilyalı karakterini bastırabilir. Saf bir muhallebi isteyen ustalar bu yüzden sakızsız gider — özellikle ev yapımı/geleneksel tariflerde sakız çoğunlukla sütlaç ve tavuk göğsüne özgü bırakılır. %0.05–0.1 (yani 1000 g süt için 0.5–1 g, yaklaşık 4–6 adet sakız)",
+      );
+
+      addNormalRow(
+        "Üzerine",
+        0,
+        "Tarçın, Hindistan Cevizi, Şamfıstık, Çikolata parçaları",
+      );
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

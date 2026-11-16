@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>ÇİĞ KÖFTE</h1>
+            <span></span>
+          </div>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/cig-kofte.png" alt="ÇİĞ KÖFTE" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>İlk Yapılacaklar</strong>
+                  <ul>
+                    <li>Bulguru öğütücüde biraz ufaltın. (166x3)</li>
+                    <li>Soğanları ve Sarımsağı rondodan geçirin.</li>
+                    <li>
+                      Bulguru, soğan ve sarımsağı setüstü miksere koyup makineyi
+                      çalıştırın 1.kd 10 dk
+                    </li>
+                    <li>Makine çalışırken bu arada;</li>
+                    <li>Salçayı ıslatın.</li>
+                    <li>Diğer tüm baharatları tek bir kapta toplayın.</li>
+                    <li>Diğer malzemeleri de tezgaha alın.</li>
+                    <li>
+                      Alttaki aşamalar boyunca, ısınan makinenizi ara ara
+                      dinlendirin.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong
+                    >Diğer malzemeleri sırayla hazneye koyun ve
+                    karıştırın</strong
+                  >
+                  <ul>
+                    <li>Baharatları ilave edin. 1.kd 10 dk</li>
+                    <li>Limonları doğrayarak ilave edin. 1.kd 10 dk</li>
+                    <li>Salçaları ilave edin. 1.kd 10 dk</li>
+                    <li>Suyu ilave edin. 1.kd 10 dk</li>
+                    <li>Nar ekşisini ilav edin. 1.kd 10 dk</li>
+                    <li>Yağ ilave edin. 1.kd. 30 dk</li>
+                    <li>Maydanoz ilave edin. 1.kd. 1 dk</li>
+                    <li>
+                      Tüm aşamalar boyunca ara ara elle de yoğurmmaya katkı
+                      yapabilirsiniz.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Porsiyonlayın</strong>
+                  <ul>
+                    <li>
+                      Naylon eldiven giyip biraz yağlayın, hazırlamış olduğunuz
+                      harçtan bölümler alıp elinizle sıkarak şekillendirin.
+                    </li>
+                    <li>
+                      Şekillendirdiğinz çiğ köfteleri bir kaba dizerek üstünü
+                      kapatın
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis Edin</strong>
+                  <ul>
+                    <li>
+                      Çiğ köfte, genellikle geniş yapraklı marul ile servis
+                      edilir ve marul yapraklarına sarılarak yenir.
+                    </li>
+                    <li>
+                      İçine de nar ekşisi yada çiğ köfte sosu, ayıca kornişon
+                      yada biber turşusu koyabilirsiniz.
+                    </li>
+                    <li>Çiğ köfteyi lavaş içine de koyabilirsiniz.</li>
+                    <li>
+                      Ayrıca isteğe bağlı olarak çiğ köftenin üzerine limon
+                      sıkabilirsiniz.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Saklama</strong>
+                  <ul>
+                    <li>
+                      Çiğ köfteyi, buzdolabında hava almayacak şekilde streç
+                      film ile sarabilir yada hava geçirmez bir kapta muhafaza
+                      edebilirsiniz.
+                    </li>
+                    <li>
+                      Böylece kurumasını ve lezzetinin bozulmasını önlemiş
+                      olursunuz.
+                    </li>
+                    <li>
+                      Çiğ köfte, yapıldıktan sonra en geç 2-3 gün içinde
+                      tüketilmelidir
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow("Bulgur", "Köftelik, esmer ince bulgur.");
+      addNormalRow("Soğan", 40, "2 orta boy");
+      addNormalRow("Sarımask", 2, "4 diş 5-10 diş (yaklaşık %0.5)");
+      addNormalRow(
+        "Salça",
+        25,
+        "Ev yapımı, doğal biber ve domates salçası kullanın. Domates salçası biber salçasından fazla olmalı. 2'ye 1 oranında kullanabilirsiniz. Bulgur miktarını girdiğinizde yan tarafta çıkacak olan miktar, toplam salça miktarını belirtmektedir. 4 yem kaş Kıvam için salçayı arttır.",
+      );
+      addNormalRow("Su", 40, "İçme Suyu");
+      addNormalRow("İsot", 4, "3-4 yemek kaşığı");
+      addNormalRow("Pul Biber", 2, "2 yemek kaşığı");
+      addNormalRow("Kırmızı Biber", 1, "1 yemek kaşığı");
+      addNormalRow("Kimyon", 0.5, "...");
+      addNormalRow("Karabiber", 0.5, "...");
+      addNormalRow("Yenibahar/Köri/Tarçın/Tuz/Şeker", 0.5, "...");
+      addNormalRow(
+        "Nar Ekşisi",
+        10,
+        "Ev yapımı doğal nar ekşişi (Nar ekşisi sosu değil) Kıvam için arttır.",
+      );
+      addNormalRow(
+        "Yağ",
+        15,
+        "Soğuk sıkım sızma zeytinyağı > Zeytinyağı > Ayçiçek yağı.",
+      );
+      addNormalRow("Nişasta", 0, "Kıvam arttırıcı");
+      addNormalRow("Ceviz", 0, "...");
+      addNormalRow("Maydanoz", 0, "...");
+      addNormalRow("Diğer", 0, "şeker");
+      addNormalRow(
+        "Bağlayıcılık",
+        0,
+        "Nişasta (bağlayıcı ve su tutucu), Soya/bezelye proteini (kıvam ve yapışkanlık), Ksantan gam, guar gam gibi kıvam vericiler ",
+      );
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

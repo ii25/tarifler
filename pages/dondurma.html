@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>DONDURMA</h1>
+            <span></span>
+          </div>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/dondurma.png" alt="DONDURMA" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık (Prepare)</strong>
+                  <ul>
+                    <li>Soğutma kabını bir gün önceden hazırlayın</li>
+                    <li>
+                      Sütü kaynatacağınız tencere ve çırpma telinin temiz
+                      olduğunu bir gün önceden kontrol edin.
+                    </li>
+                    <li>
+                      Dondurma yapımına sabah mümkün olduğunca erken saatte
+                      başlayın.
+                    </li>
+                    <li>
+                      Kullanmadan önce sütün sağlam olduğundan emin olun,
+                      Gerekirse bir kaşıkta çok az bir miktar kaynatarak homojen
+                      bir yapıda olup olmadığını gözlemleyin
+                    </li>
+                    <li>Malzemeleri tartarak hazır edin</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Karıştıma (Mixing)</strong>
+                  <ul>
+                    <li>
+                      Sütü süzerek, geniş yayvan bir tencereye alın ve yavaşça
+                      ısıtmaya başlayın
+                    </li>
+                    <li>
+                      Sıcaklık 60–70°C civarına geldiğinde şekeri ekleyin.
+                    </li>
+                    <li>
+                      Sıcaklık Pastörüzasyon noktasına ulaştığında (85°C’ 30
+                      sn), salebi yavaş yavaş ekleyin, sürekli çırpın ve sık sık
+                      kepçe ile sütü havanandırın.
+                    </li>
+                    <li>
+                      Karışım kıvam almaya başlayıncaya kadar (yaklaşık 8-15 dk)
+                      karıştırmaya devam edin. (Kepçe tesiti)
+                    </li>
+                    <li>
+                      Sıcaklık 40-50°C’ye düştüğünde vanilyayı ekleyip biraz
+                      daha karıştırn ve ocağı kapatın
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <div class="step-content">
+                  <strong>Homojenizasyon (Homogenization)</strong>
+                  <ul>
+                    <li>
+                      Sıcak karışım yüksek basınçla (150-250 bar)
+                      homojenizatörden geçirilir. Yağ globüllerinin küçültülüp,
+                      eşit dağılması, ayrışmanın önlenmesi ve böylece daha
+                      pürüzsüz yapı elde edilmesi sağlanır.
+                    </li>
+                    <li>
+                      Bu işlem Ultrasonik homojenizatör makinesinde yapılır
+                    </li>
+                    <li>
+                      Maraş usulu dondurmada homojenizasyon ya yapılmaz yada
+                      düşük basınçta yapılır
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <div class="step-content">
+                  <strong>Süzme (Straining)</strong>
+                  <ul>
+                    <li>
+                      Pürüzsüz doku elde etmek için, Karışım ince süzgeçten
+                      geçirili. Çözünmeyen topaklar, tortular, istenmeyen
+                      partiküller ayrılır.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Olgunlaştırma (Maturation)</strong>
+                  <ul>
+                    <li>
+                      Karışımı ocaktan alın ve hızlıca (En geç 30 dk) 4°C ye
+                      düşürün (evde buz banyosu ve sonrası buzdolabı) ve bu
+                      sıcaklıkta 12 saat bekletin. Yağ kristalleri stabilize
+                      olur, kıvam gelişir.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Hava Kazandırma (Overrun)</strong>
+                  <ul>
+                    <li>
+                      Geleneksel Maraş dondurması düşük overrun (%25-30 hava)
+                      ile yapılır.
+                    </li>
+                    <li>
+                      Karışım dondurma makinesine alınır. Soğutularak çırpılır
+                    </li>
+                    <li>Düşük hızda -5°-7°C 30-45 dk.</li>
+                    <li>
+                      Dondurma kıvamı oluşur, ürün yarı donmuş hale gelir.
+                    </li>
+                    <li>
+                      (Makinasız overrun için buzluğa koyduğunuz karışımı
+                      yaklaşık 1 saat arayla çıkarıp karıştırın. Bu işlem buz
+                      kristallerinin oluşumunu engellemeye yardımcı olur. Bu
+                      işlemi karışım tamamen donana kadar gün boyu tekrarlayın)
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Şoklama (Blast Freezing)</strong>
+                  <ul>
+                    <li>
+                      Aynı şekilde karışımını "hızla" dondurulması gerekiyor
+                      (-25).
+                    </li>
+                    <li>
+                      Karışımı şok dondurucuya alıp (örneğin -25°C hava ile
+                      10-15 dk) -30°C ila -40°C 30-40 dk Şoklama
+                    </li>
+                    <li>
+                      karışımın hızlıca tam donma noktasının altına (-18°C)
+                      indirerek buz kristali oluşumunu en aza indirmek ve
+                      mikrobiyal dayanıklılığı artırmak ve overrun stabilitesini
+                      korumak için yapılır. Ayrıca homojen yapıya katıkı sağlar.
+                    </li>
+                    <li>
+                      (Dondurmayı koymadan 2-3 saat önce buzluk ayarını en
+                      düşüğe al). Geniş ve yassı kaplar (örneğin 4–5 cm
+                      yüksekliğinde tepsiler) kullanmak, karışımın daha hızlı
+                      donmasını sağlar.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Sertleştirme (Hardening)</strong>
+                  <ul>
+                    <li>-18°C 6 saat</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Depolama (Storage)</strong>
+                  <ul>
+                    <li>
+                      Kapaklı, hava almayan, geniş ve sığ bir kapta saklayın
+                    </li>
+                    <li>Dondurmanın yüzeyine buzdolabı poşeti serin</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis</strong>
+                  <ul>
+                    <li>
+                      Dondurma kepçesi ile dondurma kasesine dondurma toplarını
+                      koyun.
+                    </li>
+                    <li>Üzerine istediğiniz malzemeleri ilave edin</li>
+                    <li>Servis yapın</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow(
+        "Süt",
+        "Tam yağlı, günlük (Mümkünse sabah sağılmış), su katılmamış, çiğ keçi sütü yada inek sütü. Sütü bekletmeden kullanın. Bu tip süte erişiminiz yoksa marketten alacağınız günük süt, oda yoksa en son seçenek olarak lanet olası UHT Kutu sütlerden kullanabilirsiniz.",
+      );
+
+      addNormalRow(
+        "Şeker",
+        13,
+        "(Tatlandırıcı, antifriz etkisi) ince kristal beyaz toz şeker. şekerin 4 de 3 ünü ayırıp en son ekliyin. Çok şekerli sevmiyorsanız miktarı biraz azaltabilirsiniz. Yanlız çok azaltırsanız kıvama olumsuz etki eder. Şeker miktarının çok az bir kısmını glikoz şurubu/mısır şurubu ile değiştirebilirsiniz. Böylece donma noktasını bir miktar düşürerek buz kıristallerinin büyümesini önleyebilrsiniz.",
+      );
+
+      addNormalRow(
+        "Salep",
+        0.8,
+        "8 (Ana Stabilizatör) Maraş dondurmasının ana kıvam vericisidir. --Saf yerli salep mümkünse bucak salebi. eğer damla sakızı konacaksa 6 gr salep 4 adet damla sakızı---1 litre karışım için 1–2 gram gerçek salep Yanında 0.5 g kadar ksantan gam ya da 8–10 g nişasta ile mükemmel sonuç alınır.---Gliserol Monostearat GMS E471---SALEP TEST 1. Su ile Karıştırma Testi Bir çay kaşığı salep tozunu oda sıcaklığındaki bir bardak suya koy. Karıştırmadan bekle. Gerçek saf salep, suyun içinde topaklaşır, hemen çözülmez. Salep lif lif gibi görünür, dibe doğru ağır ağır iner. Hafif ipliksi bir yapı oluşur. Katkılı (nişastalı, unlu) sahlep hemen dağılır ve suyu bulanıklaştırır. Çamurumsu bir su olur. İpucu: Saf salep asla hızlı erimez! Hep biraz tutunur, hafif şişer. 2. Pişirme Testi (Kıvam Kontrolü): 100 ml sütü kaynat. İçine yarım çay kaşığı salep tozu ekle. Kısık ateşte 5-10 dakika karıştırarak pişir. Gerçek saf salep: Yavaş yavaş yoğunlaşır. Jelimsi, elastik, lastik gibi bir kıvam yapar. Katkılı sahlep: Ya hiç koyulaşmaz ya da çabuk koyulaşır ama elastik değil puding gibi kesik bir doku olur. İpucu: Saf salep ısıyı sevdikçe şişer. Çabuk koyulaşan sahlep neredeyse kesin katkılıdır. 3. Koku Testi: Bir tutam toz sahlebi parmaklarının arasında ovalayarak kokla. Gerçek saf salep: Çok hafif, kendine has bir orkide-kök kokusu verir. (Bazıları biraz vanilyamsı hafif bir toprak kokusu der.) Katkılı sahlep: Kokusuzdur veya nişasta gibi hafif unumsu, düz bir kokusu olur. İpucu: Güçlü tatlımsı veya unumsu kokular sahlep katkılı olduğunun işareti olabilir. Yanmadan Isıtma Testi (İleri Seviye): Bir çay kaşığı toz sahlebi teflon tavaya koy. Çok düşük ateşte ısıt (karıştırmadan). Gerçek saf salep: Yavaşça hafif kahverengi olur, karamelize bir koku salar. Katkılı sahlep: Çok hızlı yanar, yanık kokusu çıkarır, siyaha döner. Küçük Hatırlatma: Özellikle su testi + süt kaynatma testi ikilisi %90 gerçek/fake ayrımı yapmanı sağlar... 0.6",
+      );
+
+      addNormalRow(
+        "Mısır Nişastası",
+        1.2,
+        "(Yardımcı Stabilizatör, kuru madde arttırıcı, kıvam verici) Aşırı nişasta, dondurmanın donduğunda kumlu bir yapı almasına yol açabilir. Sütünüzün ve salebinizin kaltitesi yeterli ise, salep miktarını belirtilenden az kullanmıorsanız, nişasta kullanmanıza gerek yoktur.",
+      );
+
+      addNormalRow(
+        "Damla Sakızı (Mastic Gum)",
+        0.0,
+        "(Yardımcı Stabilizatör) Kıvam Verici. Agar Agar (E406) (tadı değiştirebilir) (doğal formu), Guar Gam (E412) (keremamsı yapı verir) + Ksantan Gam (E415), Karragenan (E407) Not: Ksantan ve guar gibi stabilizerler çok güçlüdür → Az miktar yeterlidir. Keçiboynuzu Çekirdeği (Locust Bean Gum) (E410), Jelatin (E441), Sodyum alginat (E401)---Doğal Kitre (Gum Tragacanth)... 0.4",
+      );
+
+      addNormalRow(
+        "Lesitin",
+        0.0,
+        "(Emülgatör) Emülsifiye etmek, homojenleştirmek için Lesitin (E322) (soya veya ayçiçek) kullanılır.Alternatiflr; Mono ve Digliseritler (E471) - Polisorbat 80 E433... 0.2",
+      );
+
+      addNormalRow(
+        "Vanilya",
+        0.5,
+        "(Aroma-Tat Verici) Vanilya çubuk tercih edin. Diperleri: Tarçın, Zencefil",
+      );
+
+      addNormalRow(
+        "üstüne Konulacaklar",
+        0,
+        "Kuruyemiş, Hindistan Cevizi, çikolata Taneleri yada Sosu, Karamel, Meyve Parçaları",
+      );
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

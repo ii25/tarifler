@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>SALAMURA YEŞİL ZEYTİN</h1>
+            <span></span>
+          </div>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img
+        src="../images/salamura-yesil-zeytin.png"
+        alt="Salamura Yeşil Zeytin"
+      />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <!-- Genel Bakış: adımlardan önce gelir -->
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>....</p>
+            </div>
+            <!-- Genel Bakış. -->
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ayıklama ve temizlik (1. gün)</strong>
+                  <ul>
+                    <li>
+                      Zeytinleri geniş bir tepsiye serip ezik, ben, böcek
+                      delikli veya çürük olanları ayırın. Bozuk bir zeytin tüm
+                      kabı bozabilir.
+                    </li>
+                    <li>
+                      Sap ve yaprak kalıntılarını çıkarın. Sapların bir zararı
+                      yoktur ama tortu ve bulanıklık yapar.
+                    </li>
+                    <li>Zeytinleri soğuk suda iyice yıkayıp süzün.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Çizme (1. gün)</strong>
+                  <ul>
+                    <li>
+                      Zekytinleri çizmeden, bütün kullanmak istiyorsanız bu
+                      aşamayı atlayın.
+                    </li>
+                    <li>
+                      Çizme: Keskin bir bıçakla zeytinin boyuna 1-2 kesik atın,
+                      çekirdeğe kadar inmeniz gerekmez.
+                    </li>
+                    <li>
+                      Bütün bırakırsanız acı alma çok uzar, sonraki aşamaların
+                      süreleri değişir (bkz. aşağıdaki not).
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Acı alma (yaklaşık 7-14 gün)</strong>
+                  <ul>
+                    <li>
+                      Zekytinleri çizmeden, bütün kullandıysanız acı alma 1-2 ay
+                      sürer ve suyu günlük değiştirmek yerine sık sık kontrol
+                      etmek yeterli olabilir.
+                    </li>
+                    <li>
+                      Zeytinleri cam kavanoza veya gıdaya uygun plastik kaba
+                      koyun. Metal kap kullanmayın.
+                    </li>
+                    <li>
+                      Üzerini örtecek kadar su ekleyin. Musluk suyunu önceden
+                      bir gece bekletip klorunu uçurun.
+                    </li>
+                    <li>
+                      Zeytinler yüzeye çıkmasın diye üstüne temiz bir tabak veya
+                      ağırlık koyun.
+                    </li>
+                    <li>
+                      Günde bir kez suyu değiştirin. İlk günlerde su koyulaşıp
+                      renk atar, bu normaldir.
+                    </li>
+                    <li>
+                      7.günden sonra her gün bir zeytin tadın. Acılık geçince
+                      (tamamen yok olması gerekmez, hafif buruk kalabilir) bu
+                      aşamayı bitirin.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Salamurayı hazırlama</strong>
+                  <ul>
+                    <li>
+                      1 litre suya 80-100 g iyotsuz kaya tuzu (%8-10) ekleyip
+                      tamamen eritin. Tuzu tartarak ölçün.
+                    </li>
+                    <li>
+                      İsterseniz suyu kaynatıp soğutarak kullanın, bu daha
+                      güvenlidir.
+                    </li>
+                    <li>Zeytinleri son kez süzün.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Kavanoza yerleştirme</strong>
+                  <ul>
+                    <li>Temiz, kaynar suyla haşlanmış bir kavanoz kullanın.</li>
+                    <li>
+                      Zeytinleri sıkıştırmadan doldurun. İsterseniz katmanlar
+                      arasına limon dilimi, defne yaprağı, sarımsak, kekik veya
+                      biberiye ekleyin.
+                    </li>
+                    <li>
+                      Salamurayı, zeytinleri tamamen örtecek şekilde dökün.
+                      Ağırlıkla zeytinleri suyun altında tutun.
+                    </li>
+                    <li>
+                      Kapağı gevşek kapatın, çünkü fermantasyon gazı çıkabilir.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Olgunlaşma (3-4 hafta veya daha uzun)</strong>
+                  <ul>
+                    <li>Kavanozu serin, karanlık bir yerde saklayın.</li>
+                    <li>
+                      İlk haftalarda arada koku ve görüntüyü kontrol edin.
+                    </li>
+                    <li>
+                      Zeytin suyundan dolayı salamura zamanla seyrelir. İlk
+                      hafta sonunda tuz oranını kontrol edip gerekirse biraz tuz
+                      ekleyin.
+                    </li>
+                    <li>
+                      Yüzeyde ince beyaz tabaka (maya) oluşursa kaşıkla alın.
+                    </li>
+                    <li>
+                      3-4. haftadan sonra tadın. Beğenmezseniz birkaç hafta daha
+                      bekletin.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>,,,</strong>
+                  <ul>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>,,,</strong>
+                  <ul>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <!-- Bilgi Notları: son adımdan sonra gelir -->
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>
+                    Hazır zeytinleri serin yerde veya buzdolabında, salamurası
+                    içinde saklayın.
+                  </li>
+                  <li>
+                    Salamura yoksa zeytinler kurur ve bozulur, her zaman suyun
+                    altında tutun..
+                  </li>
+                  <li>
+                    Kötü koku, yapışkan veya sümüksü doku, yumuşamış zeytinler,
+                    renkli küf (siyah, yeşil, pembe). Bunlardan biri varsa
+                    kavanozu atın.
+                  </li>
+                  <li>...</li>
+                  <li>...</li>
+                  <li>...</li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt.
+                  </li>
+                  <li>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris.
+                  </li>
+                  <li>
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Bilgi Notları. -->
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow("Su", "İçme suyu");
+      addNormalRow("Kaya Tuzu", 8, "...");
+      addNormalRow("Sirke", 1, "...");
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

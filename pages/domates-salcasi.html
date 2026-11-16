@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>DOMATES SALÇASI</h1>
+            <span></span>
+          </div>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/domates-salcasi.png" alt="DOMATES SALÇASI" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>1. GÜN – Hazırlık + İlk Kurutma</strong>
+                  <ul>
+                    <li>
+                      Domateslerin saplarını çıkarıp iyice yıkayın ve iri iri
+                      doğrayın
+                    </li>
+                    <li>
+                      Blender veya rondo ile domatesleri püre haline getirin.
+                      (opsiyonel) Rondoyu kısa kısa çalıştırın, tamamen
+                      köpürtmeyin.
+                    </li>
+                    <li>
+                      Domatesleri tencereye alıp 15 dk kaynatın. Köpüklenirse,
+                      bir kaşıkla alın. Kaynatma ile Hem suyu azalır hem bozulma
+                      riski düşer.
+                    </li>
+                    <li>
+                      Tel süzgeçten geçirin.(süzgeç kullanmayacaksanız
+                      domatesleri önceden soymak gerekir) Kabuk + çekirdek
+                      ayrılır, pürüzsüz salça bazı kalır
+                    </li>
+                    <li>
+                      Ortaya çıkan püreyi tartın ve miktarı, malzemeler
+                      kısmındaki "Miktar girin" alanına girerek tuz miktarını
+                      elde edin.
+                    </li>
+                    <li>
+                      Tuzu ekleyin ve 1 saat dinlendirin (Tuz iyice çözünür,
+                      daha homojen olur.)
+                    </li>
+                    <li>
+                      Tepsiye yayın (Kalınlık: maksimum 1 cm). Çok kalın olursa
+                      içi bozulabilir
+                    </li>
+                    <li>
+                      Direkt güneş alan yere koyun (ideal hava: Düşük nem, hafif
+                      esinti, 28–35°C). Üstüne tülbent örtin (böcek + toz için).
+                      Öğle (11:00)
+                    </li>
+                    <li>
+                      2–3 saatte bir karıştırın. Kenarlardaki kuruyan kısmı
+                      ortaya alın. Hava çok sıcaksa daha sık karıştırın
+                    </li>
+                    <li>
+                      Güneş batınca tepsiyi İçeri aın (serin, kuru oda) (17:00)
+                    </li>
+                    <li>
+                      Üstünü Tülbent veya ince bez ile örtün. Streç film yada
+                      benzeri şeyler kullanmayın, nem yapar.
+                    </li>
+                    <li>
+                      Eğer ev aşırı sıcaksa ve buzdolabına koymanız gerekiyosa
+                      şunlara dikkat etmellisiniz. Üzerine bez örtüp onun da
+                      üzerine bir kapak kapatın. ama tam kapatmayın yada yağlı
+                      kağıtla örtün. Mümkünse salçayı derin kapata saklayın
+                      (borcam vs.) Sabah çıkarınca hemen güneşe koymayın. 15–20
+                      dk oda sıcaklığına gelsin sonra güneşe çıkarın. Ama yinede
+                      ilk tecih evin serin, kuru, havadar bir noktasıdır.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <div class="step-content">
+                  <strong>2. GÜN – Koyulaştırma Günü</strong>
+                  <ul>
+                    <li>
+                      Sabah (08:00) gibi tepsiyi tekrar güneşe çıkarın. Üst
+                      tabaka kuruduysa karıştırın.
+                    </li>
+                    <li>
+                      Gün boyunca (10:00–17:00) iki saatte bir karıştırın.
+                    </li>
+                    <li>Kaşıkla çekince iz kalıyorsa iyi gidiyor demektir</li>
+                    <li>
+                      Akşam yine tepsiyi İçeri serin bir yere alıp aıp üstünü
+                      tülbentle örtün.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <div class="step-content">
+                  <strong>3. GÜN – Son Kıvam + Kavanozlama</strong>
+                  <ul>
+                    <li>
+                      Salça artık iyice yoğun olur, daha az yayılır,
+                      karıştırınca toparlanır
+                    </li>
+                    <li>Salça şu hale geldiyse tamamdır:</li>
+                    <li>Kaşıktan akmıyor</li>
+                    <li>Rengi koyu kırmızı</li>
+                    <li>Domates kokusu gitmiş</li>
+                    <li>Macun gibi</li>
+                    <li>Artık salçanızı kavanozlara doldurabilirsiniz</li>
+                    <li>
+                      Kavanozları streril edin (Kaynar suda 5 dk bekletin veya
+                      fırında kurutun)
+                    </li>
+                    <li>Salçanızı kavanozlara doldurun</li>
+                    <li>
+                      Üstüne zeytinyağı gezdirin ve kapaklarını kapatın
+                      (yaklaşık 0.5 cm yağ tabakası), yağ hava ile teması
+                      engeller, böylece küflenmeyi önler
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <div class="step-content">
+                  <strong>Saklama</strong>
+                  <ul>
+                    <li>Serin ve karanlık yerde saklayın</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow(
+        "Domates",
+        "Etli, olgun, kırmızı, salçalık domates (Roma tipi) en iyisi. Çok sulu domates kurutmada zorlanır",
+      );
+      addNormalRow("Tuz", 3, "İnce kaya tuzu");
+      addNormalRow("Zeytinyağı", 0, "...");
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>TURŞU</h1>
+            <span></span>
+          </div>
+          <p class="recipe-title-sub-text">PROBİYOTİK LAKTO FERMENTE</p>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/tursu.png" alt="Turşu" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>
+                      Cam kavanozu iyice yıkayın ve kaynar su ile sterilize
+                      edin.
+                    </li>
+                    <li>
+                      Sebzeleri bol su ile iyice yıkayın. Dezenfekte etmeyin;
+                      yüzeyindeki doğal mikroflora fermantasyon için faydalı.
+                    </li>
+                    <li>Çok çürük-ezizk ve yumuşak olanları ayırın</li>
+                    <li>Uçlarını ve çürük-ezik yerlerini kesin</li>
+                    <li>
+                      Gerekiyorsa eşit büyüklükte doğrayın. Doğramasanız daha
+                      iyi.
+                    </li>
+                    <li>Sarımsakların kabuklarını soyun</li>
+                    <li>
+                      Kullanacaksanız limonları dilimleyin, çekirdeklerini
+                      çıkarın.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Kavanozlara Dizme</strong>
+                  <ul>
+                    <li>
+                      Sebzeleri eşt boylarda olacak şekilde sıkıca yerleştirin
+                      (Ezecek kadar sıkı değil).
+                    </li>
+                    <li>
+                      Aralarına isterseniz, sarımsak, dereotu, tane karabiber,
+                      hardal tohumu koyabilirsiniz.
+                    </li>
+                    <li>
+                      Limon dilimlerini sebzelerin üstüne veya ara katlara
+                      yerleştirin.
+                    </li>
+                    <li>
+                      Üste cam ağırlık veya sebzeleri bastıran temiz bir taş
+                      koyun. Sebzelerin tamamı su altında kalmalı, yoksa küf
+                      oluşur.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Salamura Hazırlama/Ekleme</strong>
+                  <ul>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>Salamura suyunu tam doldurmayın, boşluk bırakın.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Fermentasyon</strong>
+                  <ul>
+                    <li>
+                      Kavanozun kapağını sıkı kapatmayın (gaz çıkması gerekir).
+                    </li>
+                    <li>Kavanozların altına tabak yada tepsi koyun.</li>
+                    <li>
+                      Kavanozu oda sıcaklığında (18–24°C) birkaç gün bekletin.
+                    </li>
+                    <li>Daha sonra serin, kuru ve karanlık bir yere koyun.</li>
+                    <li>
+                      İlk günler eksilen su yerine salamura su ilave edin.
+                    </li>
+                    <li>
+                      1–3. gün: Gaz çıkışı başlar, kabarcıklar olur, su bulanır,
+                      normaldir.
+                    </li>
+                    <li>
+                      5–7. gün: Tat daha ekşi ve fermente olur (Buzdolabına
+                      alın).
+                    </li>
+                    <li>
+                      7–14. gün: En iyi probiyotik yoğunluğu bu dönemde olur.
+                    </li>
+                    <li>
+                      Salamura yüzeyini temiz tutun. Fermantasyon sırasında
+                      salamurada yüzeyde beyaz, toz gibi bir tabaka (kahm maya)
+                      oluşabilir, zararsızdır alınabilir.
+                    </li>
+                    <li>
+                      Bulanık salamura suyu, normal fermantasyon belirtisidir
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Saklama</strong>
+                  <ul>
+                    <li>
+                      Fermantasyon tamamlandıktan sonra kavanoz kapağını sıkıca
+                      kapatıp buzdolabına alın.
+                    </li>
+                    <li>
+                      Buzdolabında fermantasyon çok yavaşlar ve turşu aylarca
+                      dayanır. Renk oturur, tuzlu-ekşi denge ideal hâle gelir.
+                    </li>
+                    <li>
+                      Turşuyu alırken temiz kaşık kullanın, bozulmayı önler.
+                    </li>
+                    <li>Afiyet Olsun</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow("Su", "içme suyu");
+
+      addNormalRow(
+        "Tuz",
+        3,
+        "Katkısız, iri taneli salamuralık tuz (Tercihen kaya tuzu) %2–%3",
+      );
+
+      addNormalRow(
+        "Sebzeler",
+        0,
+        "Taze ve sert sebzeler seçin. Kullanacağınız kavanoz büyüklüğüne ve miktarına göre kaç kilo alacağınızı önceden belirleyin. Ayrıca sebzeleri alırken eşit boylarda almaya çalışın.",
+      );
+
+      addNormalRow(
+        "Sarımsak",
+        0,
+        "1 litrelik kavanoza 3–4 diş sarımsak yeterlidir.",
+      );
+
+      addNormalRow(
+        "Baharatlar",
+        0,
+        " Defne, Karabiber, Hardal Tohumu, Ardıç Tohumu,  Kişniş Tohumu, Yeşil Çay, Tane Kimyon, Biberiye, Karanfil, Kıtır doku için üzüm yaprağı veya meşe yaprağı",
+      );
+
+      addNormalRow("Extralar", 0, "Elma dilimi");
+
+      addNormalRow("Sirke", 1, "");
+
+      addNormalRow("Şeker", 0.1, "");
+
+      addNormalRow("Limon", 0, "Bir litreye 1-2 dilim çekirdekleri çıkarılmış"); 
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

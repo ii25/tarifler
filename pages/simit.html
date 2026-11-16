@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarifler</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- FULL WIDTH HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="header-left">
+
+        <!-- Logo -->
+        <div class="logo" onclick="window.location.href='../index.html';" style="cursor:pointer;">
+          <img src="../images/icon-logo.svg" class="logo-icon">
+          <span class="logo-text">tarifler</span>
+        </div>
+        <!-- Logo. -->
+      </div>
+      <!-- Tarif Başlığı -->
+      <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+      <div class="recipe-title">
+        <div class="recipe-title-line">
+          <span></span>
+          <h1>SİMİT</h1>
+          <span></span>
+        </div>
+      </div>
+      <!-- Tarif Başlığı. -->
+      <div class="header-right">
+        <!-- Arama Kutusu -->
+        <div class="search-container"><input type="text" id="searchInput" class="mainLoginInput" placeholder="&#61442;"
+            oninput="search()" />
+          <div id="results" class="results-dropdown"></div>
+        </div>
+        <!-- Arama Kutusu. -->
+      </div>
+    </div>
+  </header>
+  <!-- FULL WIDTH HEADER. -->
+  <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+  <div class="recipe-image"><img src="../images/simit.png" alt="Simit"></div>
+  <!-- İçerik -->
+  <div class="container">
+    <!-- Malzemeler Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-mal">
+          <img src="../images/icon-mal.svg" class="icon-mal">
+          <span class="text-mal">Malzemeler</span>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="malzeme-tablosu">
+          <tbody id="malzemeBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Malzemeler Kartı -->
+    <!-- Tarif Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-haz">
+          <img src="../images/icon-haz.svg" alt="" class="icon-haz">
+          <span class="text-haz">Hazırlanışı</span>
+        </div>
+      </div>
+      <div class="table-container">
+    <!-- Hazırlanışı -->
+        <section class="recipe">
+          <ol class="steps">
+            <li>
+              <div class="step-content">
+                <strong>Ön Hazırlık</strong>
+                <ul>
+                  <li>Susamları bir tavada kavurup, yayvan bir kaba alın.</li>
+                  <li>Üzüm pekmezini derin bir kaba alın.</li>
+                  <li>Pekmez miktarının iki katı su ilave edip bir çırpıcı ile karıştırn.</li>
+                  <li>Pekmez-su karışımı kabını, susamı kabını ve fırın tepsisini yan yana yerleştirerek hazır edin.</li>
+                  <li>Fırın tepsisine pişirme kağıdı kullanabilirsiniz.</li>
+                  <li>...</li>
+                  <li>...</li>
+                  <li>...</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Yoğurma</strong>
+                <ul>
+                  <li>Suyu mutfak şefinin haznesine doldurun (10 gr eksik koyun). Ortam sıcaksa suyu buzdolabından kullanın.</li>
+                  <li>Unu eleyerek İlave edin ve 1.kademede 1.5 dk yoğurun.</li>
+                  <li>15 dakika bekeyip mayayı ilave edin ve 1.kademede 2.5 dk yoğurun.</li>
+                  <li>Ardından Hamurda elinizle küçük bir havuz açıp tuzu ve 10 gr su ilave edip bir çay kaşığı yardımı ile tuz-su karışımını biraz karıştırın ve 1.kademede 3,5 dakika daha yoğurun.</li>
+                  <li>Hamurun kıvamı elastik, hafif sert ama pürüzsüz bir dokuya sahip olmalıdır.</li>
+                  <li>Hamuru yoğurduğunuzda, hamurun esneyip geri toplanması, yani iyi bir gluten gelişimi gösterdiği anlamına gelir.</li>
+                  <li>...</li>
+                  <li>...</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>İlk Mayalama</strong>
+                <ul>
+                  <li></li>
+                  <li>Hamuru hazneden çıkartıp biraz toparlayın.</li>
+                  <li>Tekrar hazneye alıp üzerini kapatarak 20-30 dk ilk mayalamaya bırakın.</li>
+                  <li>Hamuru oda sıcaklığında (ideal olarak 24-26°C) 30-45 dakika kadar dinlendirin.</li>
+                  <li>Hamurun iki katına kadar kabarması gerekmez; simit hamurunda çok fazla kabarma istenmez.</li>
+                  <li>Hafifçe kabarıp elastik hale gelmesi yeterlidir.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Beze ve İkinci Mayalama</strong>
+                <ul>
+                  <li>Hamur mayalandıktan sonra fazla kabarmamışsa, hafifçe üzerine bastırarak gazı alın.</li>
+                  <li>Hamuru, 100-150 gr'lık porsiyonlara bölüp biraz yassılaştırın</li>
+                  <li>Üzerini örterek yaklaşık 10 dk ikinci mayalamaya bırakın</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Şekil Verme, Susamlama ve Üçüncü Mayalama</strong>
+                <ul>
+                  <li>Bu aşamaya başlamdan önce frını ön ısıtmaya alın</li>
+                  <li>daha sonra Her bezeyi ince uzun bir şerit haline getirin.</li>
+                  <li>Şeritlerin uzunluğu yaklaşık 70-75 cm civarında olmalıdır.</li>
+                  <li>Ardından bu şeritleri ortadan ikiye katlayıp burun.</li>
+                  <li>Burduğunuz şeritleri halka şekline getirerek uçlarını birleştirin.</li>
+                  <li>Halka şeklini verdiğiniz hamurları pekmeze batırın. Simitlerin her tarafının iyice kaplanmasına dikkat edin.</li>
+                  <li>Çıkardığınız simitleri, bol miktarda kavrulmuş susama bulayın. Susamların her tarafa eşit şekilde yapışmasını sağlayın.</li>
+                  <li>Elinizle biraz genişleterek fırın tepsisine dizin. Tepsinin üzerini örtüp yakşaşık 10 dk mayalanmaya bırakın.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Son Mayalama</strong>
+                <ul>
+                  <li>Mayalama süresi: 15-20 dakika.</li>
+                  <li>Susama buladığınız simitleri, bir tepsiye yerleştirin</li>
+                  <li>son mayalama için oda sıcaklığında 15-20 dakika kadar bekletin</li>
+                  <li>Bu süreç, simitlerin hafifçe kabarmasını ve pişmeye hazır hale gelmesini sağlar.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Pişirme</strong>
+                <ul>
+                  <li>Tepsiyi fırına vaermeden önce simitleri elinizle biraz daha genişletin.</li>
+                  <li>Sıcaklık: 240-250°C</li>
+                  <li>Süre: 12-18 dakika (kontrollü şekilde)</li>
+                  <li>Alt-üst rezistans: İkisi de açık olmalı.</li>
+                  <li>an kullanımı: Fan kapalı tutulmalı.</li>
+                  <li>Buhar kullanımı: Zorunlu değil, ancak az buhar eklenebilir.</li>
+                  <li>Ayrıca pişirme sürecinde fırın kapağını açmamaya özen gösterin. Alt taraflarının daha hızlı pişip kızarmaması için fırının ortasında veya bir tık yukarıda pişirme yapabilirsiniz.</li>
+                  <li>...</li>
+                  <li>...</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Soğutma</strong>
+                <ul>
+                  <li>Simitleri bir tel ızgaraya alıp soğumasını bekleyin</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Servis</strong>
+                <ul>
+                  <li>...</li>
+                  <li>...</li>
+                  <li>Afiyet Olsun</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </section>    <!-- Hazırlanışı. -->    
+        <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+        <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
+      </div>
+    </div>
+  </div>
+  <!-- Icerik -->
+  <!-- JavaScript -->
+  <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+  <script src="../recipe.js"></script>
+  <script>
+    // Malzemeler
+    addMainRow("Un", "Simit yapımında, protein oranı yüksek un tercih edilmelidir. Genellikle %11-13 arası protein içeriği olan ekmeklik un kullanılır. (800 gr)");
+    
+    addNormalRow("Su", 60, "İçme suyu (%60-65) Suyu eklerken, hamurun kıvamını kontrol ederek yavaş yavaş eklemekte fayda var. Havanın sıcaklığı ve unun emiciliğine göre su miktarı hafifçe değişebilir.");
+
+    addDropdownRow(
+      [
+        { label: "İnstant Kuru Maya", value: 0.5 },
+        { label: "Aktir Kuru Maya", value: 1 },
+        { label: "Yaş Maya", value: 1.5 },
+        { label: "Ekşi Maya", value: 20 }
+      ],
+      "İsterseniz açılır listeye tıklayarak farklı bir maya kullanmak üzere seçim yapablirsiniz.  Mayanızı, buzdolabında yada serin, kuru ve güneş almayan bir ortamda saklayın"
+    );
+
+    addNormalRow("Tuz", 2, "Normal sofra tuzu");
+
+    addNormalRow("Üzüm Pekmezi", 5, "Ev yapımı, doğal üzüm pekmezini su ile inceltip kullanabilir yada alternatif olarak bir miktar şekeri (genelde beyaz şeker) ocakta karamelize edip, su ekleyerek inceltebilir ve simitleri bu karışıma batırabilirsiniz.");
+    
+    addNormalRow("Susam", 14, "Normal beyaz susam");    // Malzemeler.
+  </script>
+  <script src="../script.js" defer></script>
+  <!-- JavaScript. -->
+</body>
+
+</html>

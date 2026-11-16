@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>RAMAZAN PİDESİ</h1>
+            <span></span>
+          </div>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/ramazan-pidesi.png" alt="Ramazan Pidesi" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön hazırlıklar</strong>
+                  <ul>
+                    <li>
+                      Buzdolabınızda soğuk su olup olmadığını kontrol
+                      edin.(sıcak havalarda)
+                    </li>
+                    <li>Susamları kavurun ve bir kaba alın.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Otoliz</strong>
+                  <ul>
+                    <li>
+                      Önce suyu ardından unu hazneye koyup 1.kademede 1.5 dk
+                      yoğurun
+                    </li>
+                    <li>Üzerini nemli bir bezle örtüp 30-60 dakika bekletin</li>
+                    <li>
+                      Not: Sonradan ilave edilecek su varsa (örneğin, ben 10 gr
+                      suyu tuzu çözmek için kullanıyorum) bu miktarı toplam su
+                      miktarınızdan düşün.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Yoğuruma</strong>
+                  <ul>
+                    <li>Mayayı ilave edin ve 1.kademede 1.5 dk yoğurun</li>
+                    <li>
+                      Ardından tuzu, varsa ilave suyu koyup 1.kademede 1.5 dk
+                      yoğurun
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Mayalama</strong>
+                  <ul>
+                    <li>Hamuru hazneden dışarı alıp toparlayın</li>
+                    <li>Geniş bir kabı hafif yağlayıp hamuru içine koyun</li>
+                    <li>
+                      Kabın üzerini örtüp hamur yaklaşık iki katına çıkana kadar
+                      ortalam 60-120 dk arası kışın oda sıcaklığında yazın
+                      buzdolabında ilk mayalanmaya bırakın
+                    </li>
+                    <li>Aşırı mayalamaktan kaçının</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Katlama</strong>
+                  <ul>
+                    <li>
+                      Hamuru hafif unladığınız bir tezgaha alıp ilk katlamasını
+                      yapınız
+                    </li>
+                    <li>Üstünü örtüp yaklaşık 30-60 dakika bekletin</li>
+                    <li>
+                      Katlama adımı isteğe bağlı olarak birçaç defa tekrar
+                      edilebilir
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Beze</strong>
+                  <ul>
+                    <li>
+                      Hamuru un serpilmiş tezgaha alıp istediğiniz miktarda
+                      parçalara bölün
+                    </li>
+                    <li>
+                      Böldüğünüz hamurları yuvarlayarak beze haline getirin
+                    </li>
+                    <li>Üzerine nemli bez örtüp 30-60 dk bekletin</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Şekillendirme</strong>
+                  <ul>
+                    <li>
+                      Hamura pide şekli verildikten sonra ikinci bir mayalanma
+                      yapılır 20-30 dk
+                    </li>
+                    <li>
+                      Burada, hamurun fazla kabarmaması için süreye ve sıcaklığa
+                      dikkat edilir
+                    </li>
+                    <li>
+                      Aşırı kabaran hamur pişirme sırasında formunu kaybedebilir
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Pişirme</strong>
+                  <ul>
+                    <li>Fırını 250°C ayarlayarak önceden Isıtın</li>
+                    <li>
+                      Fırın hazır olmaya yakın Fırın tepsisinin üzerine pişirme
+                      kağıdı koyup üzerine un serpin
+                    </li>
+                    <li>Hamurları tepsiye alın</li>
+                    <li>Üzerlerine çizik atıp su serpin</li>
+                    <li>Üzerine susam ve çörekotu serpin</li>
+                    <li>
+                      Tepsinizi fırına verin ve aşağıdaki ayarlarla ayarlarda
+                      pişirin:
+                    </li>
+                    <li>
+                      Süre ve Sıcaklık: İlk 10 dakika: 200°C, İkinci 10 dakika:
+                      180°C, Üçüncü 10 dakika: 160°C, Üçüncü 10 dakika: fırın
+                      kapalı fan çalışıyor.
+                    </li>
+                    <li>Resistans: Alt ve üst İkisi de açık olmalı</li>
+                    <li>Fan: Açık</li>
+                    <li>
+                      Buhar: Evet (Fırın su bölmesine 200 gr içme suyu koyun)
+                    </li>
+                    <li>Raf: Orta göz yada bir tık altı</li>
+                    <li>
+                      Ayrıca pişirme sürecinde fırın kapağını açmamaya özen
+                      gösterin. Pişme bittikten sonra ekmeğin kısa bir süre
+                      fırının içinde bekletilerek kendi ısısı ile pişmeye devam
+                      etmesini sağlayabilirsiniz
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Soğutma</strong>
+                  <ul>
+                    <li>
+                      Pideyi fırından çıkardıktan sonra tel ızgaraya alın.
+                    </li>
+                    <li>Üzerini bir bez ile örtüp soğumaya bırakın</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Saklama</strong>
+                  <ul>
+                    <li>
+                      Özellikle yazın, ekmekler kısa sürede tüketilmeyecekse gün
+                      içinde tüketilecekler hariç diğerlerini tamamen soğuduktan
+                      sonra poşetleyip buzdolabına koyabilirsiniz
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Sonraki Kullanım için Hazırlık</strong>
+                  <ul>
+                    <li>
+                      Tezgah, Mutfak Şefi, Fırın, Ispatulalar, Ölçü Kaşıkları,
+                      tartı gibi ekmek yapımıda kullandığınız malzeme ve
+                      ekipmanları temizleyerek bir sonraki kullanıma
+                      hazırlayınız. Dolaptaki soğuk suyunuzu tamamlayınız.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Linkler</strong>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.youtube.com/watch?v=x1yHVBLNbMM"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Sadece 1 gr Maya ile Ramazan Pidesi Tarifi Yumuşacık ve
+                        Bol Gözenekli</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow("Un", "Yüksek protein oranına sahip pidelik un.");
+      addCustomRow(
+        "Su",
+        "İçme suyu kullanınız. Pide hamuru yüksek hidrasyonda olmalıdır. Hamuru kontrol edebileceğimiz ölçüde mümkün olan en yüksek oranda suyu kullanmamız gerekiyor. Genelde %75-80 civarında bir oran kullanılır. Ancak ununuz yeterince yüksek proteinli değilse fazla cıvık olmaması için hamurunuzu kontrol edebileceğiniz ölçüde su kullanın. Kullandığınız un için uygun oranı birkaç deneme sonrasında bulabilirsiniz. Örneğin, 1000 gr un için 750 gr su kullanarak hamurunuzu ideal kıvama getirdiyseniz ununuzda kullanacağınız su yüzdeniz 75 dir. Ununuz için belirlediğniz su yüzdesini % alanına giriniz.",
+      );
+      addDropdownRow(
+        [
+          { label: "İnstant Kuru Maya", value: 0.25 },
+          { label: "Aktir Kuru Maya", value: 0.5 },
+          { label: "Yaş Maya", value: 0.75 },
+          { label: "Ekşi Maya", value: 1 },
+        ],
+        "Farklı bir maya tipi kullanacaksanız açılır listeden seçebilirsiniz. Mayanızı, buzdolabında yada serin, kuru ve güneş almayan bir ortamda saklayın",
+      );
+      addNormalRow(
+        "Tuz",
+        1.5,
+        "Uzun mayalama yapacaksanız (buzdoabında geceden bekletme) oran %1.7-%1.8'e düşürülebilir.",
+      );
+      addNormalRow(
+        "Şeker",
+        1,
+        "Klasik Pide yapımında şeker mecburi değildir. Şeker, mayalanma sürecini hızlandırma, kabuğun daha kahverengi olması ve tat verici özellikler sağlar. Şekerin bu özelliklerini kullanmak istiyorsanız, şeker de ilave edebilirsiniz. %1-2 civarı yeterlidir",
+      );
+      addNormalRow(
+        "Yağ",
+        0,
+        "Hamuru katlamda kullanacağımız kabın içini yağlamak için çok az bir miktar kullanacağız. Bunun haricindeki yağ kullanımı mecburi değildir. Ancak daha pidemsi dokuda bir pide yapmak istiyorsanız %1-2 civarı yağ ilave edebilirsiniz.",
+      );
+      addNormalRow("Susam, Çörekotu", 0, "...");
+      addNormalRow("Un (Şifası için)", 0, "...");
+      addNormalRow("Su (Şifası için)", 0, "...");
+      addNormalRow("Kepek", 0, "Kalın buğday kepeği");
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

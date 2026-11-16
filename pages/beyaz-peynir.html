@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarifler</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- FULL WIDTH HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="header-left">
+
+        <!-- Logo -->
+        <div class="logo" onclick="window.location.href='../index.html';" style="cursor:pointer;">
+          <img src="../images/icon-logo.svg" class="logo-icon">
+          <span class="logo-text">tarifler</span>
+        </div>
+        <!-- Logo. -->
+      </div>
+      <!-- Tarif Başlığı -->
+      <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+      <div class="recipe-title">
+        <div class="recipe-title-line">
+          <span></span>
+          <h1>BEYAZ PEYNİR</h1>
+          <span></span>
+        </div>
+      </div>
+      <!-- Tarif Başlığı. -->
+      <div class="header-right">
+        <!-- Arama Kutusu -->
+        <div class="search-container"><input type="text" id="searchInput" class="mainLoginInput" placeholder="&#61442;"
+            oninput="search()" />
+          <div id="results" class="results-dropdown"></div>
+        </div>
+        <!-- Arama Kutusu. -->
+      </div>
+    </div>
+  </header>
+  <!-- FULL WIDTH HEADER. -->
+  <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+  <div class="recipe-image"><img src="../images/beyaz-peynir.png" alt="Beyaz Peynir"></div>
+  <!-- İçerik -->
+  <div class="container">
+    <!-- Malzemeler Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-mal">
+          <img src="../images/icon-mal.svg" class="icon-mal">
+          <span class="text-mal">Malzemeler</span>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="malzeme-tablosu">
+          <tbody id="malzemeBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Malzemeler Kartı -->
+    <!-- Tarif Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-haz">
+          <img src="../images/icon-haz.svg" alt="" class="icon-haz">
+          <span class="text-haz">Hazırlanışı</span>
+        </div>
+      </div>
+      <div class="table-container">
+    <!-- Hazırlanışı -->
+        <section class="recipe">
+          <!-- Genel Bakış: adımlardan önce gelir -->
+          <div class="genel-bakis">
+            <h3>Genel Bakış</h3>
+            <p>...</p>
+          </div>
+          <!-- Genel Bakış. -->
+          <ol class="steps">
+            <li>
+              <div class="step-content">
+                <strong>Ön Hazırlık</strong>
+                <ul>
+                  <li>Tülbent, süzgeç, terazi, timer ve termometreyi hazırlayın</li>
+                  <li>Hazırda ince kaya tuzu yoksa makinede inceltip hazırlayın</li>
+                  <li>Sütü süzerek bir tencereye alın. Varsa benmari tenceresine</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Pastörizasyon</strong>
+                <ul>
+                  <li>Sütünüzü "kaynatmayın" 72°C/15 sn (HTST) pastörize edin</li>
+                  <li>Buzla (buz banyosu) Hızlıca ısıyı düşürerek 37°C ye getirin</li>
+                  <li>Termometreyi temizleyin</li>
+                  <li>İnek (72°C 15sn) Keçi (63–65°C 30dk) Koyun (63–65°C 30dk) Manda (63–66°C 30dk)</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Mayalama</strong>
+                <ul>
+                  <li>Süt, 37°C’ye geldiğinde mayayı ekleyin ve sütü çok dalgalandırmadan nazikçe karıştırın</li>
+                  <li>Yumuşak peynir için genellikle limon suyu, sirke veya yoğurt gibi hafif asidik malzemelerle kesilir. Peynir mayası kullanılmaz veya çok az kullanılır</li>
+                  <li>Bu yöntem peyniri yumuşak yapar. Ayrıca yumuşak penir için düşük sıcaklıkta hassas bir kesme işlemi yapılır</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Bekleme</strong>
+                <ul>
+                  <li>Tencerenin üzerini bezle örtüp sarsılmayacak şekilde 30-40 dakika civarı mayalanmaya bırakın</li>
+                  <li>Bu süre zarfında süt sıcaklğının mayaladığınz andaki sıcaklığa yakın bir sıcaklıkta kalmasını sağlayın</li>
+                  <li>Gerekirse üstünü örtün yada sıcaklığını muhafaza etmesi için fırının içine yerleştirin</li>
+                  <li>Teleme oluşur</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Dilimleme</strong>
+                <ul>
+                  <li>Süre sonunda, süt jelleşmiş ve pıhtı oluşmuş olmalı</li>
+                  <li>Telemeyi keskin bir bıçakla kare kare dilimleyin</li>
+                  <li>Pıhtıları 10-15 dakika kadar dinlenmeye bırakın</li>
+                  <li>Bu işlem sırasında altından peynir altı suyu çıkmaya başlar</li>
+                  <li>Yumuşak peynir için Pıhtıyı büyük parçalar halinde bırakın ve çok işlem yapmayın</li>
+                  <li>...</li>
+                  </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Süzme</strong>
+                <ul>
+                  <li>Telemeyi temiz bir tülbente aktarın</li>
+                  <li>Bezle sardığınız pıhtıyı süzgecin üzerine koyup üzerine bir ağırlık koyarak fazla suyunun çıkmasını sağlayın</li>
+                  <li>Bu işlem genellikle 1-2 saat sürer. Süzme işlemini buzdolabında yapın. Peyniraltı suyunu çok süzerseniz sert az süzeseniz yumuşak peynir elde edersiniz. Ayrıca yumuşk peynir için presleme ve  şekillendirme yapılmaz. Peynir serbest bir şekilde bırakılır veya hafifçe bastırılır. Yumuşak peynir elde etmek için süzme süresi kısa tutulmalı 2-3 saat</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Kalıplama</strong>
+                <ul>
+                  <li>Süzülen peyniri bir kalıba koyun ve üzerine ağırlık koyarak şekil vermeye çalışın</li>
+                  <li>Bu aşamada peynirin fazla suyunu çıkarmak için hafifçe bastırabilirsiniz</li>
+                  <li>Ancak çok fazla bastırmaktan kaçının, aksi takdirde peynir sertleşebilir</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Tuzlama</strong>
+                <ul>
+                  <li>Peyniri doğrayın ve doğradığınz parçaların her tarafını kaplayacak şekilde tuzlayın</li>
+                  <li>Kapalı bir kap içinde buzdolabında ertesi güne kadar bekleterek içindeki suyu bırakması sağlayın</li>
+                  <li>Yumuşak peynir için Salamura süresini kısaltın (5-6 saat yerine 2-3 saat salamurada bekletin)</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Dinlendirme</strong>
+                <ul>
+                  <li>İçme suyu ile belirli oranda (genelde %15–18 arasında) kaya tuzu karıştırılarak hazırlanır</li>
+                  <li>Olgunlaşma süresi boyunca peynir ara sıra çevrilmelidir</li>
+                  <li>Bu aşamada peynirin lezzeti ve dokusu gelişir ve karakteristiğini kazanr</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+          <!-- Bilgi Notları: son adımdan sonra gelir -->
+          <div class="bilgi-notlari">
+            <h3>Bilgi Notları</h3>
+            <div class="not-grubu">
+              <h4>Saklama</h4>
+              <ul>
+                <li>...</li>
+              </ul>
+            </div>
+            <div class="not-grubu">
+              <h4>Besin Öğesi Korunumu</h4>
+              <ul>
+                <li>Peynir yaparken baskı yaparken ağırlık fazla koymazsiniz. Mayalama oluşmasından sonra telemeyi fazla parcalamazsiniz. Birde mayalama derecesini düşük tutarsanız yumuşak peynir yüksek tutarsanız sert peynir vs vs</li>
+                <li><a href="https://www.youtube.com/watch?v=dO-sv6Tqegk" target="_blank" rel="noopener noreferrer">Ezine peyniri nasıl yapılır, Evde Ezine peyniri yapımı %100 gerçek tarif</a><p></span><span class="normal-text"><a href="https://www.youtube.com/watch?v=os9WrRSZdXM" target="_blank" rel="noopener noreferrer">Evde Beyaz Peynir Yapımı</a></li>
+                <li><img src="../images/trakya-peynir-mayasi.jpg"></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Bilgi Notları. -->
+        </section>
+            <!-- Hazırlanışı. -->    
+        <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+        <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
+      </div>
+    </div>
+  </div>
+  <!-- Icerik -->
+  <!-- JavaScript -->
+  <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+  <script src="../recipe.js"></script>
+  <script>
+    // Malzemeler
+    addMainRow("Süt", "Tam yağlı açık çiğ süt (Keçi Sütü %30 - Koyun Sütü %60 - İnek Sütü %10). Süt, kaynatma vs. işlem görmemiş olmalı");
+    addNormalRow("Maya", 5, "Şirden Mayası(50-75 ml) > Beyaz Sirke (%1.5) Mayanın miktarı genellikle ambalajında belirtilir; bu oranı kullanın. Kültürden sonra eklenir.Yumuşak peynir için mikrobiyal maya Daha düşük pıhtılaştırma gücüne sahip maya kullanın (örn. 1/8.000 - 1/10.000 oranında maya)---1 lt süte 0.7 ml");
+    addNormalRow("Kültür", 0.07, "Toz, beyaz peynir starter kültürü. Kültür kullanımı peynirde Tat, kıvam, dayanıklılık ve olgunlaşma sağlar. Peynir yapımının başında eklenir. - mezofilik starter kültür ");
+    addNormalRow("Kaya Tuzu", 7.5, "İnce olanlardan alın yada inceltin. 1 kg salamura suyu için 75 gram tuz ideal Yumuşak peynir için Tuz oranını düşürün (%6-8 arasında tutabilirsiniz,");
+     // Malzemeler.
+  </script>
+  <script src="../script.js" defer></script>
+  <!-- JavaScript. -->
+</body>
+
+</html>

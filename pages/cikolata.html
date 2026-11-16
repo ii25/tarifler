@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>ÇİKOLATA</h1>
+            <span></span>
+          </div>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image">
+      <img src="../images/cikolata.png" alt="ÇİKOLATA" />
+    </div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ana Mazlemeleri Eritin</strong>
+                  <ul>
+                    <li>
+                      Kakao kitlesini küçük parçalara bölün yada rendeleyin
+                    </li>
+                    <li>
+                      Kakao kitlesini 45–50 °C’ye kadar eritin, 10–15 dk bu
+                      sıcaklıkta tutun (stabilizasyon, opsiyonel)
+                    </li>
+                    <li>Kakao yağı ile birlikte benmari usulü</li>
+                    <li>45–50 °C’yi geçmeyin</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Kuru Malzemeleri Ekleyin</strong>
+                  <ul>
+                    <li>Şeker + süt tozunu elekten geçirin</li>
+                    <li>Karışıma yavaş yavaş ekleyin</li>
+                    <li>
+                      Spatula ile iyice karıştırın. (Pürüzlü olması sorun değil)
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Homojenleştirin /Mini konçlama (Önerilir)</strong>
+                  <ul>
+                    <li>
+                      El blenderı veya mutfak robotu ile 3-5 dakika karıştırın
+                    </li>
+                    <li>Bu adım dokuyu iyileştirir ama şart değil</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Son Dokunuş</strong>
+                  <ul>
+                    <li>Tuz + vanilyayı ekleyin</li>
+                    <li>1 dakika daha karıştırın</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Temperleyin (opsiyonel)</strong>
+                  <ul>
+                    <li>50 °C → tamamen eritin</li>
+                    <li>27–28 °C → soğutun</li>
+                    <li>31–32 °C → tekrar ısıtın</li>
+                    <li>Kalıba dökün</li>
+                    <li>
+                      Sonuç: Parlak yüzey, kırılgan yapı, ağızda pürüzsüz erime.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Soğutun</strong>
+                  <ul>
+                    <li>Kalıba dökün. Yağlı kağıt</li>
+                    <li>
+                      Oda sıcaklığında veya buzdolabında bekletin (30-60 dk).
+                      Sertleşince hazır!
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Saklama</strong>
+                  <ul>
+                    <li>Cam kavanozda</li>
+                    <li>Serin yerde</li>
+                    <li>Buzdolabı şart değil ama yazın iyi olur</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow(
+        "Kakao Kitlesi",
+        "Öğütülmüş kavrulmuş kakao çekirdeğinin tamamıdır. İçeriği: %50–55 kakao yağı, %45–50 kakao kuru maddesidir. Akışkan, yoğun, doğal bir çikolata bazıdır. Kakao kitlesi, cocoa liquor, cocoa mass, cocoa paste isimlendirmeleri ile satılabilir. İçeriği %100 Kakao olmalıdır. İşlenme Seviyesi: Kavrulmuş + öğütülmüş, katksız olmalı. Şunlardan uzak durun: Şeker eklenmiş, Kakao yağı oranı düşürülmüş, Aroma, vanilin, lesitin içerenler. Ayrıca Raw / ham kakao kitlesi de tercih etmeyin. Doğaldır ama ev için zordur, asidiktir. Fiziksel olarak İyi kakao kitlesi: Koyu kahverengi, Mat veya hafif parlak, Kırıldığında temiz bir yüzeye sahip olmalı. Hafif kavruk, acı ama temiz kakao kokusu gelmelidir. Kötü İşaretler: Gri-beyaz tabaka (fat bloom), Çok donuk, kül gibi yüzey, Elinde hemen erimiyorsa (yağ oranı düşük) ve küf, yanık, ekşi/sirke benzeri kokular.",
+      );
+      addNormalRow(
+        "Kakao Yağı",
+        20,
+        "%100 kakao yağı olmalı, etiketinde “deodorize edilmemiş/rafine edilmemiş” yazarsa daha aromatik olur. Açık sarı–krem rengi olmalı. Çok beyaz ya da gri ise kalitesi düşüktür. Hafif çikolata/kakao kokusu gelmeli. Kokusuzsa aşırı rafine edilmiştir. Gıda tipi (food grade) olduğundan emin olun. Kaçınması Gerekenler: “Bitkisel yağ karışımı” yazanlar, Palm yağı, shea yağı eklenmiş ürünler, Aşırı ucuz ürünler. (Alernatif: Hindistan cevizi yağı) % 15–25 arttıkça daha akışkan yapar",
+      );
+      addNormalRow(
+        "Şeker",
+        70,
+        "Toz şeker > Pudra Şekeri > Esmer Şeker > Akçaağaç şurubu. % 60–80 arttıkça hacim kazandırır",
+      );
+      addNormalRow(
+        "Süt Tozu",
+        25,
+        "Hacim artıtır, yumuşaklık verir, süt tadı katar, maliyeti düşürür. Çok kullanılırsa “sütlü tatlı”ya döner. Tam yağlı süt tozu kullanınız. Etikette, düşük ısı “Low heat”/ sprey kurutma “Spray dried” yazıyorsa iyidir. Etikette şunlar yazıyorsa doğal değildir: Emülgatör, Topaklanma önleyici, Süt serumu (whey). Kaçınılacak ifadeler: Süt ürünü, Süt bazlı toz, Peynir altı suyu, E471, E322, lesitin vb.",
+      );
+      addNormalRow(
+        "Pirinç Nişastası",
+        8,
+        " %3–8 (asla fazla değil). Diğerleri: İnülin (hindiba lifi), Maltodekstrin. % 20–30 ",
+      );
+      addNormalRow("Vanilya", 0.2, "% 0,1–0,3");
+      addNormalRow("Tuz", 0.3, "% 0,2–0,4");
+      addNormalRow(
+        "Kuruyemiş",
+        0,
+        "fındık, badem, fıstık, kuru meyve, pirinç patlağı, waffle parçaları",
+      );
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

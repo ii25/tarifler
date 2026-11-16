@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarifler</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- FULL WIDTH HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="header-left">
+
+        <!-- Logo -->
+        <div class="logo" onclick="window.location.href='../index.html';" style="cursor:pointer;">
+          <img src="../images/icon-logo.svg" class="logo-icon">
+          <span class="logo-text">tarifler</span>
+        </div>
+        <!-- Logo. -->
+      </div>
+      <!-- Tarif Başlığı -->
+      <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+      <div class="recipe-title">
+        <div class="recipe-title-line">
+          <span></span>
+          <h1>LOKUM</h1>
+          <span></span>
+        </div>
+      </div>
+      <!-- Tarif Başlığı. -->
+      <div class="header-right">
+        <!-- Arama Kutusu -->
+        <div class="search-container"><input type="text" id="searchInput" class="mainLoginInput" placeholder="&#61442;"
+            oninput="search()" />
+          <div id="results" class="results-dropdown"></div>
+        </div>
+        <!-- Arama Kutusu. -->
+      </div>
+    </div>
+  </header>
+  <!-- FULL WIDTH HEADER. -->
+  <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+  <div class="recipe-image"><img src="../images/lokum.png" alt="Lokum"></div>
+  <!-- İçerik -->
+  <div class="container">
+    <!-- Malzemeler Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-mal">
+          <img src="../images/icon-mal.svg" class="icon-mal">
+          <span class="text-mal">Malzemeler</span>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="malzeme-tablosu">
+          <tbody id="malzemeBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Malzemeler Kartı -->
+    <!-- Tarif Kartı -->
+    <div class="card">
+      <div class="card-header">
+        <div class="icon-text-haz">
+          <img src="../images/icon-haz.svg" alt="" class="icon-haz">
+          <span class="text-haz">Hazırlanışı</span>
+        </div>
+      </div>
+      <div class="table-container">
+    <!-- Hazırlanışı -->
+        <section class="recipe">
+          <ol class="steps">
+            <li>
+              <div class="step-content">
+                <strong>Şerbeti Hazırlayın</strong>
+                <ul>
+                  <li>Şeker ve suyu tencereye koyun</li>
+                  <li>Orta ateşte karıştırarak ıstın. Şeker termometresi ile takip edin.</li>
+                  <li>110 °C: köpüklenmeye başlar. 112-115°C: lokum için ideal kıvama yaklaşılır.</li>
+                  <li>Hedef: 117–118 °C (soft ball stage). Hafif viskoz, akışkan ve parlak bir şurup oluşmalı.</li>
+                  <li>Bu aşamada fazla karıştırma kristalleşmeye neden olabilir, bu yüzden "soft ball stage" aşamasına
+                    ulaştıktan sonra daha fazla karıştırmayın ve ocağın altını kapatın.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Nişasta Jelini Hazırlayın</strong>
+                <ul>
+                  <li>Ayrı bir tencereye nişasta ve suyu alın</li>
+                  <li>Koyulaşana, hafif saydam, pürüzsüz, jel bir kıvama gelene kadar kısık ateşte karıştırın.</li>
+                  <li>80–85 °C jel kıvamı başlar</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Birleştirin</strong>
+                <ul>
+                  <li>Şeker şurubunu nişasta karışımına azar azar (aksi takdirde topaklanma olur.) ekleyiyerek
+                    karıştırın</li>
+                  <li>Karıştırma işlemi düşük ısıda devam etmeli.</li>
+                  <li>60–90 dakika boyunca düşük ısıda sürekli karıştırın.</li>
+                  <li>Bu işlem karışımın parlak, akışkan ama yoğun bir jel haline gelmesini sağlar. Karışım koyulaşıp
+                    açık kehribar rengini alır, kabarcıklar küçükleşir</li>
+                  <li>Pişirme süresi sonunda karışım kıvamını alacak ve tencerenin tabanına yapışmayacak bir hal
+                    alacaktır.</li>
+                  <li>Ocaktan almadan 5 dakika önce: gül suyu veya istediğiniz aroma ekleyin. Bu noktada isteğe bağlı
+                    olarak dövülmüş antep fıstığı veya hindistancevizi ekleyebilirsiniz. Karışımı iyice karıştırarak bu
+                    malzemeleri de dağıtın</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Kaba dökün & Soğutun</strong>
+                <ul>
+                  <li>Karışımı nişastalanmış veya hafif yağlanmış tepsiye dökün.</li>
+                  <li>Üstünü nemli bir spatula yardımıyla düzleştirin.</li>
+                  <li>Üzerine az nişasta serpilirsinz (yapışmayı önlemek için)</li>
+                  <li>Oda sıcaklığında, nemsiz bir ortamda 12–24 saat arası sertleşmeye bırakın.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Kesin & Kaplayın</strong>
+                <ul>
+                  <li>Lokumu dilimleyin.</li>
+                  <li>Her yüzeyini nişasta + pudra şekeri karışımı (1:1) ile kaplayın.</li>
+                  <li>isteğe bağlı olarak dövülmüş antep fıstığı veya hindistancevizi ekleyebilirsiniz.</li>
+                  <li>Karışımı iyice karıştırarak bu malzemeleri de dağıtın</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <strong>Saklama</strong>
+                <ul>
+                  <li>Hava geçirmez kapta saklayın.</li>
+                </ul>
+              </div>
+            </li>
+           
+          </ol>
+            <li>
+              <div class="step-content">
+                <strong>Teknik Notlar & Linkler</strong>
+                <ul>
+                  <li>Karışımın doğru pişirilmesi, lokumun sakız gibi değil, yumuşak ama kesilebilir olması için
+                    kritiktir.</li>
+                  <li>Aşırı nişasta veya düşük ısıda uzun pişirme → fazla yoğun ve sert doku.</li>
+                  <li>Yetersiz pişirme → yapışkan ve sakız kıvamı.</li>
+                  <li>Lokumunuzun kıvamını istediğiniz gibi ayarlamak için pişirme süresini ve nişasta miktarını
+                    ayarlayabilirsiniz.</li>
+                  <li>Ayrıca farklı tatlar eklemek için tarife çeşitli meyve suları veya esanslar da ekleyebilirsiniz.
+                  </li>
+                  <li><a href="https://www.youtube.com/watch?v=Dd3jcdK8AFA" target="_blank"
+                      rel="noopener noreferrer">Traditional Turkish Delight Recipe</a></li>
+                  <li><a href="https://www.youtube.com/watch?v=tlOm6N8_5Ec" target="_blank"
+                      rel="noopener noreferrer">Türk Lokumu tarifi son derece ünlü Türk yemeği</a></li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </section>    <!-- Hazırlanışı. -->    
+        <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+        <div class="info-note"><span class="puf-isareti"></span> renkli yazılar püf noktalarını belirtir.</div>
+      </div>
+    </div>
+  </div>
+  <!-- Icerik -->
+  <!-- JavaScript -->
+  <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+  <script src="../recipe.js"></script>
+  <script>
+    // Malzemeler
+    addMainRow("Şeker (Şerbet)", "Beyaz toz şeker. Şeker oranı arttıkça lokum daha sert ve dayanıklı olurken, azalması durumunda daha yumuşak ve kolay eriyen bir yapı elde edilir. 600 gr ");
+    
+    addNormalRow("Su (Şerbet)", 45, "%33-40-50");
+
+    addNormalRow("Limon Suyu (Şerbet)", 0, "Krem tartar kullanacaksan, limon tuzu eklemene gerek olmayabilir (aynı işleve sahiptirler, ama biri doğal asit – biri tuz formu).limon tuzu 1 kg şeker için 1–2 gr Limon tuzu, krem tartara göre daha güçlüdür. Dikkatli dozaj gerekir.");
+
+    addNormalRow("Nişasta (Nişasta Jeli) ", 18, "(Kıvam verici) Mısır nişastası da kullanılabilir, ancak buğday nişastası gelenekseldir. %15-20");
+
+    addNormalRow("Su (Nişasta Jeli)", 25, "(Nişastalı karışım için) %20-25");
+
+    addNormalRow("Krem Tartar (Nişasta Jeli)", 0.2, "(potasyum bitartrat)(Asit) Lokumda şekerin kristalleşmesi istenmez; Krem tartar süreci yavaşlatır, şekeri kısmen invert şekerlere dönüştürerek kristalleşmesini engelleyip stabilize eder ve pürüzsüz doku ve kıvam sağlar. % 0.1-0.3");
+
+    addNormalRow("İç Malzeme", 0, "Fındık, Fıstık, Ceviz vs.");
+
+    addNormalRow("Aroma", 1, "Gül suyu en klasik olanıdır ama limon, portakal ya da fıstıklı/sakızlı versiyonlarda da aroma değişir. 5-10 g - Vanilya Extatı (Nişastalı karışım için) 1Tbsp");
+
+    addNormalRow("Dış Malzeme", 0, "Pudra Şekeri, Hindistan Cevizi vs.");
+        // Malzemeler.
+  </script>
+  <script src="../script.js" defer></script>
+  <!-- JavaScript. -->
+</body>
+
+</html>
