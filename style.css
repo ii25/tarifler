@@ -69,6 +69,12 @@
   --alt-yazi: 12px; /* başlık alt açıklaması (font-size) */
   --alt-harf-araligi: 3px; /* başlık alt açıklaması harf aralığı (letter-spacing) */
   --baslik-aciklama-bosluk: 6px; /* iki satırlı tarif başlığında başlık ile alt açıklama arasındaki boşluk: mobilde ve text-box-trim desteklemeyen tarayıcılarda geçerlidir (yazı kutuları arasındaki mesafe) */
+  /* ARAMA SONUÇLARI KUTUSU: BUZLU CAM EFEKTİ (tarif sayfaları ve ana sayfa).
+     Kutunun arkasındaki sayfa bulanıklaşır, kutu yarı saydam görünür. Tarayıcı bu efekti desteklemiyorsa (backdrop-filter) eski, daha opak renkler kullanılır. */
+  --cam-bulaniklik: 14px; /* arkadaki içeriğin bulanıklık miktarı: büyüdükçe daha buzlu görünür */
+  --cam-doygunluk: 140%; /* arkadaki renklerin canlılığı: 100% = değişmez, büyüdükçe renkler daha canlı */
+  --cam-arka-koyu: #5f5f6ac7; /* tarif sayfalarındaki sonuç kutusunun rengi; son iki hane saydamlık (c7 ≈ %78). Küçültürseniz daha saydam olur ama yazı okunurluğu azalır */
+  --cam-arka-acik: #ffffff8c; /* ana sayfadaki sonuç kutusunun rengi; son iki hane saydamlık (8c ≈ %55) */
   --baslik-dikey-ayar: -0.5px; /* masaüstü iki satırlı başlık bloğunun dikey ince ayarı: üst boşluk fazlaysa eksi değer (blok yukarı çıkar), alt boşluk fazlaysa artı değer (blok aşağı iner). Ekranda yaklaşık 1px'lik adımlarla görünür; 0px tam ortalı (ölçülen) konumdur */
   --baslik-aciklama-bosluk-masaustu: 14px; /* masaüstünde (yazı kutuları kırpıldığı için) başlığın alt çizgisi ile alt açıklamanın harf üst kenarı arasındaki GÖRÜNEN boşluk */
   --baslik-cizgi-dikey: 0px; /* başlığın iki yanındaki süs çizgilerinin dikey ince ayarı (tek blok başlıkta): + değer çizgiyi aşağı, - değer yukarı kaydırır */
@@ -498,6 +504,16 @@ body {
 }
 .results-dropdown::-webkit-scrollbar {
   display: none;
+}
+/* Buzlu cam: backdrop-filter destekleniyorsa uygulanır (desteklemeyen tarayıcılarda yukarıdaki opak renk kalır) */
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .results-dropdown {
+    background-color: var(--cam-arka-koyu);
+    -webkit-backdrop-filter: blur(var(--cam-bulaniklik)) saturate(var(--cam-doygunluk));
+    backdrop-filter: blur(var(--cam-bulaniklik)) saturate(var(--cam-doygunluk));
+    border-color: #ffffff38; /* cam kenarı: ince açık çizgi */
+    box-shadow: 0 10px 24px -10px #00000066; /* altına hafif gölge: kutu sayfadan ayrılır */
+  }
 }
 .results-dropdown p {
   margin: 0;
@@ -1324,6 +1340,16 @@ ul li::marker {
 }
 .index-results-dropdown::-webkit-scrollbar {
   display: none;
+}
+/* Buzlu cam (ana sayfa): bkz. :root'taki --cam-* değişkenleri */
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .index-results-dropdown {
+    background-color: var(--cam-arka-acik);
+    -webkit-backdrop-filter: blur(var(--cam-bulaniklik)) saturate(var(--cam-doygunluk));
+    backdrop-filter: blur(var(--cam-bulaniklik)) saturate(var(--cam-doygunluk));
+    border-color: #ffffff66;
+    box-shadow: 0 10px 24px -10px #00000040;
+  }
 }
 .index-results-dropdown p {
   margin: 0;
