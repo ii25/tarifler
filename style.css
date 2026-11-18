@@ -1274,7 +1274,7 @@ ul li::marker {
 /* MOBİL ARKA PLAN GÖRSELİ: 768px ve altında masaüstü görseli (banner-bg.jpg) yerine images/banner-bg-mobile.jpg kullanılır */
 @media (max-width: 768px) {
   .banner-image {
-    background-image: url("images/banner-bg-mobil.jpg");
+    background-image: url("images/banner-bg-mobile.jpg");
     background-position: center center; /* görselin hangi bölümünün görüneceği: örn. "center top" üst kısmı, "center bottom" alt kısmı gösterir */
   }
   .banner-content {
