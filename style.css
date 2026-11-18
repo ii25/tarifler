@@ -1328,7 +1328,6 @@ ul li::marker {
 
 .hero-text {
   font-weight: inherit;
-  padding-bottom:20px;
   animation-name: headerenter;
   animation-duration: 5s;
   position: relative;
