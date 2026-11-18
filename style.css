@@ -78,7 +78,7 @@
   /* ANA SAYFA (index.html): masaüstü değerleri; mobil değerleri @media (max-width: 768px) :root bloğunda */
   --hero-yazi: 5.5rem; /* "Bugün Ne Pişirelim?" yazısının boyutu */
   --index-arama-genislik: auto; /* masaüstü: ana sayfadaki arama kutusu kendi doğal genişliğinde kalır (auto). Mobil değeri @media bloğundaki :root'ta */
-  --hero-alt-bosluk: 20px; /* başlığın altındaki boşluk (başlık ile arama kutusu arasına eklenir); masaüstü değeri. Mobil değeri @media bloğundaki :root'ta */
+  --hero-arama-aralik: 119px; /* "Bugün Ne Pişirelim?" yazısının altı ile arama kutusunun üstü arasındaki BOŞLUK (masaüstü). Azaltırsanız arama kutusu yukarı çıkar. Mobil değeri @media bloğundaki :root'ta */
   --hero-kenar: 21px; /* yazının etrafındaki beyaz kalın kenarlık (yazı küçülünce orantılı küçültülmelidir: yaklaşık yazı boyutunun dörtte biri) */
   --imza-yazi: 33px; /* header'daki "Created By" imza yazısı */
   --baslik-dikey-ayar: -0.5px; /* masaüstü iki satırlı başlık bloğunun dikey ince ayarı: üst boşluk fazlaysa eksi değer (blok yukarı çıkar), alt boşluk fazlaysa artı değer (blok aşağı iner). Ekranda yaklaşık 1px'lik adımlarla görünür; 0px tam ortalı (ölçülen) konumdur */
@@ -177,7 +177,7 @@
     --satir-bosluk: 8px;
     --gram-genislik: 84px;
     --hero-yazi: 4rem; /* mobil: ana sayfa başlığı ("Bugün Ne" / "Pişirelim?" iki satır). Büyütürseniz uzun satır ("Pişirelim?") dar ekrana sığmayabilir */
-    --hero-alt-bosluk: 0px; /* mobil: başlığın altındaki boşluk (masaüstünde 20px) */
+    --hero-arama-aralik: 80px; /* mobil: başlık ile arama kutusu arasındaki boşluk. Daha yakın için küçültün (örn. 40px), daha uzak için büyütün */
     --hero-kenar: 13px; /* mobil: başlığın beyaz kenarlığı (yazı boyutunun yaklaşık dörtte biri) */
     --index-arama-genislik: 170px; /* mobil: ana sayfadaki arama kutusunun genişliği. Daha dar için küçültün (örn. 150px), daha geniş için büyütün */
     --imza-yazi: 22px; /* mobil: header imzası */
@@ -1330,7 +1330,7 @@ ul li::marker {
 
 .hero-text {
   font-weight: inherit;
-  padding-bottom: var(--hero-alt-bosluk); /* başlığın altındaki boşluk (:root'tan ayarlanır) */
+  margin-bottom: 0; /* başlık ile arama kutusu arasındaki boşluk arama kutusunun üst boşluğundan gelir (:root --hero-arama-aralik) */
   animation-name: headerenter;
   animation-duration: 5s;
   position: relative;
@@ -1411,6 +1411,7 @@ ul li::marker {
 }
 #index-searchInput {
   width: 100%;
+  /* margin: üst boşluk = başlık ile arama kutusu arası (:root'taki --hero-arama-aralik; masaüstü ve mobil için ayrı değer) | yanlar: 0 | alt: 5px */
   font-size: 12px;
   border: 1px solid #a2afb1;
   border-radius: 8px;
@@ -1419,7 +1420,7 @@ ul li::marker {
   color: var(--renk-beyaz);
   text-align: center;
   height: 40px;
-  margin: 40px 0 5px;
+  margin: var(--hero-arama-aralik) 0 5px;
   padding: 0 25px;
   animation: fadeIn 3s ease-out forwards;
   opacity: 0;
