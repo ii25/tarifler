@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifler</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- FULL WIDTH HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href = '../index.html'"
+            style="cursor: pointer"
+          >
+            <img src="../images/icon-logo.svg" class="logo-icon" />
+            <span class="logo-text">tarifler</span>
+          </div>
+          <!-- Logo. -->
+        </div>
+        <!-- Tarif Başlığı -->
+        <!-- Tek blok: başlığın altında açıklama istiyorsanız <p> satırı kalsın, istemiyorsanız o satırı silin (ya da yorum içine alın).
+           Başka bir değişiklik gerekmez: tek satırlı / iki satırlı görünümü stil kendisi ayarlar. -->
+        <div class="recipe-title">
+          <div class="recipe-title-line">
+            <span></span>
+            <h1>PATATES SALATASI</h1>
+            <span></span>
+          </div>
+        </div>
+        <!-- Tarif Başlığı. -->
+        <div class="header-right">
+          <!-- Arama Kutusu -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              class="mainLoginInput"
+              placeholder="&#61442;"
+              oninput="search()"
+            />
+            <div id="results" class="results-dropdown"></div>
+          </div>
+          <!-- Arama Kutusu. -->
+        </div>
+      </div>
+    </header>
+    <!-- FULL WIDTH HEADER. -->
+    <!-- Görsel yüksekliği: style.css içindeki --gorsel-yukseklik. Sadece bu sayfa için: <div class="recipe-image" style="--gorsel-yukseklik: 260px"> -->
+    <div class="recipe-image"><img src="../images/food.png" alt="" /></div>
+    <!-- İçerik -->
+    <div class="container">
+      <!-- Malzemeler Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-mal">
+            <img src="../images/icon-mal.svg" class="icon-mal" />
+            <span class="text-mal">Malzemeler</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="malzeme-tablosu">
+            <tbody id="malzemeBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Malzemeler Kartı -->
+      <!-- Tarif Kartı -->
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-text-haz">
+            <img src="../images/icon-haz.svg" alt="" class="icon-haz" />
+            <span class="text-haz">Hazırlanışı</span>
+          </div>
+        </div>
+        <div class="table-container">
+          <!-- Hazırlanışı -->
+          <section class="recipe">
+            <div class="genel-bakis">
+              <h3>Genel Bakış</h3>
+              <p>
+                Bu salata, haşlanıp sıcakken sosla buluşan patateslerin sosu
+                içine çekmesine dayanır. Patatesler kabuklu pişirilerek vitamin
+                ve mineral kaybı azaltılır, sos ise limon, zeytinyağı, tuz ve
+                karabiberden oluşan basit bir emülsiyon olarak hazırlanır. Soğan
+                ve maydanoz ise taze ve çıtır kalsın diye işlemin sonuna
+                bırakılır.
+              </p>
+            </div>
+            <ol class="steps">
+              <li>
+                <div class="step-content">
+                  <strong>Ön Hazırlık</strong>
+                  <ul>
+                    <li>
+                      Kapaklı bir tencere ile buhar sepeti ya da büyük bir
+                      süzgeç, geniş bir karıştırma kabı, keskin bir bıçak,
+                      terazi ve küçük bir çırpma kabı hazırlayın; sosu ayrı bir
+                      kapta hazırlayacağınız için ekstra bir kap işi
+                      kolaylaştırır.
+                    </li>
+                    <li>
+                      Tüm malzemeleri tartın ve patatesleri sert bir fırça ile
+                      kabuklarını soymadan yıkayın; kabuğu bu aşamada soymak
+                      yerine pişirdikten sonra soymak, patatesin suyla temasını
+                      azaltarak besin kaybını düşürür.
+                    </li>
+                    <li>
+                      Limonu sıkın, maydanozun yapraklarını ayıklayıp ince kıyın
+                      ve soğanı yarım ay şeklinde ince dilimleyin.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Patatesleri Pişirme</strong>
+                  <ul>
+                    <li>
+                      Patatesleri kabuklu ve bütün halde buharda pişirin; suda
+                      haşlamaya göre C vitamini ve potasyum gibi suda çözünen
+                      besinler suya geçmediği için daha iyi korunur. Buhar
+                      sepeti yoksa tencerede az suyla ve kapağı kapalı pişirin.
+                    </li>
+                    <li>
+                      Orta boy patatesler için 25-35 dakika yeterlidir; bıçak
+                      ucu ortaya direnç göstermeden girdiğinde pişmiştir.<span
+                        class="puf"
+                      >
+                        Patatesler farklı boydaysa büyüklerini baştan,
+                        küçüklerini sonradan ekleyin; böylece hepsi aynı anda
+                        pişer ve bir kısmı dağılırken diğeri çiğ kalmaz.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Soğanı Hazırlama</strong>
+                  <ul>
+                    <li>
+                      Patatesler pişerken dilimlenmiş soğanı soğuk suda 5 dakika
+                      bekletip süzün; bu, soğandaki keskin kükürtlü bileşiklerin
+                      bir kısmını uzaklaştırarak sindirimi kolaylaştırır.
+                    </li>
+                    <li>
+                      Bekletme süresini kısa tutun, çünkü uzun süre suda kalan
+                      soğan hem çıtırlığını hem de suda çözünen bileşiklerini
+                      kaybeder.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Sosu Hazırlama</strong>
+                  <ul>
+                    <li>
+                      Küçük kapta önce limon suyunu, tuzu ve karabiberi
+                      karıştırıp tuz çözününceye kadar bekleyin; tuz yağda
+                      değil, ancak limon suyunda eridiği için bu sıra önemlidir.
+                    </li>
+                    <li>
+                      Ardından zeytinyağını ince bir iplik halinde ekleyerek
+                      çırpın; yağ yavaş eklendiğinde geçici bir emülsiyon oluşur
+                      ve sos patateslere daha eşit yapışır.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Patatesleri Soyup Doğrama</strong>
+                  <ul>
+                    <li>
+                      Patatesleri ellerinizi yakmayacak kadar soğuyunca soyun;
+                      kabuk sıcakken çok kolay sıyrılır, tamamen soğursa ise
+                      zorlaşır.<span class="puf">
+                        Patatesi bir çatalla sabitleyip bıçağın sırtıyla kabuğu
+                        çekmek, hem elinizi korur hem de patatesin ucunu ezmeden
+                        temiz soymanızı sağlar.</span
+                      >
+                    </li>
+                    <li>
+                      Patatesleri 1-1,5 cm kalınlığında dilimleyin ya da küp
+                      doğrayın; daha ince dilimler sosu çok iyi çeker ama salata
+                      ezik görünebilir.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Sıcakken Sosla Birleştirme</strong>
+                  <ul>
+                    <li>
+                      Patatesleri geniş kaba alın ve sıcakken sosun yarısını
+                      ekleyip nazikçe karıştırın; sıcak patatesin gözenekleri
+                      açıktır ve sosu içine çeker, soğuduktan sonra eklenen sos
+                      ise yüzeyde kalır.<span class="puf">
+                        Karıştırırken kaşığı kullanmak yerine büyük bir spatula
+                        ya da kaşıkla alttan üste kaldırın; bu, dilimlerin
+                        ezilmesini önler.</span
+                      >
+                    </li>
+                    <li>
+                      Patatesler ılımaya başladığında soğanı ve kalan sosu
+                      ekleyin; soğanı sıcak patatese hemen koyarsanız solar ve
+                      çıtırlığını yitirir.
+                    </li>
+                    <li>
+                      Maydanozu en son ekleyin; ısıdan ve limonun asidinden uzun
+                      süre etkilenmeyen maydanoz hem rengini hem de C vitamini
+                      ile aromasını daha iyi korur.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Dinlendirme</strong>
+                  <ul>
+                    <li>
+                      Salatayı kapağı kapalı şekilde oda sıcaklığında 15-20
+                      dakika dinlendirin; bu sürede aromalar patatese yerleşir
+                      ve tuz dengelenir.
+                    </li>
+                    <li>
+                      Tadına bakıp gerekirse bir tutam tuz ya da birkaç damla
+                      limon suyu ekleyin; patateslerin tadı ilk karıştırmadan
+                      sonra değişebildiği için ayarı son ana bırakmak daha
+                      doğrudur.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="step-content">
+                  <strong>Servis</strong>
+                  <ul>
+                    <li>
+                      Salatayı oda sıcaklığında ya da hafif serin servis edin;
+                      aşırı soğuk yenirse patatesin tadı ve zeytinyağının
+                      aroması hissedilmez.
+                    </li>
+                    <li>
+                      Üzerine bir miktar kıyılmış taze maydanoz serpin ve
+                      isterseniz bir yemek kaşığı kadar zeytinyağı gezdirin.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+            <div class="bilgi-notlari">
+              <h3>Bilgi Notları</h3>
+              <div class="not-grubu">
+                <h4>Saklama</h4>
+                <ul>
+                  <li>
+                    Salatayı kapalı bir kapta buzdolabında en fazla 2 gün
+                    saklayın; maydanoz bir süre sonra solabileceği için uzun
+                    saklayacaksanız maydanozu servis anına bırakın.
+                  </li>
+                  <li>
+                    Pişmiş patatesi oda sıcaklığında 2 saatten fazla
+                    bekletmeyin; pişmiş nişastalı gıdalar bakteri üremesi için
+                    uygun ortam oluşturur.
+                  </li>
+                  <li>
+                    Salatayı dondurmayın; patatesin dokusu çözündüğünde sulanır
+                    ve lapaya dönüşür.
+                  </li>
+                </ul>
+              </div>
+              <div class="not-grubu">
+                <h4>Besin Öğesi Korunumu</h4>
+                <ul>
+                  <li>
+                    Kabuklu ve bütün pişirmek, patatesin C vitamini ve
+                    potasyumunun pişirme suyuna geçmesini en aza indirir; kabuğu
+                    soyup küçük doğrayarak haşlamak kaybı belirgin biçimde
+                    artırır.
+                  </li>
+                  <li>
+                    Pişmiş patates soğutulunca bir kısım nişastası dirençli
+                    nişastaya dönüşür; bu, daha yavaş sindirilen ve bağırsak
+                    sağlığına yardımcı olan bir yapıdır, dolayısıyla bu salata
+                    sıcak patatesten daha avantajlıdır.
+                  </li>
+                  <li>
+                    Zeytinyağı pişirilmediği için polifenolleri ve E vitamini
+                    korunur; limon ve maydanoz ise çiğ kaldıkları için C
+                    vitaminini en yüksek halde sunar.
+                  </li>
+                  <li>
+                    Soğanı suda bekletmek bir miktar suda çözünen bileşiği alır;
+                    bu, tadı yumuşatmak karşılığında verilen küçük bir ödündür,
+                    bu yüzden süreyi kısa tutmak yeterlidir.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- Hazırlanışı. -->
+          <!-- Püf noktası bilgisi: kayan alanın en sonunda yer alır (Hazırlanışı kısmının altına) -->
+          <div class="info-note">
+            <span class="puf-isareti"></span> renkli yazılar püf noktalarını
+            belirtir.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icerik -->
+    <!-- JavaScript -->
+    <!-- Ortak kod: ../recipe.js (satır fonksiyonları ve hesaplama) -->
+    <script src="../recipe.js"></script>
+    <script>
+      // Malzemeler
+      addMainRow(
+        "Patates",
+        "Salata için en uygun tür, haşlanınca şeklini koruyan mumsu (sarı etli) patatestir; bulunamazsa her işe uygun orta nişastalı patates olur, en son seçenek ise un gibi dağılan nişastalı patateslerdir ve bunlarla dilimli yerine ezik bir salata elde edersiniz. Alırken sert, filizlenmemiş, yeşilleşmemiş ve kabuğu düzgün olanları seçin; benzer boyda olmaları eşit pişmeyi sağlar. Tarifin ana malzemesi olduğu için diğer tüm oranlar patatesin ağırlığına göre hesaplanır.",
+      );
+      addNormalRow(
+        "Kırmızı soğan",
+        15,
+        "Tatlımsı yapısı ve çıtırlığıyla kırmızı soğan bu salatada en iyi sonucu verir; bulunamazsa taze soğanın beyaz kısmı, o da yoksa kuru soğan kullanılabilir, ancak kuru soğanın keskinliği daha yüksek olduğu için ince doğrayıp tuzla ovmanız ve yıkamanız gerekir. Sıkı, parlak kabuklu ve yumuşamamış olanları seçin. Yüzde 15 oranı, patatesin tadını bastırmadan belirgin bir keskinlik ve çıtırlık katar; oran düşerse salata düz, artarsa soğan baskın kalır.",
+      );
+      addNormalRow(
+        "Maydanoz",
+        8,
+        "Salatanın ferahlığını düz yapraklı taze maydanoz taşır; bulunamazsa dereotu iyi bir alternatiftir, kurutulmuş otlar ise ancak son çare olarak düşünülmelidir çünkü aroma ve renk çok zayıf kalır. Canlı yeşil, solmamış ve sapları sert olmayan demetleri tercih edin; yaprakları kullanıp kalın sapları ayırın, çünkü saplar acımsı bir tat bırakabilir. Yüzde 8 oranı, salata yeşil noktalı değil gözle görülür derecede otlu olsun diye seçilmiştir.",
+      );
+      addNormalRow(
+        "Zeytinyağı",
+        12,
+        "Meyvemsi aromasıyla naturel sızma zeytinyağı en doğru tercihtir; olmazsa naturel birinci zeytinyağı kullanılır, rafine yağlar ise tat vermediği için en alt sıradadır. Asitliği düşük, taze sıkım ve koyu renkli şişede satılan bir yağ arayın, çünkü bu salatada yağ pişmeden yenir ve tadı doğrudan hissedilir. Yüzde 12 oranı, patateslerin kurumadan parlak ve yumuşak kalmasını sağlar.",
+      );
+      addNormalRow(
+        "Limon suyu",
+        10,
+        "Taze sıkılmış limon suyu ilk tercihtir; elma sirkesi iyi bir ikinci seçenektir, üzüm sirkesi daha sert kalır, hazır limon suyu ise son sırada yer alır çünkü aroması yavaş yavaş bozulmuş ve yapaydır. Kabuğu ince, ağır ve parlak limonlar daha çok su verir. Yüzde 10 oranı, yağın ağırlığını dengeleyecek kadar asit sağlar; fazlası patatesin tadını örter.",
+      );
+      addNormalRow(
+        "Tuz",
+        1,
+        "İnce öğütülmüş deniz tuzu en kolay dağılan seçimdir; kaya tuzu aynı işi görür ama daha iri olduğu için sosta çözünmesini beklemeniz gerekir, iyotlu sofra tuzu ise en az tercih edilen, ancak çok kolay bulunan seçenektir. Nemlenip topaklanmamış, kuru tuz kullanın. Yüzde 1 oranı, nişastalı patatesi lezzetlendirmek için yeterli bir tuzluluk verir; sıcak patates tuzu iyi çektiği için sonradan eklemeye gerek kalmaz.",
+      );
+      addNormalRow(
+        "Karabiber",
+        0.3,
+        "Salatanın kokusunu en iyi taze çektiğiniz karabiber taşır; hazır toz karabiber ikinci sıradadır, aroması hızla uçtuğu için ise yeni açılmış, kokusu hissedilen bir paket seçmelisiniz. Yüzde 0,3 oranı, biberin belli ama baskın olmayan bir ısı vermesini sağlar.",
+      );
+      // Malzemeler.
+    </script>
+    <script src="../script.js" defer></script>
+    <!-- JavaScript. -->
+  </body>
+</html>

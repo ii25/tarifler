@@ -75,6 +75,11 @@
   --cam-doygunluk: 140%; /* arkadaki renklerin canlılığı: 100% = değişmez, büyüdükçe renkler daha canlı */
   --cam-arka-koyu: #5f5f6ac7; /* tarif sayfalarındaki sonuç kutusunun rengi; son iki hane saydamlık (c7 ≈ %78). Küçültürseniz daha saydam olur ama yazı okunurluğu azalır */
   --cam-arka-acik: #ffffff8c; /* ana sayfadaki sonuç kutusunun rengi; son iki hane saydamlık (8c ≈ %55) */
+  /* ANA SAYFA (index.html): masaüstü değerleri; mobil değerleri @media (max-width: 768px) :root bloğunda */
+  --hero-yazi: 5.5rem; /* "Bugün Ne Pişirelim?" yazısının boyutu */
+  --index-arama-genislik: auto; /* masaüstü: ana sayfadaki arama kutusu kendi doğal genişliğinde kalır (auto). Mobil değeri @media bloğundaki :root'ta */
+  --hero-kenar: 21px; /* yazının etrafındaki beyaz kalın kenarlık (yazı küçülünce orantılı küçültülmelidir: yaklaşık yazı boyutunun dörtte biri) */
+  --imza-yazi: 33px; /* header'daki "Created By" imza yazısı */
   --baslik-dikey-ayar: -0.5px; /* masaüstü iki satırlı başlık bloğunun dikey ince ayarı: üst boşluk fazlaysa eksi değer (blok yukarı çıkar), alt boşluk fazlaysa artı değer (blok aşağı iner). Ekranda yaklaşık 1px'lik adımlarla görünür; 0px tam ortalı (ölçülen) konumdur */
   --baslik-aciklama-bosluk-masaustu: 14px; /* masaüstünde (yazı kutuları kırpıldığı için) başlığın alt çizgisi ile alt açıklamanın harf üst kenarı arasındaki GÖRÜNEN boşluk */
   --baslik-cizgi-dikey: 0px; /* başlığın iki yanındaki süs çizgilerinin dikey ince ayarı (tek blok başlıkta): + değer çizgiyi aşağı, - değer yukarı kaydırır */
@@ -170,6 +175,10 @@
     --satir-kenar: 14px;
     --satir-bosluk: 8px;
     --gram-genislik: 84px;
+    --hero-yazi: 4.4rem; /* mobil: ana sayfa başlığı ("Bugün Ne" / "Pişirelim?" iki satır). Büyütürseniz uzun satır ("Pişirelim?") dar ekrana sığmayabilir */
+    --hero-kenar: 13px; /* mobil: başlığın beyaz kenarlığı (yazı boyutunun yaklaşık dörtte biri) */
+    --index-arama-genislik: 170px; /* mobil: ana sayfadaki arama kutusunun genişliği. Daha dar için küçültün (örn. 150px), daha geniş için büyütün */
+    --imza-yazi: 22px; /* mobil: header imzası */
   }
 }
 /* Fontlar. */
@@ -531,10 +540,11 @@ body {
   background-color: #f1f1f11c;
 }
 /* Arama Kutusu. */
-/* Header Yerleşimi (tarif sayfaları; ana sayfanın .index-header'ı etkilenmez) */
+/* Header Yerleşimi (tarif sayfalarındaki .header ve ana sayfadaki .index-header için ortak) */
 /* 3 sütun: logo (sola yaslı) | başlık | arama kutusu (sağa yaslı).
    Yan sütunlar eşit genişlikte (1fr) olduğundan, logo veya arama kutusu ne kadar değişirse değişsin başlık tam ortada kalır. */
-.header .header-inner {
+.header .header-inner,
+.index-header .header-inner {
   display: grid;
   grid-template-columns: minmax(var(--header-yan-min), 1fr) auto minmax(var(--header-yan-min), 1fr);
   grid-template-areas: "logo baslik arama";
@@ -542,17 +552,20 @@ body {
   align-items: center;
   column-gap: 20px;
 }
-.header .header-left {
+.header .header-left,
+.index-header .header-left {
   grid-area: logo;
   justify-content: flex-start;
   min-width: 0;
 }
-.header .header-right {
+.header .header-right,
+.index-header .header-right {
   grid-area: arama;
   justify-content: flex-end;
   min-width: 0;
 }
-.header .logo {
+.header .logo,
+.index-header .logo {
   padding-right: 0;
 }
 .header .recipe-title,
@@ -588,7 +601,8 @@ body {
 }
 /* Mobil görünüm: üstte logo + arama kutusu, başlık alt satıra geçer */
 @media (max-width: 768px) {
-  .header .header-inner {
+  .header .header-inner,
+  .index-header .header-inner {
     height: auto;
     padding: 6px 1rem 0;
     grid-template-columns: auto minmax(0, 1fr);
@@ -596,6 +610,10 @@ body {
     grid-template-areas:
       "logo arama"
       "baslik baslik";
+  }
+  /* Ana sayfada başlık satırı yok: alt boşluk bırakılır */
+  .index-header .header-inner {
+    padding-bottom: 6px;
   }
   /* Başlık satırı: header'ın tam genişliğinde, farklı renkli bir şerit */
   .header .recipe-title,
@@ -632,7 +650,7 @@ body {
 /* imza */
 .imza {
   font-family: var(--font-imza);
-  font-size: 33px;
+  font-size: var(--imza-yazi);
 }
 /* imza. */
 
@@ -1253,6 +1271,23 @@ ul li::marker {
   z-index: 0;
 }
 
+/* MOBİL ARKA PLAN GÖRSELİ: 768px ve altında masaüstü görseli (banner-bg.jpg) yerine images/banner-bg-mobile.jpg kullanılır */
+@media (max-width: 768px) {
+  .banner-image {
+    background-image: url("images/banner-bg-mobile.jpg");
+    background-position: center center; /* görselin hangi bölümünün görüneceği: örn. "center top" üst kısmı, "center bottom" alt kısmı gösterir */
+  }
+  .banner-content {
+    padding: 0 16px; /* başlık ekranın kenarlarına yapışmasın */
+    box-sizing: border-box;
+  }
+  /* Başlık mobilde iki satır olur: "Bugün Ne" / "Pişirelim?". Satır sonu index.html'de h1 içindeki ve data-text içindeki satır sonundan gelir;
+     masaüstünde (normal boşluk kuralı) o satır sonu boşluğa dönüşür, mobilde burada korunur. */
+  .hero-text,
+  .hero-text::after {
+    white-space: pre-line;
+  }
+}
 .banner-video {
   position: absolute;
   top: 0;
@@ -1299,10 +1334,10 @@ ul li::marker {
   position: relative;
   display: inline-block;
   font-family: var(--font-baslik);
-  font-size: 5.5rem;
+  font-size: var(--hero-yazi);
   /* Alt katman: sadece beyaz kenarlık */
   color: #ffdc9c;
-  -webkit-text-stroke: 21px var(--renk-beyaz);
+  -webkit-text-stroke: var(--hero-kenar) var(--renk-beyaz);
   paint-order: stroke fill;
   stroke-linejoin: round;
   filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.6))
@@ -1367,6 +1402,11 @@ ul li::marker {
   background-color: #86404017;
 }
 
+/* Ana sayfa arama kutusunun genişliği: :root'taki --index-arama-genislik (masaüstü: auto, mobil: ayarlanabilir) */
+.banner-content .search-container {
+  width: var(--index-arama-genislik);
+  max-width: 100%;
+}
 #index-searchInput {
   width: 100%;
   font-size: 12px;

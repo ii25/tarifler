@@ -60,6 +60,7 @@ const ARAMA_LISTESI = [
   { title: "Patlamış Mısır", url: "patlamis-misir.html" },
   { title: "Bar Kaplama Karameli", url: "bar-kaplma-karameli.html" },
   { title: "Fıstık Ezmesi", url: "fistik-ezmesi.html" },
+  { title: "Patates Salatası", url: "patates-salatasi.html" },
 ];
 
 function search() {
