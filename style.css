@@ -78,7 +78,7 @@
   /* ANA SAYFA (index.html): masaüstü değerleri; mobil değerleri @media (max-width: 768px) :root bloğunda */
   --hero-yazi: 5.5rem; /* "Bugün Ne Pişirelim?" yazısının boyutu */
   --index-arama-genislik: auto; /* masaüstü: ana sayfadaki arama kutusu kendi doğal genişliğinde kalır (auto). Mobil değeri @media bloğundaki :root'ta */
-  --banner-icerik-dikey: -30px; /* ANA SAYFA: "Bugün Ne Pişirelim?" başlığı ile arama kutusunu BİRLİKTE dikeyde kaydırır (masaüstü). Artı değer (örn. 40px) ikisini aşağı, eksi değer (örn. -40px) yukarı kaydırır; 0px şu anki konumdur. Mobil değeri @media bloğundaki :root'ta */
+  --banner-icerik-dikey: 0px; /* ANA SAYFA: "Bugün Ne Pişirelim?" başlığı ile arama kutusunu BİRLİKTE dikeyde kaydırır (masaüstü). Artı değer (örn. 40px) ikisini aşağı, eksi değer (örn. -40px) yukarı kaydırır; 0px şu anki konumdur. Mobil değeri @media bloğundaki :root'ta */
   --hero-arama-aralik: 119px; /* "Bugün Ne Pişirelim?" yazısının altı ile arama kutusunun üstü arasındaki BOŞLUK (masaüstü). Azaltırsanız arama kutusu yukarı çıkar. Mobil değeri @media bloğundaki :root'ta */
   --hero-kenar: 21px; /* yazının etrafındaki beyaz kalın kenarlık (yazı küçülünce orantılı küçültülmelidir: yaklaşık yazı boyutunun dörtte biri) */
   --imza-yazi: 33px; /* header'daki "Created By" imza yazısı */
@@ -178,7 +178,7 @@
     --satir-bosluk: 8px;
     --gram-genislik: 84px;
     --hero-yazi: 4rem; /* mobil: ana sayfa başlığı ("Bugün Ne" / "Pişirelim?" iki satır). Büyütürseniz uzun satır ("Pişirelim?") dar ekrana sığmayabilir */
-    --banner-icerik-dikey: 0px; /* mobil: başlık + arama kutusunu birlikte dikeyde kaydırır (artı değer aşağı, eksi değer yukarı) */
+    --banner-icerik-dikey: 30px; /* mobil: başlık + arama kutusunu birlikte dikeyde kaydırır (artı değer aşağı, eksi değer yukarı) */
     --hero-arama-aralik: 83px; /* mobil: başlık ile arama kutusu arasındaki boşluk. Daha yakın için küçültün (örn. 40px), daha uzak için büyütün */
     --hero-kenar: 13px; /* mobil: başlığın beyaz kenarlığı (yazı boyutunun yaklaşık dörtte biri) */
     --index-arama-genislik: 170px; /* mobil: ana sayfadaki arama kutusunun genişliği. Daha dar için küçültün (örn. 150px), daha geniş için büyütün */
