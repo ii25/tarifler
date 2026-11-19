@@ -78,6 +78,12 @@
   /* ANA SAYFA (index.html): masaüstü değerleri; mobil değerleri @media (max-width: 768px) :root bloğunda */
   --hero-yazi: 5.5rem; /* "Bugün Ne Pişirelim?" yazısının boyutu */
   --index-arama-genislik: auto; /* masaüstü: ana sayfadaki arama kutusu kendi doğal genişliğinde kalır (auto). Mobil değeri @media bloğundaki :root'ta */
+  /* BUHAR VİDEOSU (ana sayfa, images/steam.mp4): masaüstü değerleri; mobil değerleri @media (max-width: 768px) :root bloğunda.
+     Videonun MERKEZ noktası, .banner-video kutusuna göre yüzdeyle belirlenir: o kutu bannerın genişliğinin %98'i, yüksekliğinin %128'i kadardır
+     (bu yüzden "ust" yüzdesi bannerın yüksekliğine göre yaklaşık 1,28 katı etki eder). */
+  --buhar-genislik: 460px; /* videonun genişliği (yüksekliği orantılı gelir). Ekrana sığmazsa kutunun genişliğine kadar kendiliğinden küçülür */
+  --buhar-sol: 66%; /* videonun merkezinin soldan konumu: büyüdükçe video sağa kayar */
+  --buhar-ust: 42%; /* videonun merkezinin üstten konumu: büyüdükçe video aşağı iner */
   --banner-icerik-dikey: 0px; /* ANA SAYFA: "Bugün Ne Pişirelim?" başlığı ile arama kutusunu BİRLİKTE dikeyde kaydırır (masaüstü). Artı değer (örn. 40px) ikisini aşağı, eksi değer (örn. -40px) yukarı kaydırır; 0px şu anki konumdur. Mobil değeri @media bloğundaki :root'ta */
   --hero-arama-aralik: 119px; /* "Bugün Ne Pişirelim?" yazısının altı ile arama kutusunun üstü arasındaki BOŞLUK (masaüstü). Azaltırsanız arama kutusu yukarı çıkar. Mobil değeri @media bloğundaki :root'ta */
   --hero-kenar: 21px; /* yazının etrafındaki beyaz kalın kenarlık (yazı küçülünce orantılı küçültülmelidir: yaklaşık yazı boyutunun dörtte biri) */
@@ -178,7 +184,10 @@
     --satir-bosluk: 8px;
     --gram-genislik: 84px;
     --hero-yazi: 4rem; /* mobil: ana sayfa başlığı ("Bugün Ne" / "Pişirelim?" iki satır). Büyütürseniz uzun satır ("Pişirelim?") dar ekrana sığmayabilir */
-    --banner-icerik-dikey: -30px; /* mobil: başlık + arama kutusunu birlikte dikeyde kaydırır (artı değer aşağı, eksi değer yukarı) */
+    --buhar-genislik: 358px; /* mobil: buhar videosunun genişliği (ekrana sığmazsa kendiliğinden küçülür) */
+    --buhar-sol: 53%; /* mobil: videonun merkezinin soldan konumu */
+    --buhar-ust: 43%; /* mobil: videonun merkezinin üstten konumu */
+    --banner-icerik-dikey: 0px; /* mobil: başlık + arama kutusunu birlikte dikeyde kaydırır (artı değer aşağı, eksi değer yukarı) */
     --hero-arama-aralik: 83px; /* mobil: başlık ile arama kutusu arasındaki boşluk. Daha yakın için küçültün (örn. 40px), daha uzak için büyütün */
     --hero-kenar: 13px; /* mobil: başlığın beyaz kenarlığı (yazı boyutunun yaklaşık dörtte biri) */
     --index-arama-genislik: 170px; /* mobil: ana sayfadaki arama kutusunun genişliği. Daha dar için küçültün (örn. 150px), daha geniş için büyütün */
@@ -1308,14 +1317,14 @@ ul li::marker {
 
 .banner-video video {
   position: absolute;
-  width: 605px;
+  width: var(--buhar-genislik); /* genişlik, konum: :root'taki --buhar-genislik, --buhar-ust, --buhar-sol (masaüstü ve mobil ayrı) */
   height: auto;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   transform: translate(-50%, -50%);
-  top: 40%;
-  left: 65%;
+  top: var(--buhar-ust);
+  left: var(--buhar-sol);
 }
 
 .banner-content {
