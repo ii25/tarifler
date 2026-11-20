@@ -183,7 +183,7 @@
     --satir-kenar: 14px;
     --satir-bosluk: 8px;
     --gram-genislik: 84px;
-    --hero-yazi: 4rem; /* mobil: ana sayfa başlığı ("Bugün Ne" / "Pişirelim?" iki satır). Büyütürseniz uzun satır ("Pişirelim?") dar ekrana sığmayabilir */
+    --hero-yazi: 4.8rem; /* mobil: ana sayfa başlığı ("Bugün Ne" / "Pişirelim?" iki satır). Büyütürseniz uzun satır ("Pişirelim?") dar ekrana sığmayabilir */
     --buhar-genislik: 358px; /* mobil: buhar videosunun genişliği (ekrana sığmazsa kendiliğinden küçülür) */
     --buhar-sol: 53%; /* mobil: videonun merkezinin soldan konumu */
     --buhar-ust: 43%; /* mobil: videonun merkezinin üstten konumu */
