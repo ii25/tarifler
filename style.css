@@ -185,17 +185,26 @@
     --satir-kenar: 14px;
     --satir-bosluk: 8px;
     --gram-genislik: 84px;
-    --hero-yazi: 4rem; /* mobil: ana sayfa başlığı ("Bugün Ne" / "Pişirelim?" iki satır). Büyütürseniz uzun satır ("Pişirelim?") dar ekrana sığmayabilir */
     --buhar-genislik: 605px; /* mobil: buhar videosunun genişliği (ekrana sığmazsa kendiliğinden küçülür) */
     --buhar-sol: 65%; /* mobil: videonun merkezinin soldan konumu */
     --buhar-ust: 40%; /* mobil: videonun merkezinin üstten konumu */
     --banner-icerik-dikey: 0px; /* mobil: başlık + arama kutusunu birlikte dikeyde kaydırır (artı değer aşağı, eksi değer yukarı) */
-    --hero-arama-aralik: 83px; /* mobil: başlık ile arama kutusu arasındaki boşluk. Daha yakın için küçültün (örn. 40px), daha uzak için büyütün */
-    --hero-kenar: 13px; /* mobil: başlığın beyaz kenarlığı (yazı boyutunun yaklaşık dörtte biri) */
-    --index-arama-yukseklik: 40px; /* mobil: ana sayfadaki arama kutusunun yüksekliği */
-    --index-arama-yazi: 12px; /* mobil: ana sayfadaki arama kutusunun yazı boyutu. Not: iOS Safari, 16px'ten küçük yazılı kutuya dokunulunca sayfayı yakınlaştırabilir */
-    --index-arama-genislik: 170px; /* mobil: ana sayfadaki arama kutusunun genişliği. Daha dar için küçültün (örn. 150px), daha geniş için büyütün */
+    --index-arama-yukseklik: 35px; /* mobil: ana sayfadaki arama kutusunun yüksekliği */
+    --index-arama-yazi: 11px; /* mobil: ana sayfadaki arama kutusunun yazı boyutu. Not: iOS Safari, 16px'ten küçük yazılı kutuya dokunulunca sayfayı yakınlaştırabilir */
     --imza-yazi: 22px; /* mobil: header imzası */
+  }
+}
+/* ANA SAYFA: AKICI (FLUID) BOYUTLANDIRMA: dikey ekranlarda (telefon, tablet) ve genişliği 1024px'e kadar olan ekranlarda geçerlidir.
+   Değerler clamp(en küçük, ekrana göre değer, en büyük) biçimindedir: ekran büyüdükçe başlık ve arama kutusu da onunla birlikte büyür,
+   banner ile orantısızlık olmaz. "vmin", ekranın dar kenarının %1'idir (telefonda genişlik, yatay ekranda yükseklik).
+   Masaüstü (yatay ve 1024px'ten geniş) ekranlarda bunlar uygulanmaz; yukarıdaki :root'taki sabit masaüstü değerleri geçerlidir.
+   Bir değeri ayarlamak için clamp içindeki üç sayıdan ilgilisini değiştirin: ilk sayı en küçük, ortadaki ekrana göre ölçek, üçüncü en büyük değerdir. */
+@media (orientation: portrait), (max-width: 1024px) {
+  :root {
+    --hero-yazi: clamp(2.6rem, 16.4vmin, 4rem); /* başlık boyutu: 390px genişlikli telefonda 64px, tablette en çok 5.5rem (88px = masaüstü değeri) */
+    --hero-kenar: calc(var(--hero-yazi) * 0.2386); /* beyaz kenarlık, yazı boyutuyla orantılı (masaüstündeki oran: 21px / 88px). Kalınlaştırmak için çarpanı büyütün */
+    --hero-arama-aralik: clamp(83px, 14vmin, 119px); /* başlık ile arama kutusu arası boşluk */
+    --index-arama-genislik: clamp(150px, 27vmin, 207px); /* arama kutusunun genişliği: telefonda 170px, tablette masaüstü genişliği (207px) */
   }
 }
 /* Fontlar. */
@@ -1298,18 +1307,22 @@ ul li::marker {
     overscroll-behavior: none; /* kenarlarda "çekince esneme" ve yenileme hareketi engellenir */
   }
 }
-/* MOBİL ARKA PLAN GÖRSELİ: 768px ve altında masaüstü görseli (banner-bg.jpg) yerine images/banner-bg-mobile.jpg kullanılır */
-@media (max-width: 768px) {
+/* DİKEY EKRAN ARKA PLAN GÖRSELİ: ekran DİKEY ise (telefon, tablet, dar tarayıcı penceresi) masaüstü görseli (banner-bg.jpg) yerine
+   images/banner-bg-mobile.jpg kullanılır. Genişliğe değil ekranın yönüne bakılır: dik tutulan tabletler de dikey görseli alır. */
+@media (orientation: portrait) {
   .banner-image {
     background-image: url("images/banner-bg-mobile.jpg");
     background-position: center center; /* görselin hangi bölümünün görüneceği: örn. "center top" üst kısmı, "center bottom" alt kısmı gösterir */
   }
+}
+/* Dikey ekranlarda ve 768px'e kadar dar ekranlarda başlık iki satırdır ve kenarlara yapışmaz. */
+@media (orientation: portrait), (max-width: 768px) {
   .banner-content {
     padding: 0 16px; /* başlık ekranın kenarlarına yapışmasın */
     box-sizing: border-box;
   }
-  /* Başlık mobilde iki satır olur: "Bugün Ne" / "Pişirelim?". Satır sonu index.html'de h1 içindeki ve data-text içindeki satır sonundan gelir;
-     masaüstünde (normal boşluk kuralı) o satır sonu boşluğa dönüşür, mobilde burada korunur. */
+  /* Başlık iki satır olur: "Bugün Ne" / "Pişirelim?". Satır sonu index.html'de h1 içindeki ve data-text içindeki satır sonundan gelir;
+     masaüstünde (normal boşluk kuralı) o satır sonu boşluğa dönüşür, burada korunur. */
   .hero-text,
   .hero-text::after {
     white-space: pre-line;
