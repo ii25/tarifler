@@ -185,15 +185,15 @@
     --satir-kenar: 14px;
     --satir-bosluk: 8px;
     --gram-genislik: 84px;
-    --buhar-genislik: 605px; /* mobil: buhar videosunun genişliği (ekrana sığmazsa kendiliğinden küçülür) */
-    --buhar-sol: 65%; /* mobil: videonun merkezinin soldan konumu */
-    --buhar-ust: 40%; /* mobil: videonun merkezinin üstten konumu */
-    --banner-icerik-dikey: 0px; /* mobil: başlık + arama kutusunu birlikte dikeyde kaydırır (artı değer aşağı, eksi değer yukarı) */
+    --buhar-genislik: 330px; /* mobil: buhar videosunun genişliği (ekrana sığmazsa kendiliğinden küçülür) */
+    --buhar-sol: 55%; /* mobil: videonun merkezinin soldan konumu */
+    --buhar-ust: 43%; /* mobil: videonun merkezinin üstten konumu */
+    --banner-icerik-dikey: -20px; /* mobil: başlık + arama kutusunu birlikte dikeyde kaydırır (artı değer aşağı, eksi değer yukarı) */
     --index-arama-yukseklik: 35px; /* mobil: ana sayfadaki arama kutusunun yüksekliği */
     --index-arama-yazi: 11px; /* mobil: ana sayfadaki arama kutusunun yazı boyutu. Not: iOS Safari, 16px'ten küçük yazılı kutuya dokunulunca sayfayı yakınlaştırabilir */
     --imza-yazi: 22px; /* mobil: header imzası */
   }
-}
+
 /* ANA SAYFA: AKICI (FLUID) BOYUTLANDIRMA: dikey ekranlarda (telefon, tablet) ve genişliği 1024px'e kadar olan ekranlarda geçerlidir.
    Değerler clamp(en küçük, ekrana göre değer, en büyük) biçimindedir: ekran büyüdükçe başlık ve arama kutusu da onunla birlikte büyür,
    banner ile orantısızlık olmaz. "vmin", ekranın dar kenarının %1'idir (telefonda genişlik, yatay ekranda yükseklik).
@@ -201,8 +201,8 @@
    Bir değeri ayarlamak için clamp içindeki üç sayıdan ilgilisini değiştirin: ilk sayı en küçük, ortadaki ekrana göre ölçek, üçüncü en büyük değerdir. */
 @media (orientation: portrait), (max-width: 1024px) {
   :root {
-    --hero-yazi: clamp(2.6rem, 16.4vmin, 4.5rem); /* başlık boyutu: 390px genişlikli telefonda 64px, tablette en çok 5.5rem (88px = masaüstü değeri) */
-    --hero-kenar: calc(var(--hero-yazi) * 0.2386); /* beyaz kenarlık, yazı boyutuyla orantılı (masaüstündeki oran: 21px / 88px). Kalınlaştırmak için çarpanı büyütün */
+    --hero-yazi: clamp(2.6rem, 16.4vmin, 4.3rem); /* başlık boyutu: 390px genişlikli telefonda 64px, tablette en çok 5.5rem (88px = masaüstü değeri) */
+    --hero-kenar: calc(var(--hero-yazi) * 0.2); /* beyaz kenarlık, yazı boyutuyla orantılı (masaüstündeki oran: 21px / 88px). Kalınlaştırmak için çarpanı büyütün */
     --hero-arama-aralik: clamp(83px, 14vmin, 119px); /* başlık ile arama kutusu arası boşluk */
     --index-arama-genislik: clamp(160px, 27vmin, 207px); /* arama kutusunun genişliği: telefonda 170px, tablette masaüstü genişliği (207px) */
   }
