@@ -194,6 +194,8 @@
     --imza-yazi: 22px; /* mobil: header imzası */
   }
 
+
+}
 /* ANA SAYFA: AKICI (FLUID) BOYUTLANDIRMA: dikey ekranlarda (telefon, tablet) ve genişliği 1024px'e kadar olan ekranlarda geçerlidir.
    Değerler clamp(en küçük, ekrana göre değer, en büyük) biçimindedir: ekran büyüdükçe başlık ve arama kutusu da onunla birlikte büyür,
    banner ile orantısızlık olmaz. "vmin", ekranın dar kenarının %1'idir (telefonda genişlik, yatay ekranda yükseklik).
@@ -201,7 +203,7 @@
    Bir değeri ayarlamak için clamp içindeki üç sayıdan ilgilisini değiştirin: ilk sayı en küçük, ortadaki ekrana göre ölçek, üçüncü en büyük değerdir. */
 @media (orientation: portrait), (max-width: 1024px) {
   :root {
-    --hero-yazi: clamp(2.6rem, 16.4vmin, 4.3rem); /* başlık boyutu: 390px genişlikli telefonda 64px, tablette en çok 5.5rem (88px = masaüstü değeri) */
+    --hero-yazi: clamp(2.6rem, 16.4vmin, 4.2rem); /* başlık boyutu: 390px genişlikli telefonda 64px, tablette en çok 5.5rem (88px = masaüstü değeri) */
     --hero-kenar: calc(var(--hero-yazi) * 0.2); /* beyaz kenarlık, yazı boyutuyla orantılı (masaüstündeki oran: 21px / 88px). Kalınlaştırmak için çarpanı büyütün */
     --hero-arama-aralik: clamp(83px, 14vmin, 119px); /* başlık ile arama kutusu arası boşluk */
     --index-arama-genislik: clamp(160px, 27vmin, 207px); /* arama kutusunun genişliği: telefonda 170px, tablette masaüstü genişliği (207px) */
