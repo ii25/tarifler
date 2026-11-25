@@ -201,10 +201,10 @@
    Bir değeri ayarlamak için clamp içindeki üç sayıdan ilgilisini değiştirin: ilk sayı en küçük, ortadaki ekrana göre ölçek, üçüncü en büyük değerdir. */
 @media (orientation: portrait), (max-width: 1024px) {
   :root {
-    --hero-yazi: clamp(2.6rem, 16.4vmin, 4rem); /* başlık boyutu: 390px genişlikli telefonda 64px, tablette en çok 5.5rem (88px = masaüstü değeri) */
-    --hero-kenar: calc(var(--hero-yazi) * 0.200); /* beyaz kenarlık, yazı boyutuyla orantılı (masaüstündeki oran: 21px / 88px). Kalınlaştırmak için çarpanı büyütün */
+    --hero-yazi: clamp(2.6rem, 16.4vmin, 4.5rem); /* başlık boyutu: 390px genişlikli telefonda 64px, tablette en çok 5.5rem (88px = masaüstü değeri) */
+    --hero-kenar: calc(var(--hero-yazi) * 0.2386); /* beyaz kenarlık, yazı boyutuyla orantılı (masaüstündeki oran: 21px / 88px). Kalınlaştırmak için çarpanı büyütün */
     --hero-arama-aralik: clamp(83px, 14vmin, 119px); /* başlık ile arama kutusu arası boşluk */
-    --index-arama-genislik: clamp(150px, 27vmin, 207px); /* arama kutusunun genişliği: telefonda 170px, tablette masaüstü genişliği (207px) */
+    --index-arama-genislik: clamp(160px, 27vmin, 207px); /* arama kutusunun genişliği: telefonda 170px, tablette masaüstü genişliği (207px) */
   }
 }
 /* Fontlar. */
