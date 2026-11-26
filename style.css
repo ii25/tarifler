@@ -187,7 +187,7 @@
     --gram-genislik: 84px;
     --buhar-genislik: 300px; /* mobil: buhar videosunun genişliği (ekrana sığmazsa kendiliğinden küçülür) */
     --buhar-sol: 55%; /* mobil: videonun merkezinin soldan konumu */
-    --buhar-ust: 40%; /* mobil: videonun merkezinin üstten konumu */
+    --buhar-ust: 45%; /* mobil: videonun merkezinin üstten konumu */
     --banner-icerik-dikey: 0px; /* mobil: başlık + arama kutusunu birlikte dikeyde kaydırır (artı değer aşağı, eksi değer yukarı) */
     --index-arama-yukseklik: 40px; /* mobil: ana sayfadaki arama kutusunun yüksekliği */
     --index-arama-yazi: 12px; /* mobil: ana sayfadaki arama kutusunun yazı boyutu. Not: iOS Safari, 16px'ten küçük yazılı kutuya dokunulunca sayfayı yakınlaştırabilir */
