@@ -25,6 +25,10 @@
       </div>
     <div class="header-right">
       <div class="imza">Created By</div>
+      <!-- Mobil header arama kutusu: yalnızca mobilde görünür (tarif sayfalarındaki header ile aynı); masaüstünde banner'daki arama kutusu kullanılır -->
+      <div class="search-container header-arama"><input type="text" id="searchInput" class="mainLoginInput" placeholder="&#61442;" oninput="search(this)" />
+        <div id="results" class="results-dropdown"></div>
+      </div>
     </div>
     </div>
   </header>
@@ -70,8 +74,8 @@
 </svg>
       
       <div class="banner-content"><h1 class="hero-text" data-text="Bugün Ne&#10;Pişirelim?">Bugün Ne
-Pişirelim?</h1><div class="search-container"><input type="text" id="index-searchInput" class="index-mainLoginInput" placeholder="TARİF ARA" oninput="search()" />
-          <div id="results" class="index-results-dropdown"></div></div></div>
+Pişirelim?</h1><div class="search-container"><input type="text" id="index-searchInput" class="index-mainLoginInput" placeholder="TARİF ARA" oninput="search(this)" />
+          <div id="index-results" class="index-results-dropdown"></div></div></div>
           
       <div class="banner-video"><video autoplay muted loop><source src="images/steam.mp4" type="video/mp4"></video></div>
       <div class="banner-image"></div>

@@ -60,17 +60,19 @@ const ARAMA_LISTESI = [
   { title: "Patlamış Mısır", url: "patlamis-misir.html" },
   { title: "Bar Kaplama Karameli", url: "bar-kaplma-karameli.html" },
   { title: "Fıstık Ezmesi", url: "fistik-ezmesi.html" },
-  { title: "Patates Salatası", url: "patates-salatasi.html" },
 ];
 
-function search() {
-  // Tarif sayfasında "searchInput", ana sayfada "index-searchInput" kullanılır
-  const aramaKutusu = document.getElementById("searchInput") || document.getElementById("index-searchInput");
-  const resultsContainer = document.getElementById("results");
-  if (!aramaKutusu || !resultsContainer) return;
+function search(kutu) {
+  // search(this) ile çağrılırsa o arama kutusu kullanılır (ana sayfada iki arama kutusu olabilir: banner'daki ve mobil header'daki).
+  // Parametresiz çağrıda (tarif sayfaları) sayfadaki arama kutusu bulunur: tarif sayfasında "searchInput", ana sayfada "index-searchInput".
+  const aramaKutusu = kutu || document.getElementById("searchInput") || document.getElementById("index-searchInput");
+  if (!aramaKutusu) return;
+  // Sonuç listesi, arama kutusunun hemen yanındaki kardeş öğedir (her arama kutusunun kendi listesi var)
+  const resultsContainer = aramaKutusu.nextElementSibling;
+  if (!resultsContainer) return;
 
-  // Ana sayfa pages klasörünün dışında olduğu için linklere "pages/" eklenir
-  const klasor = aramaKutusu.id === "index-searchInput" ? "pages/" : "";
+  // Ana sayfa (banner içeren sayfa) pages klasörünün dışında olduğu için linklere "pages/" eklenir
+  const klasor = document.querySelector(".banner") ? "pages/" : "";
   const searchTerm = aramaKutusu.value.toLowerCase();
 
   // Sonuçlar alanını temizle
@@ -96,23 +98,25 @@ function search() {
 }
 
 (function () {
-  const aramaKutusu = document.getElementById("searchInput") || document.getElementById("index-searchInput");
-  if (!aramaKutusu) return;
+  // Sayfadaki her arama kutusu için (tarif sayfasında 1, ana sayfada 2 tane olabilir) kendi sonuç listesi yönetilir
+  const kutular = [document.getElementById("searchInput"), document.getElementById("index-searchInput")].filter(Boolean);
+  kutular.forEach(function (aramaKutusu) {
+    const sonuclar = aramaKutusu.nextElementSibling;
+    if (!sonuclar) return;
 
-  // Arama kutusundan çıkıldığında sonuçları gizle
-  aramaKutusu.addEventListener("blur", function () {
-    setTimeout(() => {
-      const sonuclar = document.getElementById("results");
-      if (sonuclar) sonuclar.style.display = "none";
-    }, 200);
-  });
+    // Arama kutusundan çıkıldığında sonuçları gizle
+    aramaKutusu.addEventListener("blur", function () {
+      setTimeout(() => {
+        sonuclar.style.display = "none";
+      }, 200);
+    });
 
-  // Arama kutusuna yeniden odaklanıldığında, sonuç varsa göster
-  aramaKutusu.addEventListener("focus", function () {
-    const sonuclar = document.getElementById("results");
-    if (sonuclar && sonuclar.innerHTML.trim() !== "") {
-      sonuclar.style.display = "block";
-    }
+    // Arama kutusuna yeniden odaklanıldığında, sonuç varsa göster
+    aramaKutusu.addEventListener("focus", function () {
+      if (sonuclar.innerHTML.trim() !== "") {
+        sonuclar.style.display = "block";
+      }
+    });
   });
 })();
 
